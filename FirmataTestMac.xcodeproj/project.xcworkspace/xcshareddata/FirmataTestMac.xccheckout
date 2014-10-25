@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C7BF3D96-A540-44DA-9B54-35ADBAE10BA7</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FirmataTestMac</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>5A811E91F5DFF59170683E14D2C5755F19DE18CB</key>
+		<string>github.com:armadsen/ORSSerialPort.git</string>
+		<key>C4C99A8B98F672E42D5CA0AD08F4B173ED5DD49D</key>
+		<string>github.com:fibasile/Firmata-ObjC.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Mac/FirmataTestMac/FirmataTestMac.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>5A811E91F5DFF59170683E14D2C5755F19DE18CB</key>
+		<string>../../../..deps/osx/ORSSerialPort/</string>
+		<key>C4C99A8B98F672E42D5CA0AD08F4B173ED5DD49D</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:fibasile/Firmata-ObjC.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C4C99A8B98F672E42D5CA0AD08F4B173ED5DD49D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C4C99A8B98F672E42D5CA0AD08F4B173ED5DD49D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Firmata-ObjC</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>5A811E91F5DFF59170683E14D2C5755F19DE18CB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ORSSerialPort</string>
+		</dict>
+	</array>
+</dict>
+</plist>
