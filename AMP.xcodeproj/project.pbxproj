@@ -1,0 +1,722 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FAD7420019FC2F72001BE270 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD741FF19FC2F72001BE270 /* AppDelegate.m */; };
+		FAD7420219FC2F72001BE270 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD7420119FC2F72001BE270 /* main.m */; };
+		FAD7420419FC2F72001BE270 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAD7420319FC2F72001BE270 /* Images.xcassets */; };
+		FAD7420719FC2F72001BE270 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD7420519FC2F72001BE270 /* MainMenu.xib */; };
+		FAD7421319FC2F72001BE270 /* AMPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD7421219FC2F72001BE270 /* AMPTests.m */; };
+		FAD7421D19FC2F8F001BE270 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD7421C19FC2F8F001BE270 /* IOKit.framework */; };
+		FAD7425519FC2FD9001BE270 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FAD7422119FC2FD8001BE270 /* .gitignore */; };
+		FAD7425619FC2FD9001BE270 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FAD7422819FC2FD8001BE270 /* Credits.rtf */; };
+		FAD7425719FC2FD9001BE270 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FAD7422A19FC2FD8001BE270 /* InfoPlist.strings */; };
+		FAD7425819FC2FD9001BE270 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD7422C19FC2FD8001BE270 /* MainMenu.xib */; };
+		FAD7425919FC2FD9001BE270 /* ORSSerialPortCocoaDemo-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAD7422E19FC2FD8001BE270 /* ORSSerialPortCocoaDemo-Info.plist */; };
+		FAD7425A19FC2FD9001BE270 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD7423019FC2FD8001BE270 /* main.m */; };
+		FAD7425B19FC2FD9001BE270 /* ORSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD7423219FC2FD8001BE270 /* ORSAppDelegate.m */; };
+		FAD7425C19FC2FD9001BE270 /* ORSSerialPortDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD7423519FC2FD8001BE270 /* ORSSerialPortDemoController.m */; };
+		FAD7425D19FC2FD9001BE270 /* ORSSerialPortCommandLineDemo.1 in Resources */ = {isa = PBXBuildFile; fileRef = FAD7423B19FC2FD9001BE270 /* ORSSerialPortCommandLineDemo.1 */; };
+		FAD7425E19FC2FD9001BE270 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD7423D19FC2FD9001BE270 /* main.m */; };
+		FAD7425F19FC2FD9001BE270 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = FAD7423F19FC2FD9001BE270 /* LICENSE */; };
+		FAD7426019FC2FD9001BE270 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = FAD7424019FC2FD9001BE270 /* README.md */; };
+		FAD7426119FC2FD9001BE270 /* ORSSerialPort.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD7424319FC2FD9001BE270 /* ORSSerialPort.m */; };
+		FAD7426219FC2FD9001BE270 /* ORSSerialPortManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD7424519FC2FD9001BE270 /* ORSSerialPortManager.m */; };
+		FAD7426319FC2FD9001BE270 /* ADArduino.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD7424819FC2FD9001BE270 /* ADArduino.m */; };
+		FAD7426419FC2FD9001BE270 /* ADArduinoPin.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD7424A19FC2FD9001BE270 /* ADArduinoPin.m */; };
+		FAD7426519FC2FD9001BE270 /* ADCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = FAD7424B19FC2FD9001BE270 /* ADCircularBuffer.c */; };
+		FAD7426619FC2FD9001BE270 /* ADFirmata.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD7424E19FC2FD9001BE270 /* ADFirmata.m */; };
+		FAD7426719FC2FD9001BE270 /* ADSerialPort.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD7425119FC2FD9001BE270 /* ADSerialPort.m */; };
+		FAD7426819FC2FD9001BE270 /* ADUnixSerialPort.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD7425419FC2FD9001BE270 /* ADUnixSerialPort.m */; };
+		FAD7427119FC30B9001BE270 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD7427019FC30B9001BE270 /* Cocoa.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAD7420D19FC2F72001BE270 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAD741F119FC2F72001BE270 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAD741F819FC2F72001BE270;
+			remoteInfo = AMP;
+		};
+		FAD7426A19FC2FD9001BE270 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAD7422419FC2FD8001BE270 /* ORSSerialPortCocoaDemo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9D66D80E159BCAB800EE6D09;
+			remoteInfo = ORSSerialPortCocoaDemo;
+		};
+		FAD7426D19FC2FD9001BE270 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAD7423719FC2FD8001BE270 /* ORSSerialPortCommandLineDemo.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9DF0452A1678333000DA0CDA;
+			remoteInfo = ORSSerialPortCommandLineDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FAD741F919FC2F72001BE270 /* AMP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AMP.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAD741FD19FC2F72001BE270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAD741FE19FC2F72001BE270 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FAD741FF19FC2F72001BE270 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FAD7420119FC2F72001BE270 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FAD7420319FC2F72001BE270 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FAD7420619FC2F72001BE270 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		FAD7420C19FC2F72001BE270 /* AMPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AMPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAD7421119FC2F72001BE270 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAD7421219FC2F72001BE270 /* AMPTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AMPTests.m; sourceTree = "<group>"; };
+		FAD7421C19FC2F8F001BE270 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		FAD7422119FC2FD8001BE270 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		FAD7422419FC2FD8001BE270 /* ORSSerialPortCocoaDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = ORSSerialPortCocoaDemo.xcodeproj; sourceTree = "<group>"; };
+		FAD7422919FC2FD8001BE270 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		FAD7422B19FC2FD8001BE270 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FAD7422D19FC2FD8001BE270 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		FAD7422E19FC2FD8001BE270 /* ORSSerialPortCocoaDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ORSSerialPortCocoaDemo-Info.plist"; sourceTree = "<group>"; };
+		FAD7423019FC2FD8001BE270 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FAD7423119FC2FD8001BE270 /* ORSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSAppDelegate.h; sourceTree = "<group>"; };
+		FAD7423219FC2FD8001BE270 /* ORSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSAppDelegate.m; sourceTree = "<group>"; };
+		FAD7423319FC2FD8001BE270 /* ORSSerialPortCocoaDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ORSSerialPortCocoaDemo-Prefix.pch"; sourceTree = "<group>"; };
+		FAD7423419FC2FD8001BE270 /* ORSSerialPortDemoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSerialPortDemoController.h; sourceTree = "<group>"; };
+		FAD7423519FC2FD8001BE270 /* ORSSerialPortDemoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSerialPortDemoController.m; sourceTree = "<group>"; };
+		FAD7423719FC2FD8001BE270 /* ORSSerialPortCommandLineDemo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = ORSSerialPortCommandLineDemo.xcodeproj; sourceTree = "<group>"; };
+		FAD7423B19FC2FD9001BE270 /* ORSSerialPortCommandLineDemo.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; path = ORSSerialPortCommandLineDemo.1; sourceTree = "<group>"; };
+		FAD7423D19FC2FD9001BE270 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FAD7423E19FC2FD9001BE270 /* ORSSerialPortCommandLineDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ORSSerialPortCommandLineDemo-Prefix.pch"; sourceTree = "<group>"; };
+		FAD7423F19FC2FD9001BE270 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		FAD7424019FC2FD9001BE270 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FAD7424219FC2FD9001BE270 /* ORSSerialPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSerialPort.h; sourceTree = "<group>"; };
+		FAD7424319FC2FD9001BE270 /* ORSSerialPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSerialPort.m; sourceTree = "<group>"; };
+		FAD7424419FC2FD9001BE270 /* ORSSerialPortManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORSSerialPortManager.h; sourceTree = "<group>"; };
+		FAD7424519FC2FD9001BE270 /* ORSSerialPortManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORSSerialPortManager.m; sourceTree = "<group>"; };
+		FAD7424719FC2FD9001BE270 /* ADArduino.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADArduino.h; sourceTree = "<group>"; };
+		FAD7424819FC2FD9001BE270 /* ADArduino.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADArduino.m; sourceTree = "<group>"; };
+		FAD7424919FC2FD9001BE270 /* ADArduinoPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADArduinoPin.h; sourceTree = "<group>"; };
+		FAD7424A19FC2FD9001BE270 /* ADArduinoPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADArduinoPin.m; sourceTree = "<group>"; };
+		FAD7424B19FC2FD9001BE270 /* ADCircularBuffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ADCircularBuffer.c; sourceTree = "<group>"; };
+		FAD7424C19FC2FD9001BE270 /* ADCircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADCircularBuffer.h; sourceTree = "<group>"; };
+		FAD7424D19FC2FD9001BE270 /* ADFirmata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADFirmata.h; sourceTree = "<group>"; };
+		FAD7424E19FC2FD9001BE270 /* ADFirmata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADFirmata.m; sourceTree = "<group>"; };
+		FAD7424F19FC2FD9001BE270 /* ADFirmataConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADFirmataConst.h; sourceTree = "<group>"; };
+		FAD7425019FC2FD9001BE270 /* ADSerialPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSerialPort.h; sourceTree = "<group>"; };
+		FAD7425119FC2FD9001BE270 /* ADSerialPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADSerialPort.m; sourceTree = "<group>"; };
+		FAD7425319FC2FD9001BE270 /* ADUnixSerialPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADUnixSerialPort.h; sourceTree = "<group>"; };
+		FAD7425419FC2FD9001BE270 /* ADUnixSerialPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADUnixSerialPort.m; sourceTree = "<group>"; };
+		FAD7426F19FC3004001BE270 /* AMP-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AMP-prefix.pch"; sourceTree = "<group>"; };
+		FAD7427019FC30B9001BE270 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FAD741F619FC2F72001BE270 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAD7427119FC30B9001BE270 /* Cocoa.framework in Frameworks */,
+				FAD7421D19FC2F8F001BE270 /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAD7420919FC2F72001BE270 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FAD741F019FC2F72001BE270 = {
+			isa = PBXGroup;
+			children = (
+				FAD7427019FC30B9001BE270 /* Cocoa.framework */,
+				FAD7421C19FC2F8F001BE270 /* IOKit.framework */,
+				FAD741FB19FC2F72001BE270 /* AMP */,
+				FAD7420F19FC2F72001BE270 /* AMPTests */,
+				FAD741FA19FC2F72001BE270 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FAD741FA19FC2F72001BE270 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAD741F919FC2F72001BE270 /* AMP.app */,
+				FAD7420C19FC2F72001BE270 /* AMPTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAD741FB19FC2F72001BE270 /* AMP */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7421E19FC2FD8001BE270 /* deps */,
+				FAD7424619FC2FD9001BE270 /* Library */,
+				FAD741FE19FC2F72001BE270 /* AppDelegate.h */,
+				FAD741FF19FC2F72001BE270 /* AppDelegate.m */,
+				FAD7420319FC2F72001BE270 /* Images.xcassets */,
+				FAD7420519FC2F72001BE270 /* MainMenu.xib */,
+				FAD741FC19FC2F72001BE270 /* Supporting Files */,
+			);
+			path = AMP;
+			sourceTree = "<group>";
+		};
+		FAD741FC19FC2F72001BE270 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAD741FD19FC2F72001BE270 /* Info.plist */,
+				FAD7420119FC2F72001BE270 /* main.m */,
+				FAD7426F19FC3004001BE270 /* AMP-prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FAD7420F19FC2F72001BE270 /* AMPTests */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7421219FC2F72001BE270 /* AMPTests.m */,
+				FAD7421019FC2F72001BE270 /* Supporting Files */,
+			);
+			path = AMPTests;
+			sourceTree = "<group>";
+		};
+		FAD7421019FC2F72001BE270 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7421119FC2F72001BE270 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FAD7421E19FC2FD8001BE270 /* deps */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7421F19FC2FD8001BE270 /* osx */,
+			);
+			name = deps;
+			path = "../../Firmata-ObjC/deps";
+			sourceTree = "<group>";
+		};
+		FAD7421F19FC2FD8001BE270 /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7422019FC2FD8001BE270 /* ORSSerialPort */,
+			);
+			path = osx;
+			sourceTree = "<group>";
+		};
+		FAD7422019FC2FD8001BE270 /* ORSSerialPort */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7422119FC2FD8001BE270 /* .gitignore */,
+				FAD7422219FC2FD8001BE270 /* Examples */,
+				FAD7423F19FC2FD9001BE270 /* LICENSE */,
+				FAD7424019FC2FD9001BE270 /* README.md */,
+				FAD7424119FC2FD9001BE270 /* Source */,
+			);
+			path = ORSSerialPort;
+			sourceTree = "<group>";
+		};
+		FAD7422219FC2FD8001BE270 /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7422319FC2FD8001BE270 /* CocoaDemo */,
+				FAD7423619FC2FD8001BE270 /* CommandLineDemo */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		FAD7422319FC2FD8001BE270 /* CocoaDemo */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7422419FC2FD8001BE270 /* ORSSerialPortCocoaDemo.xcodeproj */,
+				FAD7422719FC2FD8001BE270 /* Resources */,
+				FAD7422F19FC2FD8001BE270 /* Sources */,
+			);
+			path = CocoaDemo;
+			sourceTree = "<group>";
+		};
+		FAD7422519FC2FD8001BE270 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7426B19FC2FD9001BE270 /* ORSSerialPortCocoaDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAD7422719FC2FD8001BE270 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7422819FC2FD8001BE270 /* Credits.rtf */,
+				FAD7422A19FC2FD8001BE270 /* InfoPlist.strings */,
+				FAD7422C19FC2FD8001BE270 /* MainMenu.xib */,
+				FAD7422E19FC2FD8001BE270 /* ORSSerialPortCocoaDemo-Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FAD7422F19FC2FD8001BE270 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7423019FC2FD8001BE270 /* main.m */,
+				FAD7423119FC2FD8001BE270 /* ORSAppDelegate.h */,
+				FAD7423219FC2FD8001BE270 /* ORSAppDelegate.m */,
+				FAD7423319FC2FD8001BE270 /* ORSSerialPortCocoaDemo-Prefix.pch */,
+				FAD7423419FC2FD8001BE270 /* ORSSerialPortDemoController.h */,
+				FAD7423519FC2FD8001BE270 /* ORSSerialPortDemoController.m */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		FAD7423619FC2FD8001BE270 /* CommandLineDemo */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7423719FC2FD8001BE270 /* ORSSerialPortCommandLineDemo.xcodeproj */,
+				FAD7423A19FC2FD9001BE270 /* Resources */,
+				FAD7423C19FC2FD9001BE270 /* Sources */,
+			);
+			path = CommandLineDemo;
+			sourceTree = "<group>";
+		};
+		FAD7423819FC2FD8001BE270 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7426E19FC2FD9001BE270 /* ORSSerialPortCommandLineDemo */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAD7423A19FC2FD9001BE270 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7423B19FC2FD9001BE270 /* ORSSerialPortCommandLineDemo.1 */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FAD7423C19FC2FD9001BE270 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7423D19FC2FD9001BE270 /* main.m */,
+				FAD7423E19FC2FD9001BE270 /* ORSSerialPortCommandLineDemo-Prefix.pch */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		FAD7424119FC2FD9001BE270 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7424219FC2FD9001BE270 /* ORSSerialPort.h */,
+				FAD7424319FC2FD9001BE270 /* ORSSerialPort.m */,
+				FAD7424419FC2FD9001BE270 /* ORSSerialPortManager.h */,
+				FAD7424519FC2FD9001BE270 /* ORSSerialPortManager.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		FAD7424619FC2FD9001BE270 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7424719FC2FD9001BE270 /* ADArduino.h */,
+				FAD7424819FC2FD9001BE270 /* ADArduino.m */,
+				FAD7424919FC2FD9001BE270 /* ADArduinoPin.h */,
+				FAD7424A19FC2FD9001BE270 /* ADArduinoPin.m */,
+				FAD7424B19FC2FD9001BE270 /* ADCircularBuffer.c */,
+				FAD7424C19FC2FD9001BE270 /* ADCircularBuffer.h */,
+				FAD7424D19FC2FD9001BE270 /* ADFirmata.h */,
+				FAD7424E19FC2FD9001BE270 /* ADFirmata.m */,
+				FAD7424F19FC2FD9001BE270 /* ADFirmataConst.h */,
+				FAD7425019FC2FD9001BE270 /* ADSerialPort.h */,
+				FAD7425119FC2FD9001BE270 /* ADSerialPort.m */,
+				FAD7425219FC2FD9001BE270 /* osx */,
+			);
+			name = Library;
+			path = "../../Firmata-ObjC/Library";
+			sourceTree = "<group>";
+		};
+		FAD7425219FC2FD9001BE270 /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				FAD7425319FC2FD9001BE270 /* ADUnixSerialPort.h */,
+				FAD7425419FC2FD9001BE270 /* ADUnixSerialPort.m */,
+			);
+			path = osx;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FAD741F819FC2F72001BE270 /* AMP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAD7421619FC2F72001BE270 /* Build configuration list for PBXNativeTarget "AMP" */;
+			buildPhases = (
+				FAD741F519FC2F72001BE270 /* Sources */,
+				FAD741F619FC2F72001BE270 /* Frameworks */,
+				FAD741F719FC2F72001BE270 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AMP;
+			productName = AMP;
+			productReference = FAD741F919FC2F72001BE270 /* AMP.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FAD7420B19FC2F72001BE270 /* AMPTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAD7421919FC2F72001BE270 /* Build configuration list for PBXNativeTarget "AMPTests" */;
+			buildPhases = (
+				FAD7420819FC2F72001BE270 /* Sources */,
+				FAD7420919FC2F72001BE270 /* Frameworks */,
+				FAD7420A19FC2F72001BE270 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAD7420E19FC2F72001BE270 /* PBXTargetDependency */,
+			);
+			name = AMPTests;
+			productName = AMPTests;
+			productReference = FAD7420C19FC2F72001BE270 /* AMPTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FAD741F119FC2F72001BE270 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Dolo;
+				TargetAttributes = {
+					FAD741F819FC2F72001BE270 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					FAD7420B19FC2F72001BE270 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = FAD741F819FC2F72001BE270;
+					};
+				};
+			};
+			buildConfigurationList = FAD741F419FC2F72001BE270 /* Build configuration list for PBXProject "AMP" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FAD741F019FC2F72001BE270;
+			productRefGroup = FAD741FA19FC2F72001BE270 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FAD7422519FC2FD8001BE270 /* Products */;
+					ProjectRef = FAD7422419FC2FD8001BE270 /* ORSSerialPortCocoaDemo.xcodeproj */;
+				},
+				{
+					ProductGroup = FAD7423819FC2FD8001BE270 /* Products */;
+					ProjectRef = FAD7423719FC2FD8001BE270 /* ORSSerialPortCommandLineDemo.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				FAD741F819FC2F72001BE270 /* AMP */,
+				FAD7420B19FC2F72001BE270 /* AMPTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FAD7426B19FC2FD9001BE270 /* ORSSerialPortCocoaDemo.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = ORSSerialPortCocoaDemo.app;
+			remoteRef = FAD7426A19FC2FD9001BE270 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FAD7426E19FC2FD9001BE270 /* ORSSerialPortCommandLineDemo */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = ORSSerialPortCommandLineDemo;
+			remoteRef = FAD7426D19FC2FD9001BE270 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FAD741F719FC2F72001BE270 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAD7420419FC2F72001BE270 /* Images.xcassets in Resources */,
+				FAD7425519FC2FD9001BE270 /* .gitignore in Resources */,
+				FAD7425D19FC2FD9001BE270 /* ORSSerialPortCommandLineDemo.1 in Resources */,
+				FAD7420719FC2F72001BE270 /* MainMenu.xib in Resources */,
+				FAD7425619FC2FD9001BE270 /* Credits.rtf in Resources */,
+				FAD7425719FC2FD9001BE270 /* InfoPlist.strings in Resources */,
+				FAD7425F19FC2FD9001BE270 /* LICENSE in Resources */,
+				FAD7425919FC2FD9001BE270 /* ORSSerialPortCocoaDemo-Info.plist in Resources */,
+				FAD7425819FC2FD9001BE270 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAD7420A19FC2F72001BE270 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FAD741F519FC2F72001BE270 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAD7420219FC2F72001BE270 /* main.m in Sources */,
+				FAD7425A19FC2FD9001BE270 /* main.m in Sources */,
+				FAD7425C19FC2FD9001BE270 /* ORSSerialPortDemoController.m in Sources */,
+				FAD7426319FC2FD9001BE270 /* ADArduino.m in Sources */,
+				FAD7426219FC2FD9001BE270 /* ORSSerialPortManager.m in Sources */,
+				FAD7426719FC2FD9001BE270 /* ADSerialPort.m in Sources */,
+				FAD7426119FC2FD9001BE270 /* ORSSerialPort.m in Sources */,
+				FAD7426019FC2FD9001BE270 /* README.md in Sources */,
+				FAD7420019FC2F72001BE270 /* AppDelegate.m in Sources */,
+				FAD7426419FC2FD9001BE270 /* ADArduinoPin.m in Sources */,
+				FAD7425E19FC2FD9001BE270 /* main.m in Sources */,
+				FAD7426619FC2FD9001BE270 /* ADFirmata.m in Sources */,
+				FAD7426819FC2FD9001BE270 /* ADUnixSerialPort.m in Sources */,
+				FAD7425B19FC2FD9001BE270 /* ORSAppDelegate.m in Sources */,
+				FAD7426519FC2FD9001BE270 /* ADCircularBuffer.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAD7420819FC2F72001BE270 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAD7421319FC2F72001BE270 /* AMPTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAD7420E19FC2F72001BE270 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAD741F819FC2F72001BE270 /* AMP */;
+			targetProxy = FAD7420D19FC2F72001BE270 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FAD7420519FC2F72001BE270 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAD7420619FC2F72001BE270 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		FAD7422819FC2FD8001BE270 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAD7422919FC2FD8001BE270 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		FAD7422A19FC2FD8001BE270 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAD7422B19FC2FD8001BE270 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FAD7422C19FC2FD8001BE270 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAD7422D19FC2FD8001BE270 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FAD7421419FC2F72001BE270 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FAD7421519FC2F72001BE270 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FAD7421719FC2F72001BE270 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREFIX_HEADER = "AMP/AMP-prefix.pch";
+				INFOPLIST_FILE = AMP/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FAD7421819FC2F72001BE270 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PREFIX_HEADER = "AMP/AMP-prefix.pch";
+				INFOPLIST_FILE = AMP/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FAD7421A19FC2F72001BE270 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AMPTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AMP.app/Contents/MacOS/AMP";
+			};
+			name = Debug;
+		};
+		FAD7421B19FC2F72001BE270 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AMPTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AMP.app/Contents/MacOS/AMP";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FAD741F419FC2F72001BE270 /* Build configuration list for PBXProject "AMP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAD7421419FC2F72001BE270 /* Debug */,
+				FAD7421519FC2F72001BE270 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAD7421619FC2F72001BE270 /* Build configuration list for PBXNativeTarget "AMP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAD7421719FC2F72001BE270 /* Debug */,
+				FAD7421819FC2F72001BE270 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FAD7421919FC2F72001BE270 /* Build configuration list for PBXNativeTarget "AMPTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAD7421A19FC2F72001BE270 /* Debug */,
+				FAD7421B19FC2F72001BE270 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FAD741F119FC2F72001BE270 /* Project object */;
+}
