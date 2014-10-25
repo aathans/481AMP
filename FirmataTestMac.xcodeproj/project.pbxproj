@@ -20,14 +20,14 @@
 		F4927CB618224EE900C1A82D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4927C9518224EE900C1A82D /* Cocoa.framework */; };
 		F4927CBE18224EEA00C1A82D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4927CBC18224EEA00C1A82D /* InfoPlist.strings */; };
 		F4927CC018224EEA00C1A82D /* FirmataTestMacTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4927CBF18224EEA00C1A82D /* FirmataTestMacTests.m */; };
-		F4927CDA18224F1400C1A82D /* ADArduino.m in Sources */ = {isa = PBXBuildFile; fileRef = F4927CCB18224F1400C1A82D /* ADArduino.m */; };
-		F4927CDB18224F1400C1A82D /* ADArduinoPin.m in Sources */ = {isa = PBXBuildFile; fileRef = F4927CCD18224F1400C1A82D /* ADArduinoPin.m */; };
-		F4927CDC18224F1400C1A82D /* ADCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = F4927CCE18224F1400C1A82D /* ADCircularBuffer.c */; };
-		F4927CDD18224F1400C1A82D /* ADFirmata.m in Sources */ = {isa = PBXBuildFile; fileRef = F4927CD118224F1400C1A82D /* ADFirmata.m */; };
-		F4927CDE18224F1400C1A82D /* ADSerialPort.m in Sources */ = {isa = PBXBuildFile; fileRef = F4927CD418224F1400C1A82D /* ADSerialPort.m */; };
-		F4927CDF18224F1400C1A82D /* ADUnixSerialPort.m in Sources */ = {isa = PBXBuildFile; fileRef = F4927CD718224F1400C1A82D /* ADUnixSerialPort.m */; };
-		F4927CE618224F3100C1A82D /* ORSSerialPort.m in Sources */ = {isa = PBXBuildFile; fileRef = F4927CE318224F3100C1A82D /* ORSSerialPort.m */; };
-		F4927CE718224F3100C1A82D /* ORSSerialPortManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F4927CE518224F3100C1A82D /* ORSSerialPortManager.m */; };
+		FA28FCEB19FC453A00C3C2AA /* ADArduino.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FCE119FC453A00C3C2AA /* ADArduino.m */; };
+		FA28FCEC19FC453A00C3C2AA /* ADArduinoPin.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FCE319FC453A00C3C2AA /* ADArduinoPin.m */; };
+		FA28FCED19FC453A00C3C2AA /* ADCircularBuffer.c in Sources */ = {isa = PBXBuildFile; fileRef = FA28FCE419FC453A00C3C2AA /* ADCircularBuffer.c */; };
+		FA28FCEE19FC453A00C3C2AA /* ADFirmata.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FCE719FC453A00C3C2AA /* ADFirmata.m */; };
+		FA28FCEF19FC453A00C3C2AA /* ADSerialPort.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FCEA19FC453A00C3C2AA /* ADSerialPort.m */; };
+		FA28FCF319FC454400C3C2AA /* ADUnixSerialPort.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FCF219FC454400C3C2AA /* ADUnixSerialPort.m */; };
+		FA28FCF819FC455A00C3C2AA /* ORSSerialPort.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FCF519FC455A00C3C2AA /* ORSSerialPort.m */; };
+		FA28FCF919FC455A00C3C2AA /* ORSSerialPortManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FCF719FC455A00C3C2AA /* ORSSerialPortManager.m */; };
 		FAD7427519FC32C5001BE270 /* ADMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD7427319FC32C5001BE270 /* ADMainViewController.m */; };
 		FAD7427619FC32C5001BE270 /* ADMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD7427419FC32C5001BE270 /* ADMainViewController.xib */; };
 /* End PBXBuildFile section */
@@ -65,23 +65,23 @@
 		F4927CBB18224EE900C1A82D /* FirmataTestMacTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FirmataTestMacTests-Info.plist"; sourceTree = "<group>"; };
 		F4927CBD18224EEA00C1A82D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F4927CBF18224EEA00C1A82D /* FirmataTestMacTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirmataTestMacTests.m; sourceTree = "<group>"; };
-		F4927CCA18224F1400C1A82D /* ADArduino.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADArduino.h; path = ../../../Library/ADArduino.h; sourceTree = "<group>"; };
-		F4927CCB18224F1400C1A82D /* ADArduino.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADArduino.m; path = ../../../Library/ADArduino.m; sourceTree = "<group>"; };
-		F4927CCC18224F1400C1A82D /* ADArduinoPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADArduinoPin.h; path = ../../../Library/ADArduinoPin.h; sourceTree = "<group>"; };
-		F4927CCD18224F1400C1A82D /* ADArduinoPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADArduinoPin.m; path = ../../../Library/ADArduinoPin.m; sourceTree = "<group>"; };
-		F4927CCE18224F1400C1A82D /* ADCircularBuffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ADCircularBuffer.c; path = ../../../Library/ADCircularBuffer.c; sourceTree = "<group>"; };
-		F4927CCF18224F1400C1A82D /* ADCircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADCircularBuffer.h; path = ../../../Library/ADCircularBuffer.h; sourceTree = "<group>"; };
-		F4927CD018224F1400C1A82D /* ADFirmata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADFirmata.h; path = ../../../Library/ADFirmata.h; sourceTree = "<group>"; };
-		F4927CD118224F1400C1A82D /* ADFirmata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADFirmata.m; path = ../../../Library/ADFirmata.m; sourceTree = "<group>"; };
-		F4927CD218224F1400C1A82D /* ADFirmataConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADFirmataConst.h; path = ../../../Library/ADFirmataConst.h; sourceTree = "<group>"; };
-		F4927CD318224F1400C1A82D /* ADSerialPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADSerialPort.h; path = ../../../Library/ADSerialPort.h; sourceTree = "<group>"; };
-		F4927CD418224F1400C1A82D /* ADSerialPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADSerialPort.m; path = ../../../Library/ADSerialPort.m; sourceTree = "<group>"; };
-		F4927CD618224F1400C1A82D /* ADUnixSerialPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADUnixSerialPort.h; sourceTree = "<group>"; };
-		F4927CD718224F1400C1A82D /* ADUnixSerialPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADUnixSerialPort.m; sourceTree = "<group>"; };
-		F4927CE218224F3100C1A82D /* ORSSerialPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORSSerialPort.h; path = ../../../deps/osx/ORSSerialPort/Source/ORSSerialPort.h; sourceTree = "<group>"; };
-		F4927CE318224F3100C1A82D /* ORSSerialPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPort.m; path = ../../../deps/osx/ORSSerialPort/Source/ORSSerialPort.m; sourceTree = "<group>"; };
-		F4927CE418224F3100C1A82D /* ORSSerialPortManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORSSerialPortManager.h; path = ../../../deps/osx/ORSSerialPort/Source/ORSSerialPortManager.h; sourceTree = "<group>"; };
-		F4927CE518224F3100C1A82D /* ORSSerialPortManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPortManager.m; path = ../../../deps/osx/ORSSerialPort/Source/ORSSerialPortManager.m; sourceTree = "<group>"; };
+		FA28FCE019FC453A00C3C2AA /* ADArduino.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADArduino.h; path = Library/ADArduino.h; sourceTree = "<group>"; };
+		FA28FCE119FC453A00C3C2AA /* ADArduino.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADArduino.m; path = Library/ADArduino.m; sourceTree = "<group>"; };
+		FA28FCE219FC453A00C3C2AA /* ADArduinoPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADArduinoPin.h; path = Library/ADArduinoPin.h; sourceTree = "<group>"; };
+		FA28FCE319FC453A00C3C2AA /* ADArduinoPin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADArduinoPin.m; path = Library/ADArduinoPin.m; sourceTree = "<group>"; };
+		FA28FCE419FC453A00C3C2AA /* ADCircularBuffer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = ADCircularBuffer.c; path = Library/ADCircularBuffer.c; sourceTree = "<group>"; };
+		FA28FCE519FC453A00C3C2AA /* ADCircularBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADCircularBuffer.h; path = Library/ADCircularBuffer.h; sourceTree = "<group>"; };
+		FA28FCE619FC453A00C3C2AA /* ADFirmata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADFirmata.h; path = Library/ADFirmata.h; sourceTree = "<group>"; };
+		FA28FCE719FC453A00C3C2AA /* ADFirmata.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADFirmata.m; path = Library/ADFirmata.m; sourceTree = "<group>"; };
+		FA28FCE819FC453A00C3C2AA /* ADFirmataConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADFirmataConst.h; path = Library/ADFirmataConst.h; sourceTree = "<group>"; };
+		FA28FCE919FC453A00C3C2AA /* ADSerialPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADSerialPort.h; path = Library/ADSerialPort.h; sourceTree = "<group>"; };
+		FA28FCEA19FC453A00C3C2AA /* ADSerialPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ADSerialPort.m; path = Library/ADSerialPort.m; sourceTree = "<group>"; };
+		FA28FCF119FC454400C3C2AA /* ADUnixSerialPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADUnixSerialPort.h; sourceTree = "<group>"; };
+		FA28FCF219FC454400C3C2AA /* ADUnixSerialPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADUnixSerialPort.m; sourceTree = "<group>"; };
+		FA28FCF419FC455A00C3C2AA /* ORSSerialPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORSSerialPort.h; path = deps/osx/ORSSerialPort/Source/ORSSerialPort.h; sourceTree = "<group>"; };
+		FA28FCF519FC455A00C3C2AA /* ORSSerialPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPort.m; path = deps/osx/ORSSerialPort/Source/ORSSerialPort.m; sourceTree = "<group>"; };
+		FA28FCF619FC455A00C3C2AA /* ORSSerialPortManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORSSerialPortManager.h; path = deps/osx/ORSSerialPort/Source/ORSSerialPortManager.h; sourceTree = "<group>"; };
+		FA28FCF719FC455A00C3C2AA /* ORSSerialPortManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPortManager.m; path = deps/osx/ORSSerialPort/Source/ORSSerialPortManager.m; sourceTree = "<group>"; };
 		FAD7427219FC32C5001BE270 /* ADMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADMainViewController.h; sourceTree = "<group>"; };
 		FAD7427319FC32C5001BE270 /* ADMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADMainViewController.m; sourceTree = "<group>"; };
 		FAD7427419FC32C5001BE270 /* ADMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADMainViewController.xib; sourceTree = "<group>"; };
@@ -152,8 +152,8 @@
 		F4927C9B18224EE900C1A82D /* FirmataTestMac */ = {
 			isa = PBXGroup;
 			children = (
-				F4927CE118224F1C00C1A82D /* Deps */,
-				F4927CC918224EFD00C1A82D /* Library */,
+				FA28FCDF19FC451300C3C2AA /* library */,
+				FA28FCDE19FC450F00C3C2AA /* dep */,
 				F4927CA718224EE900C1A82D /* ADAppDelegate.h */,
 				F4927CA818224EE900C1A82D /* ADAppDelegate.m */,
 				F439CA2518229D12002F09E2 /* ADDetailWindowController.h */,
@@ -198,44 +198,44 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		F4927CC918224EFD00C1A82D /* Library */ = {
+		FA28FCDE19FC450F00C3C2AA /* dep */ = {
 			isa = PBXGroup;
 			children = (
-				F4927CCA18224F1400C1A82D /* ADArduino.h */,
-				F4927CCB18224F1400C1A82D /* ADArduino.m */,
-				F4927CCC18224F1400C1A82D /* ADArduinoPin.h */,
-				F4927CCD18224F1400C1A82D /* ADArduinoPin.m */,
-				F4927CCE18224F1400C1A82D /* ADCircularBuffer.c */,
-				F4927CCF18224F1400C1A82D /* ADCircularBuffer.h */,
-				F4927CD018224F1400C1A82D /* ADFirmata.h */,
-				F4927CD118224F1400C1A82D /* ADFirmata.m */,
-				F4927CD218224F1400C1A82D /* ADFirmataConst.h */,
-				F4927CD318224F1400C1A82D /* ADSerialPort.h */,
-				F4927CD418224F1400C1A82D /* ADSerialPort.m */,
-				F4927CD518224F1400C1A82D /* osx */,
+				FA28FCF419FC455A00C3C2AA /* ORSSerialPort.h */,
+				FA28FCF519FC455A00C3C2AA /* ORSSerialPort.m */,
+				FA28FCF619FC455A00C3C2AA /* ORSSerialPortManager.h */,
+				FA28FCF719FC455A00C3C2AA /* ORSSerialPortManager.m */,
 			);
-			name = Library;
+			name = dep;
 			sourceTree = "<group>";
 		};
-		F4927CD518224F1400C1A82D /* osx */ = {
+		FA28FCDF19FC451300C3C2AA /* library */ = {
 			isa = PBXGroup;
 			children = (
-				F4927CD618224F1400C1A82D /* ADUnixSerialPort.h */,
-				F4927CD718224F1400C1A82D /* ADUnixSerialPort.m */,
+				FA28FCE019FC453A00C3C2AA /* ADArduino.h */,
+				FA28FCE119FC453A00C3C2AA /* ADArduino.m */,
+				FA28FCE219FC453A00C3C2AA /* ADArduinoPin.h */,
+				FA28FCE319FC453A00C3C2AA /* ADArduinoPin.m */,
+				FA28FCE419FC453A00C3C2AA /* ADCircularBuffer.c */,
+				FA28FCE519FC453A00C3C2AA /* ADCircularBuffer.h */,
+				FA28FCE619FC453A00C3C2AA /* ADFirmata.h */,
+				FA28FCE719FC453A00C3C2AA /* ADFirmata.m */,
+				FA28FCE819FC453A00C3C2AA /* ADFirmataConst.h */,
+				FA28FCE919FC453A00C3C2AA /* ADSerialPort.h */,
+				FA28FCEA19FC453A00C3C2AA /* ADSerialPort.m */,
+				FA28FCF019FC454400C3C2AA /* osx */,
+			);
+			name = library;
+			sourceTree = "<group>";
+		};
+		FA28FCF019FC454400C3C2AA /* osx */ = {
+			isa = PBXGroup;
+			children = (
+				FA28FCF119FC454400C3C2AA /* ADUnixSerialPort.h */,
+				FA28FCF219FC454400C3C2AA /* ADUnixSerialPort.m */,
 			);
 			name = osx;
-			path = ../../../Library/osx;
-			sourceTree = "<group>";
-		};
-		F4927CE118224F1C00C1A82D /* Deps */ = {
-			isa = PBXGroup;
-			children = (
-				F4927CE218224F3100C1A82D /* ORSSerialPort.h */,
-				F4927CE318224F3100C1A82D /* ORSSerialPort.m */,
-				F4927CE418224F3100C1A82D /* ORSSerialPortManager.h */,
-				F4927CE518224F3100C1A82D /* ORSSerialPortManager.m */,
-			);
-			name = Deps;
+			path = Library/osx;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,18 +338,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4927CE618224F3100C1A82D /* ORSSerialPort.m in Sources */,
+				FA28FCEF19FC453A00C3C2AA /* ADSerialPort.m in Sources */,
 				F4927CA218224EE900C1A82D /* main.m in Sources */,
-				F4927CDD18224F1400C1A82D /* ADFirmata.m in Sources */,
 				F4927CA918224EE900C1A82D /* ADAppDelegate.m in Sources */,
 				F439CA2818229D12002F09E2 /* ADDetailWindowController.m in Sources */,
-				F4927CE718224F3100C1A82D /* ORSSerialPortManager.m in Sources */,
+				FA28FCED19FC453A00C3C2AA /* ADCircularBuffer.c in Sources */,
+				FA28FCEC19FC453A00C3C2AA /* ADArduinoPin.m in Sources */,
+				FA28FCEB19FC453A00C3C2AA /* ADArduino.m in Sources */,
+				FA28FCF319FC454400C3C2AA /* ADUnixSerialPort.m in Sources */,
+				FA28FCF819FC455A00C3C2AA /* ORSSerialPort.m in Sources */,
+				FA28FCF919FC455A00C3C2AA /* ORSSerialPortManager.m in Sources */,
 				FAD7427519FC32C5001BE270 /* ADMainViewController.m in Sources */,
-				F4927CDF18224F1400C1A82D /* ADUnixSerialPort.m in Sources */,
-				F4927CDC18224F1400C1A82D /* ADCircularBuffer.c in Sources */,
-				F4927CDA18224F1400C1A82D /* ADArduino.m in Sources */,
-				F4927CDE18224F1400C1A82D /* ADSerialPort.m in Sources */,
-				F4927CDB18224F1400C1A82D /* ADArduinoPin.m in Sources */,
+				FA28FCEE19FC453A00C3C2AA /* ADFirmata.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
