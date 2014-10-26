@@ -28,6 +28,14 @@
 		FA28FCF319FC454400C3C2AA /* ADUnixSerialPort.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FCF219FC454400C3C2AA /* ADUnixSerialPort.m */; };
 		FA28FCF819FC455A00C3C2AA /* ORSSerialPort.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FCF519FC455A00C3C2AA /* ORSSerialPort.m */; };
 		FA28FCF919FC455A00C3C2AA /* ORSSerialPortManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FCF719FC455A00C3C2AA /* ORSSerialPortManager.m */; };
+		FA28FCFB19FCC3E900C3C2AA /* HueSDK_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA28FCFA19FCC3E900C3C2AA /* HueSDK_OSX.framework */; };
+		FA28FD0C19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FCFE19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m */; };
+		FA28FD0D19FCC3F500C3C2AA /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0019FCC3F500C3C2AA /* DDASLLogger.m */; };
+		FA28FD0E19FCC3F500C3C2AA /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0219FCC3F500C3C2AA /* DDFileLogger.m */; };
+		FA28FD0F19FCC3F500C3C2AA /* DDLog.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0419FCC3F500C3C2AA /* DDLog.m */; };
+		FA28FD1019FCC3F500C3C2AA /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0619FCC3F500C3C2AA /* DDTTYLogger.m */; };
+		FA28FD1119FCC3F500C3C2AA /* ContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0919FCC3F500C3C2AA /* ContextFilterLogFormatter.m */; };
+		FA28FD1219FCC3F500C3C2AA /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0B19FCC3F500C3C2AA /* DispatchQueueLogFormatter.m */; };
 		FAD7427519FC32C5001BE270 /* ADMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD7427319FC32C5001BE270 /* ADMainViewController.m */; };
 		FAD7427619FC32C5001BE270 /* ADMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD7427419FC32C5001BE270 /* ADMainViewController.xib */; };
 /* End PBXBuildFile section */
@@ -82,6 +90,21 @@
 		FA28FCF519FC455A00C3C2AA /* ORSSerialPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPort.m; path = deps/osx/ORSSerialPort/Source/ORSSerialPort.m; sourceTree = "<group>"; };
 		FA28FCF619FC455A00C3C2AA /* ORSSerialPortManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORSSerialPortManager.h; path = deps/osx/ORSSerialPort/Source/ORSSerialPortManager.h; sourceTree = "<group>"; };
 		FA28FCF719FC455A00C3C2AA /* ORSSerialPortManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORSSerialPortManager.m; path = deps/osx/ORSSerialPort/Source/ORSSerialPortManager.m; sourceTree = "<group>"; };
+		FA28FCFA19FCC3E900C3C2AA /* HueSDK_OSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HueSDK_OSX.framework; path = FirmataTestMac/HueSDK_OSX.framework; sourceTree = "<group>"; };
+		FA28FCFD19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
+		FA28FCFE19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
+		FA28FCFF19FCC3F500C3C2AA /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
+		FA28FD0019FCC3F500C3C2AA /* DDASLLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDASLLogger.m; sourceTree = "<group>"; };
+		FA28FD0119FCC3F500C3C2AA /* DDFileLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDFileLogger.h; sourceTree = "<group>"; };
+		FA28FD0219FCC3F500C3C2AA /* DDFileLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDFileLogger.m; sourceTree = "<group>"; };
+		FA28FD0319FCC3F500C3C2AA /* DDLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDLog.h; sourceTree = "<group>"; };
+		FA28FD0419FCC3F500C3C2AA /* DDLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDLog.m; sourceTree = "<group>"; };
+		FA28FD0519FCC3F500C3C2AA /* DDTTYLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDTTYLogger.h; sourceTree = "<group>"; };
+		FA28FD0619FCC3F500C3C2AA /* DDTTYLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDTTYLogger.m; sourceTree = "<group>"; };
+		FA28FD0819FCC3F500C3C2AA /* ContextFilterLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextFilterLogFormatter.h; sourceTree = "<group>"; };
+		FA28FD0919FCC3F500C3C2AA /* ContextFilterLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextFilterLogFormatter.m; sourceTree = "<group>"; };
+		FA28FD0A19FCC3F500C3C2AA /* DispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchQueueLogFormatter.h; sourceTree = "<group>"; };
+		FA28FD0B19FCC3F500C3C2AA /* DispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchQueueLogFormatter.m; sourceTree = "<group>"; };
 		FAD7427219FC32C5001BE270 /* ADMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADMainViewController.h; sourceTree = "<group>"; };
 		FAD7427319FC32C5001BE270 /* ADMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADMainViewController.m; sourceTree = "<group>"; };
 		FAD7427419FC32C5001BE270 /* ADMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ADMainViewController.xib; sourceTree = "<group>"; };
@@ -92,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA28FCFB19FCC3E900C3C2AA /* HueSDK_OSX.framework in Frameworks */,
 				F439CA2B1822A01B002F09E2 /* IOKit.framework in Frameworks */,
 				F4927C9618224EE900C1A82D /* Cocoa.framework in Frameworks */,
 			);
@@ -131,6 +155,7 @@
 		F4927C9418224EE900C1A82D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA28FCFA19FCC3E900C3C2AA /* HueSDK_OSX.framework */,
 				F439CA2A1822A01B002F09E2 /* IOKit.framework */,
 				F4927C9518224EE900C1A82D /* Cocoa.framework */,
 				F4927CB418224EE900C1A82D /* XCTest.framework */,
@@ -155,6 +180,7 @@
 				FA28FCDF19FC451300C3C2AA /* library */,
 				FA28FCDE19FC450F00C3C2AA /* dep */,
 				F4927CA718224EE900C1A82D /* ADAppDelegate.h */,
+				FA28FCFC19FCC3F500C3C2AA /* Lumberjack */,
 				F4927CA818224EE900C1A82D /* ADAppDelegate.m */,
 				F439CA2518229D12002F09E2 /* ADDetailWindowController.h */,
 				F439CA2618229D12002F09E2 /* ADDetailWindowController.m */,
@@ -236,6 +262,35 @@
 			);
 			name = osx;
 			path = Library/osx;
+			sourceTree = "<group>";
+		};
+		FA28FCFC19FCC3F500C3C2AA /* Lumberjack */ = {
+			isa = PBXGroup;
+			children = (
+				FA28FCFD19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.h */,
+				FA28FCFE19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m */,
+				FA28FCFF19FCC3F500C3C2AA /* DDASLLogger.h */,
+				FA28FD0019FCC3F500C3C2AA /* DDASLLogger.m */,
+				FA28FD0119FCC3F500C3C2AA /* DDFileLogger.h */,
+				FA28FD0219FCC3F500C3C2AA /* DDFileLogger.m */,
+				FA28FD0319FCC3F500C3C2AA /* DDLog.h */,
+				FA28FD0419FCC3F500C3C2AA /* DDLog.m */,
+				FA28FD0519FCC3F500C3C2AA /* DDTTYLogger.h */,
+				FA28FD0619FCC3F500C3C2AA /* DDTTYLogger.m */,
+				FA28FD0719FCC3F500C3C2AA /* Extensions */,
+			);
+			path = Lumberjack;
+			sourceTree = "<group>";
+		};
+		FA28FD0719FCC3F500C3C2AA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FA28FD0819FCC3F500C3C2AA /* ContextFilterLogFormatter.h */,
+				FA28FD0919FCC3F500C3C2AA /* ContextFilterLogFormatter.m */,
+				FA28FD0A19FCC3F500C3C2AA /* DispatchQueueLogFormatter.h */,
+				FA28FD0B19FCC3F500C3C2AA /* DispatchQueueLogFormatter.m */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,14 +397,21 @@
 				F4927CA218224EE900C1A82D /* main.m in Sources */,
 				F4927CA918224EE900C1A82D /* ADAppDelegate.m in Sources */,
 				F439CA2818229D12002F09E2 /* ADDetailWindowController.m in Sources */,
+				FA28FD1019FCC3F500C3C2AA /* DDTTYLogger.m in Sources */,
+				FA28FD0E19FCC3F500C3C2AA /* DDFileLogger.m in Sources */,
 				FA28FCED19FC453A00C3C2AA /* ADCircularBuffer.c in Sources */,
 				FA28FCEC19FC453A00C3C2AA /* ADArduinoPin.m in Sources */,
 				FA28FCEB19FC453A00C3C2AA /* ADArduino.m in Sources */,
 				FA28FCF319FC454400C3C2AA /* ADUnixSerialPort.m in Sources */,
+				FA28FD1219FCC3F500C3C2AA /* DispatchQueueLogFormatter.m in Sources */,
 				FA28FCF819FC455A00C3C2AA /* ORSSerialPort.m in Sources */,
+				FA28FD0C19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m in Sources */,
 				FA28FCF919FC455A00C3C2AA /* ORSSerialPortManager.m in Sources */,
+				FA28FD0F19FCC3F500C3C2AA /* DDLog.m in Sources */,
 				FAD7427519FC32C5001BE270 /* ADMainViewController.m in Sources */,
+				FA28FD0D19FCC3F500C3C2AA /* DDASLLogger.m in Sources */,
 				FA28FCEE19FC453A00C3C2AA /* ADFirmata.m in Sources */,
+				FA28FD1119FCC3F500C3C2AA /* ContextFilterLogFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,9 +542,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FirmataTestMac",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FirmataTestMac/FirmataTestMac-Prefix.pch";
 				INFOPLIST_FILE = "FirmataTestMac/FirmataTestMac-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -493,9 +560,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/FirmataTestMac",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FirmataTestMac/FirmataTestMac-Prefix.pch";
 				INFOPLIST_FILE = "FirmataTestMac/FirmataTestMac-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
