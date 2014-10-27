@@ -31,6 +31,15 @@
 		FA01EDDE19FCCB0C00034F00 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA01EDDC19FCCB0C00034F00 /* Images.xcassets */; };
 		FA01EDE019FCCB3E00034F00 /* HueSDK_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA01EDDF19FCCB3E00034F00 /* HueSDK_OSX.framework */; };
 		FA01EDE119FCCC8D00034F00 /* 481AMPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA01EDB419FCCA4300034F00 /* 481AMPTests.m */; };
+		FA01EDEF19FDC41A00034F00 /* PHLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA01EDE519FDC41A00034F00 /* PHLoadingViewController.m */; };
+		FA01EDF019FDC41A00034F00 /* PHLoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA01EDE619FDC41A00034F00 /* PHLoadingViewController.xib */; };
+		FA01EDF119FDC41A00034F00 /* PHBridgePushLinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA01EDE819FDC41A00034F00 /* PHBridgePushLinkViewController.m */; };
+		FA01EDF219FDC41A00034F00 /* PHBridgePushLinkViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA01EDE919FDC41A00034F00 /* PHBridgePushLinkViewController.xib */; };
+		FA01EDF319FDC41A00034F00 /* PHBridgeSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA01EDEB19FDC41A00034F00 /* PHBridgeSelectionViewController.m */; };
+		FA01EDF419FDC41A00034F00 /* PHBridgeSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA01EDEC19FDC41A00034F00 /* PHBridgeSelectionViewController.xib */; };
+		FA01EDF519FDC41A00034F00 /* press_smartbridge.png in Resources */ = {isa = PBXBuildFile; fileRef = FA01EDEE19FDC41A00034F00 /* press_smartbridge.png */; };
+		FA01EDF919FDC5D700034F00 /* AMPControlLightsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA01EDF719FDC5D700034F00 /* AMPControlLightsViewController.m */; };
+		FA01EDFA19FDC5D700034F00 /* AMPControlLightsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA01EDF819FDC5D700034F00 /* AMPControlLightsViewController.xib */; };
 		FA28FD0C19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FCFE19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m */; };
 		FA28FD0D19FCC3F500C3C2AA /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0019FCC3F500C3C2AA /* DDASLLogger.m */; };
 		FA28FD0E19FCC3F500C3C2AA /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0219FCC3F500C3C2AA /* DDFileLogger.m */; };
@@ -94,6 +103,19 @@
 		FA01EDDB19FCCB0C00034F00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = 481AMP/Base.lproj/MainMenu.xib; sourceTree = SOURCE_ROOT; };
 		FA01EDDC19FCCB0C00034F00 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = 481AMP/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		FA01EDDF19FCCB3E00034F00 /* HueSDK_OSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HueSDK_OSX.framework; sourceTree = "<group>"; };
+		FA01EDE419FDC41A00034F00 /* PHLoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHLoadingViewController.h; sourceTree = "<group>"; };
+		FA01EDE519FDC41A00034F00 /* PHLoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHLoadingViewController.m; sourceTree = "<group>"; };
+		FA01EDE619FDC41A00034F00 /* PHLoadingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHLoadingViewController.xib; sourceTree = "<group>"; };
+		FA01EDE719FDC41A00034F00 /* PHBridgePushLinkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHBridgePushLinkViewController.h; sourceTree = "<group>"; };
+		FA01EDE819FDC41A00034F00 /* PHBridgePushLinkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHBridgePushLinkViewController.m; sourceTree = "<group>"; };
+		FA01EDE919FDC41A00034F00 /* PHBridgePushLinkViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHBridgePushLinkViewController.xib; sourceTree = "<group>"; };
+		FA01EDEA19FDC41A00034F00 /* PHBridgeSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PHBridgeSelectionViewController.h; sourceTree = "<group>"; };
+		FA01EDEB19FDC41A00034F00 /* PHBridgeSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PHBridgeSelectionViewController.m; sourceTree = "<group>"; };
+		FA01EDEC19FDC41A00034F00 /* PHBridgeSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PHBridgeSelectionViewController.xib; sourceTree = "<group>"; };
+		FA01EDEE19FDC41A00034F00 /* press_smartbridge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = press_smartbridge.png; sourceTree = "<group>"; };
+		FA01EDF619FDC5D700034F00 /* AMPControlLightsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPControlLightsViewController.h; sourceTree = "<group>"; };
+		FA01EDF719FDC5D700034F00 /* AMPControlLightsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPControlLightsViewController.m; sourceTree = "<group>"; };
+		FA01EDF819FDC5D700034F00 /* AMPControlLightsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMPControlLightsViewController.xib; sourceTree = "<group>"; };
 		FA28FCFD19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
 		FA28FCFE19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
 		FA28FCFF19FCC3F500C3C2AA /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
@@ -178,6 +200,7 @@
 		F4927C9B18224EE900C1A82D /* 481AMP */ = {
 			isa = PBXGroup;
 			children = (
+				FA01EDE219FDC41A00034F00 /* SDKWizard */,
 				FA28FCDF19FC451300C3C2AA /* library */,
 				FA28FCDE19FC450F00C3C2AA /* dep */,
 				FA28FCFC19FCC3F500C3C2AA /* Lumberjack */,
@@ -185,6 +208,9 @@
 				FA01EDD019FCCAF300034F00 /* ADAppDelegate.m */,
 				FA01EDD119FCCAF300034F00 /* ADDetailWindowController.h */,
 				FA01EDD219FCCAF300034F00 /* ADDetailWindowController.m */,
+				FA01EDF619FDC5D700034F00 /* AMPControlLightsViewController.h */,
+				FA01EDF719FDC5D700034F00 /* AMPControlLightsViewController.m */,
+				FA01EDF819FDC5D700034F00 /* AMPControlLightsViewController.xib */,
 				FA01EDD319FCCAF300034F00 /* ADMainViewController.h */,
 				FA01EDD419FCCAF300034F00 /* ADMainViewController.m */,
 				FA01EDD519FCCAF300034F00 /* ADMainViewController.xib */,
@@ -224,6 +250,39 @@
 				F4927CBC18224EEA00C1A82D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FA01EDE219FDC41A00034F00 /* SDKWizard */ = {
+			isa = PBXGroup;
+			children = (
+				FA01EDE319FDC41A00034F00 /* LoadingView */,
+				FA01EDE719FDC41A00034F00 /* PHBridgePushLinkViewController.h */,
+				FA01EDE819FDC41A00034F00 /* PHBridgePushLinkViewController.m */,
+				FA01EDE919FDC41A00034F00 /* PHBridgePushLinkViewController.xib */,
+				FA01EDEA19FDC41A00034F00 /* PHBridgeSelectionViewController.h */,
+				FA01EDEB19FDC41A00034F00 /* PHBridgeSelectionViewController.m */,
+				FA01EDEC19FDC41A00034F00 /* PHBridgeSelectionViewController.xib */,
+				FA01EDED19FDC41A00034F00 /* Resources */,
+			);
+			path = SDKWizard;
+			sourceTree = SOURCE_ROOT;
+		};
+		FA01EDE319FDC41A00034F00 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				FA01EDE419FDC41A00034F00 /* PHLoadingViewController.h */,
+				FA01EDE519FDC41A00034F00 /* PHLoadingViewController.m */,
+				FA01EDE619FDC41A00034F00 /* PHLoadingViewController.xib */,
+			);
+			path = LoadingView;
+			sourceTree = "<group>";
+		};
+		FA01EDED19FDC41A00034F00 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA01EDEE19FDC41A00034F00 /* press_smartbridge.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		FA28FCDE19FC450F00C3C2AA /* dep */ = {
@@ -375,10 +434,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA01EDF219FDC41A00034F00 /* PHBridgePushLinkViewController.xib in Resources */,
 				F4927CA018224EE900C1A82D /* InfoPlist.strings in Resources */,
+				FA01EDF019FDC41A00034F00 /* PHLoadingViewController.xib in Resources */,
+				FA01EDF519FDC41A00034F00 /* press_smartbridge.png in Resources */,
+				FA01EDFA19FDC5D700034F00 /* AMPControlLightsViewController.xib in Resources */,
 				FA01EDDE19FCCB0C00034F00 /* Images.xcassets in Resources */,
 				F4927CA618224EE900C1A82D /* Credits.rtf in Resources */,
 				FA01EDD919FCCAF300034F00 /* ADMainViewController.xib in Resources */,
+				FA01EDF419FDC41A00034F00 /* PHBridgeSelectionViewController.xib in Resources */,
 				FA01EDDD19FCCB0C00034F00 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -398,11 +462,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA01EDF919FDC5D700034F00 /* AMPControlLightsViewController.m in Sources */,
 				F4927CA218224EE900C1A82D /* main.m in Sources */,
 				FA01EDC419FCCAAC00034F00 /* ADFirmata.m in Sources */,
+				FA01EDF319FDC41A00034F00 /* PHBridgeSelectionViewController.m in Sources */,
 				FA01EDD819FCCAF300034F00 /* ADMainViewController.m in Sources */,
 				FA28FD1019FCC3F500C3C2AA /* DDTTYLogger.m in Sources */,
 				FA28FD0E19FCC3F500C3C2AA /* DDFileLogger.m in Sources */,
+				FA01EDEF19FDC41A00034F00 /* PHLoadingViewController.m in Sources */,
 				FA01EDC319FCCAAC00034F00 /* ADCircularBuffer.c in Sources */,
 				FA01EDC819FCCABB00034F00 /* ADUnixSerialPort.m in Sources */,
 				FA28FD1219FCC3F500C3C2AA /* DispatchQueueLogFormatter.m in Sources */,
@@ -416,6 +483,7 @@
 				FA01EDC219FCCAAC00034F00 /* ADArduinoPin.m in Sources */,
 				FA01EDCE19FCCACF00034F00 /* ORSSerialPortManager.m in Sources */,
 				FA01EDCD19FCCACF00034F00 /* ORSSerialPort.m in Sources */,
+				FA01EDF119FDC41A00034F00 /* PHBridgePushLinkViewController.m in Sources */,
 				FA01EDC519FCCAAC00034F00 /* ADSerialPort.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
