@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Fiore Basile. All rights reserved.
 //
 
-#import "ADAppDelegate.h"
+#import "AMPAppDelegate.h"
 #import "ORSSerialPortManager.h"
 #import "ORSSerialPort.h"
 #import "ADArduino.h"
@@ -14,7 +14,7 @@
 #import "PHLoadingViewController.h"
 #import "AMPControlLightsViewController.h"
 
-@interface ADAppDelegate()
+@interface AMPAppDelegate()
 
 @property (nonatomic, strong) NSAlert *noConnectionAlert;
 @property (nonatomic, strong) NSAlert *noBridgeFoundAlert;
@@ -30,15 +30,17 @@
 
 @end
 
-@implementation ADAppDelegate
+@implementation AMPAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+    
     // Insert code here to initialize your application
     self.controlLightsViewController = [[AMPControlLightsViewController alloc] initWithNibName:@"AMPControlLightsViewController" bundle:[NSBundle mainBundle]];
     
-    self.controlLightsViewController.view.frame = ((NSView *)self.window.contentView).bounds;
-    self.window.contentView = self.controlLightsViewController.view;
+    self.controlLightsViewController.view.frame = ((NSView *)self.hueController.window.contentView).bounds;
+    self.hueController.window.contentView = self.controlLightsViewController.view;
+    [self.hueController showWindow:self];
     
     self.phHueSDK = [PHHueSDK new];
     [self.phHueSDK startUpSDK];

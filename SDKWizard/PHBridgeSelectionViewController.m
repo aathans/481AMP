@@ -8,7 +8,7 @@
 
 #import "PHBridgeSelectionViewController.h"
 #import <HueSDK_OSX/HueSDK.h>
-#import "ADAppDelegate.h"
+#import "AMPAppDelegate.h"
 
 @interface PHBridgeSelectionViewController ()
 

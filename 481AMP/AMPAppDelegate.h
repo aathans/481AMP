@@ -7,22 +7,23 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "ADDetailWindowController.h"
+#import "AMPGalileoWindowController.h"
+#import "AMPHueWindowController.h"
 #include "PHBridgePushLinkViewController.h"
 #include "PHBridgeSelectionViewController.h"
 #import <HueSDK_OSX/HueSDK.h>
 
-#define NSAppDelegate  ((ADAppDelegate *)[[NSApplication sharedApplication] delegate])
+#define NSAppDelegate  ((AMPAppDelegate *)[[NSApplication sharedApplication] delegate])
 
 @class PHHueSDK;
 
-@interface ADAppDelegate : NSObject <NSApplicationDelegate, PHBridgePushLinkViewControllerDelegate, PHBridgeSelectionViewControllerDelegate>
+@interface AMPAppDelegate : NSObject <NSApplicationDelegate, PHBridgePushLinkViewControllerDelegate, PHBridgeSelectionViewControllerDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
 
 //*** GALILEO ***
 @property (assign) BOOL connected;
-@property (assign) IBOutlet ADDetailWindowController *detailController;
+@property (assign) IBOutlet AMPGalileoWindowController *detailController;
 @property (assign) IBOutlet NSComboBox* serialPortsCombo;
 @property (assign) IBOutlet NSComboBox* serialBaudCombo;
 @property (assign) IBOutlet NSButton* connectButton;
@@ -32,7 +33,7 @@
 
 //*** PHILIPS HUE ***
 @property (nonatomic) PHHueSDK *phHueSDK;
-
+@property (nonatomic) IBOutlet AMPHueWindowController *hueController;
 -(void)enableLocalHeartbeat;
 
 -(void)disableLocalHeartbeat;

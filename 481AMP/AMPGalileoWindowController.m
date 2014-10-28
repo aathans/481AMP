@@ -6,15 +6,15 @@
 //  Copyright (c) 2013 Fiore Basile. All rights reserved.
 //
 
-#import "ADDetailWindowController.h"
+#import "AMPGalileoWindowController.h"
 #import "ADArduinoPin.h"
 #import "ADFirmataConst.h"
 
-@interface ADDetailWindowController ()
+@interface AMPGalileoWindowController ()
 
 @end
 
-@implementation ADDetailWindowController
+@implementation AMPGalileoWindowController
 
 - (id)initWithWindow:(NSWindow *)window
 {

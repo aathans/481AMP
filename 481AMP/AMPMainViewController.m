@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Fiore Basile. All rights reserved.
 //
 
-#import "ADMainViewController.h"
+#import "AMPMainViewController.h"
 
-@interface ADMainViewController ()
+@interface AMPMainViewController ()
 
 @end
 
-@implementation ADMainViewController
+@implementation AMPMainViewController
 
 -(void)loadView{
     [super loadView];

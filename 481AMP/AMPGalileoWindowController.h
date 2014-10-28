@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "ADArduino.h"
 
-@interface ADDetailWindowController : NSWindowController <NSTableViewDataSource,NSTableViewDelegate>
+@interface AMPGalileoWindowController : NSWindowController <NSTableViewDataSource,NSTableViewDelegate>
 
 
 @property (strong) ADArduino* arduino;

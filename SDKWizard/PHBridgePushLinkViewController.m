@@ -7,7 +7,7 @@
 //
 
 #import "PHBridgePushLinkViewController.h"
-#import "ADAppDelegate.h"
+#import "AMPAppDelegate.h"
 #import <HueSDK_OSX/HueSDK.h>
 
 @interface PHBridgePushLinkViewController ()

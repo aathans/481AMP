@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 #import "ADArduino.h"
 
-@interface ADMainViewController : NSViewController
+@interface AMPMainViewController : NSViewController
 
 @property (nonatomic) ADArduino *arduino;
 
