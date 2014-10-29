@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "ADArduino.h"
+#import "AMPDataManager.h"
 
 @interface AMPGalileoWindowController : NSWindowController <NSTableViewDataSource,NSTableViewDelegate>
 
@@ -16,4 +17,7 @@
 @property (assign) IBOutlet NSTableView *tableView;
 @property (assign) BOOL stopRefresh;
 @property (assign) NSTimer* timer;
+
+@property (nonatomic) AMPDataManager *dataManager;
+
 @end
