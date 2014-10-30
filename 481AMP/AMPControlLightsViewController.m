@@ -70,6 +70,7 @@
         }
     }
 }
+- 
 - (IBAction)selectOtherBridge:(id)sender{
     [NSAppDelegate searchForBridgeLocal];
 }
@@ -92,4 +93,23 @@
         }];
     }
 }
+
+- (void)setLightsToRandomColor:(id)sender{
+    PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
+    PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
+    
+    PHLightState *lightState = [[PHLightState alloc] init];
+    [lightState setHue:[NSNumber numberWithInt:arc4random() % MAX_HUE]];
+    
+    for (PHLight *light in cache.lights.allValues) {
+        // Send lightstate to light
+        [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
+            if (errors != nil) {
+                NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
+                NSLog(@"Response: %@",message);
+            }
+        }];
+    }
+}
+
 @end
