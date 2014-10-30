@@ -7,7 +7,14 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "AMPDataManager.h"
+
+@class AMPDataManager;
 
 @interface AMPControlLightsViewController : NSViewController
+
+@property (nonatomic) AMPDataManager* dataManager;
+
+- (void)changeLightsToRandomColor;
 
 @end

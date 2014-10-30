@@ -7,11 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AMPControlLightsViewController.h"
+
+@class AMPControlLightsViewController;
 
 @interface AMPDataManager : NSObject
 
 @property (nonatomic) long currentReadValue;
 @property (nonatomic) long initialReadValue;
+
+@property (nonatomic) AMPControlLightsViewController *myHue;
 
 +(id)sharedManager;
 
