@@ -29,14 +29,10 @@
 {
     [super windowDidLoad];
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
-
-
-    
 }
 
 
 -(void)showWindow:(id)sender {
-    
     self.stopRefresh = NO;
     [super showWindow:sender];
     [self initArduino];
@@ -56,8 +52,7 @@
         
         //**** GET INITIAL PIN VALUE ***
         ADArduinoPin *pin = [self.arduino.analogPins objectAtIndex:0];
-        self.dataManager.readValue = pin.value;
-        NSLog(@"PIN VALUE: %ld", self.dataManager.readValue);
+        self.dataManager.initialReadValue = pin.value;
         
         [self setupGUI];
     }];
@@ -67,7 +62,6 @@
 - (void) setupGUI {
         [[self tableView] reloadData];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(refresh:) userInfo:nil repeats:YES];
-    
 }
 
 
@@ -114,7 +108,6 @@
         }
     }
     
-    
     return nil;
 }
 
@@ -132,9 +125,7 @@
 }
 
 -(NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-    
     return self.arduino.digitalPins.count + self.arduino.analogPins.count;
-    
 }
 
 -(CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row{
@@ -153,7 +144,6 @@
     
     ADArduinoPin* pin = [self pinForRow:row];
     if (!pin) return nil;
-    
     
     if ([tableColumn.identifier isEqualToString:@"pin"]){
         NSTextFieldCell* tf = [[NSTextFieldCell alloc] init];
@@ -195,7 +185,6 @@
             NSTextFieldCell* textFieldCell = [[NSTextFieldCell alloc] init];
             return textFieldCell;
         }
-
         
     }
 
@@ -206,9 +195,9 @@
 -(void)tableView:(NSTableView *)tableView setObjectValue:(id)object forTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     
     if ([tableColumn.identifier isEqualToString:@"mode"]){
-        
         [self changePinMode:row index:[object intValue]];
     }
+    
     if ([tableColumn.identifier isEqualToString:@"pin_value"]){
         [self changePinValue:row value:[object unsignedIntValue]];
     }
