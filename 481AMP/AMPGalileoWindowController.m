@@ -28,7 +28,6 @@
 - (void)windowDidLoad
 {
     [super windowDidLoad];
-    
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
 
 
@@ -44,6 +43,7 @@
 }
 
 - (void) initArduino {
+    self.dataManager = [AMPDataManager sharedManager];
     
     __block ADArduino* _warduino = self.arduino;
     [self.arduino connectWithBlock:^{
@@ -54,6 +54,11 @@
         NSLog(@"Analog pins %@", _warduino.analogPins);
         NSLog(@"Digital pins %@", _warduino.digitalPins);
         
+        //**** GET INITIAL PIN VALUE ***
+        ADArduinoPin *pin = [self.arduino.analogPins objectAtIndex:0];
+        self.dataManager.readValue = pin.value;
+        NSLog(@"PIN VALUE: %ld", self.dataManager.readValue);
+        
         [self setupGUI];
     }];
 }
@@ -61,16 +66,13 @@
 
 - (void) setupGUI {
         [[self tableView] reloadData];
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:.5 target:self selector:@selector(refresh:) userInfo:nil repeats:YES];
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(refresh:) userInfo:nil repeats:YES];
     
 }
 
 
 - (void) refresh:(NSTimer*)timer {
-    
     [[self tableView] reloadData];
-
-    
 }
 
 

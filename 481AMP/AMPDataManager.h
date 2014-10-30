@@ -10,7 +10,7 @@
 
 @interface AMPDataManager : NSObject
 
-@property (nonatomic) int readValue;
+@property (nonatomic) long readValue;
 
 +(id)sharedManager;
 
