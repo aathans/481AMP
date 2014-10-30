@@ -70,10 +70,11 @@
         }
     }
 }
-- 
+
 - (IBAction)selectOtherBridge:(id)sender{
     [NSAppDelegate searchForBridgeLocal];
 }
+
 - (IBAction)randomizeColoursOfConnectLights:(id)sender{
     [self.randomLightsButton setEnabled:NO];
     PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
@@ -94,12 +95,32 @@
     }
 }
 
-- (void)setLightsToRandomColor:(id)sender{
+- (void)setLightsToRandomColor{
     PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
     PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
     
     PHLightState *lightState = [[PHLightState alloc] init];
     [lightState setHue:[NSNumber numberWithInt:arc4random() % MAX_HUE]];
+    
+    for (PHLight *light in cache.lights.allValues) {
+        // Send lightstate to light
+        [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
+            if (errors != nil) {
+                NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
+                NSLog(@"Response: %@",message);
+            }
+        }];
+    }
+}
+
+- (void)resetLights{
+    PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
+    PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
+    
+    PHLightState *lightState = [[PHLightState alloc] init];
+    [lightState setHue:[NSNumber numberWithInt:14922]];
+    [lightState setBrightness:[NSNumber numberWithInt:254]];
+    [lightState setSaturation:[NSNumber numberWithInt:144]];
     
     for (PHLight *light in cache.lights.allValues) {
         // Send lightstate to light
