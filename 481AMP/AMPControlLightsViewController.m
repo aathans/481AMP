@@ -18,7 +18,6 @@
 @property (nonatomic,weak) IBOutlet NSTextField *bridgeIpLabel;
 @property (nonatomic,weak) IBOutlet NSTextField *bridgeLastHeartbeatLabel;
 @property (nonatomic,weak) IBOutlet NSButton *randomLightsButton;
-@property (nonatomic) AMPDataManager *dataManager;
 
 @end
 
@@ -128,6 +127,23 @@
     [lightState setBrightness:[NSNumber numberWithInt:254]];
     [lightState setSaturation:[NSNumber numberWithInt:144]];
     
+    for (PHLight *light in cache.lights.allValues) {
+        // Send lightstate to light
+        [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
+            if (errors != nil) {
+                NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
+                NSLog(@"Response: %@",message);
+            }
+        }];
+    }
+}
+
+- (void)changeBrightness:(NSNumber *)brightness{
+    PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
+    PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
+    
+    PHLightState *lightState = [[PHLightState alloc] init];
+    [lightState setBrightness:brightness];
     for (PHLight *light in cache.lights.allValues) {
         // Send lightstate to light
         [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
