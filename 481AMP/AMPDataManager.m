@@ -19,5 +19,11 @@
     return sharedMyManager;
 }
 
+-(void)setCurrentReadValue:(long)currentReadValue{
+    if(currentReadValue < 0.95*_initialReadValue){
+        [self.myHue changeLightsToRandomColor];
+    }
+}
+
 
 @end

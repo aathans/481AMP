@@ -30,6 +30,8 @@
 }
 - (void)loadView{
     [super loadView];
+    self.dataManager = [AMPDataManager sharedManager];
+    self.dataManager.myHue = self;
     PHNotificationManager *notificationManager = [PHNotificationManager defaultManager];
     // Register for the local heartbeat notifications
     [notificationManager registerObject:self withSelector:@selector(localConnection) forNotification:LOCAL_CONNECTION_NOTIFICATION];
@@ -95,7 +97,7 @@
     }
 }
 
-- (void)setLightsToRandomColor{
+- (void)changeLightsToRandomColor{
     PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
     PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
     
@@ -111,6 +113,7 @@
             }
         }];
     }
+    
 }
 
 - (void)resetLights{
