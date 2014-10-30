@@ -66,9 +66,13 @@
 
 
 - (void) refresh:(NSTimer*)timer {
-    ADArduinoPin *pin = [self.arduino.analogPins objectAtIndex:0];
-    self.dataManager.currentReadValue = pin.value;
+    ADArduinoPin *analogPin = [self.arduino.analogPins objectAtIndex:0];
+    self.dataManager.currentReadValue = analogPin.value;
     
+    
+    ADArduinoPin *digitalPin = [self.arduino.digitalPins objectAtIndex:7];
+    self.dataManager.digitalValue = digitalPin.value;
+
     [[self tableView] reloadData];
 }
 

@@ -25,5 +25,10 @@
     }
 }
 
-
+-(void)setDigitalValue:(BOOL)digitalValue{
+    if(digitalValue && self.digitalValue != 1){
+        [self.myHue changeLightsToRandomColor];
+    }
+    _digitalValue = digitalValue;
+}
 @end

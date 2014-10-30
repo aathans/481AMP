@@ -15,6 +15,7 @@
 
 @property (nonatomic) long currentReadValue;
 @property (nonatomic) long initialReadValue;
+@property (nonatomic) BOOL digitalValue;
 
 @property (nonatomic) AMPControlLightsViewController *myHue;
 
