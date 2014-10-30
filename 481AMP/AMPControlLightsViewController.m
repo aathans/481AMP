@@ -8,6 +8,7 @@
 
 #import "AMPControlLightsViewController.h"
 #import "AMPAppDelegate.h"
+#import "AMPDataManager.h"
 
 #define MAX_HUE 65535
 
@@ -17,6 +18,7 @@
 @property (nonatomic,weak) IBOutlet NSTextField *bridgeIpLabel;
 @property (nonatomic,weak) IBOutlet NSTextField *bridgeLastHeartbeatLabel;
 @property (nonatomic,weak) IBOutlet NSButton *randomLightsButton;
+@property (nonatomic) AMPDataManager *dataManager;
 
 @end
 
@@ -35,6 +37,7 @@
     [notificationManager registerObject:self withSelector:@selector(localConnection) forNotification:LOCAL_CONNECTION_NOTIFICATION];
     [notificationManager registerObject:self withSelector:@selector(noLocalConnection) forNotification:NO_LOCAL_CONNECTION_NOTIFICATION];
     [self noLocalConnection];
+    self.dataManager = [AMPDataManager sharedManager];
 }
 - (void)localConnection{
     [self loadConnectedBridgeValues];
@@ -95,7 +98,7 @@
     }
 }
 
-- (void)setLightsToRandomColor{
+- (void)changeLightsToRandomColor{
     PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
     PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
     
