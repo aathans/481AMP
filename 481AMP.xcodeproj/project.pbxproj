@@ -30,7 +30,6 @@
 		FA01EDDD19FCCB0C00034F00 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA01EDDA19FCCB0C00034F00 /* MainMenu.xib */; };
 		FA01EDDE19FCCB0C00034F00 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA01EDDC19FCCB0C00034F00 /* Images.xcassets */; };
 		FA01EDE019FCCB3E00034F00 /* HueSDK_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA01EDDF19FCCB3E00034F00 /* HueSDK_OSX.framework */; };
-		FA01EDE119FCCC8D00034F00 /* 481AMPTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FA01EDB419FCCA4300034F00 /* 481AMPTests.m */; };
 		FA01EDEF19FDC41A00034F00 /* PHLoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA01EDE519FDC41A00034F00 /* PHLoadingViewController.m */; };
 		FA01EDF019FDC41A00034F00 /* PHLoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA01EDE619FDC41A00034F00 /* PHLoadingViewController.xib */; };
 		FA01EDF119FDC41A00034F00 /* PHBridgePushLinkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA01EDE819FDC41A00034F00 /* PHBridgePushLinkViewController.m */; };
@@ -49,6 +48,13 @@
 		FA28FD1019FCC3F500C3C2AA /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0619FCC3F500C3C2AA /* DDTTYLogger.m */; };
 		FA28FD1119FCC3F500C3C2AA /* ContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0919FCC3F500C3C2AA /* ContextFilterLogFormatter.m */; };
 		FA28FD1219FCC3F500C3C2AA /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0B19FCC3F500C3C2AA /* DispatchQueueLogFormatter.m */; };
+		FA32B8DF1A0D9D370079AB58 /* AMPSoundTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FA32B8DE1A0D9D370079AB58 /* AMPSoundTest.m */; };
+		FA32B8E11A0DA0760079AB58 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA32B8E01A0DA0760079AB58 /* AVFoundation.framework */; };
+		FA32B8E21A0DAB820079AB58 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA32B8E01A0DA0760079AB58 /* AVFoundation.framework */; };
+		FA32B8E71A0DB3BA0079AB58 /* snare.ogg in Resources */ = {isa = PBXBuildFile; fileRef = FA32B8E51A0DB2EC0079AB58 /* snare.ogg */; };
+		FA32B8E81A0DB3C70079AB58 /* snare.ogg in Resources */ = {isa = PBXBuildFile; fileRef = FA32B8E41A0DAF390079AB58 /* snare.ogg */; };
+		FA32B8EA1A0DB5F70079AB58 /* snare.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA32B8E91A0DB5F70079AB58 /* snare.mp3 */; };
+		FA32B8EC1A0DB6140079AB58 /* snare.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA32B8EB1A0DB6140079AB58 /* snare.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +142,12 @@
 		FA28FD0919FCC3F500C3C2AA /* ContextFilterLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextFilterLogFormatter.m; sourceTree = "<group>"; };
 		FA28FD0A19FCC3F500C3C2AA /* DispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchQueueLogFormatter.h; sourceTree = "<group>"; };
 		FA28FD0B19FCC3F500C3C2AA /* DispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchQueueLogFormatter.m; sourceTree = "<group>"; };
+		FA32B8DE1A0D9D370079AB58 /* AMPSoundTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPSoundTest.m; sourceTree = "<group>"; };
+		FA32B8E01A0DA0760079AB58 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FA32B8E41A0DAF390079AB58 /* snare.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = snare.ogg; sourceTree = "<group>"; };
+		FA32B8E51A0DB2EC0079AB58 /* snare.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = snare.ogg; sourceTree = "<group>"; };
+		FA32B8E91A0DB5F70079AB58 /* snare.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = snare.mp3; sourceTree = "<group>"; };
+		FA32B8EB1A0DB6140079AB58 /* snare.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = snare.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA32B8E11A0DA0760079AB58 /* AVFoundation.framework in Frameworks */,
 				F439CA2B1822A01B002F09E2 /* IOKit.framework in Frameworks */,
 				F4927C9618224EE900C1A82D /* Cocoa.framework in Frameworks */,
 				FA01EDE019FCCB3E00034F00 /* HueSDK_OSX.framework in Frameworks */,
@@ -153,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA32B8E21A0DAB820079AB58 /* AVFoundation.framework in Frameworks */,
 				F4927CB618224EE900C1A82D /* Cocoa.framework in Frameworks */,
 				F4927CB518224EE900C1A82D /* XCTest.framework in Frameworks */,
 			);
@@ -183,6 +197,7 @@
 		F4927C9418224EE900C1A82D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA32B8E01A0DA0760079AB58 /* AVFoundation.framework */,
 				FA01EDDF19FCCB3E00034F00 /* HueSDK_OSX.framework */,
 				F439CA2A1822A01B002F09E2 /* IOKit.framework */,
 				F4927C9518224EE900C1A82D /* Cocoa.framework */,
@@ -225,6 +240,8 @@
 				FA01EDD419FCCAF300034F00 /* AMPMainViewController.m */,
 				FA01EDD519FCCAF300034F00 /* AMPMainViewController.xib */,
 				FA01EDDA19FCCB0C00034F00 /* MainMenu.xib */,
+				FA32B8E91A0DB5F70079AB58 /* snare.mp3 */,
+				FA32B8E41A0DAF390079AB58 /* snare.ogg */,
 				FA01EDDC19FCCB0C00034F00 /* Images.xcassets */,
 				F4927C9C18224EE900C1A82D /* Supporting Files */,
 			);
@@ -247,6 +264,9 @@
 			isa = PBXGroup;
 			children = (
 				FA01EDB419FCCA4300034F00 /* 481AMPTests.m */,
+				FA32B8EB1A0DB6140079AB58 /* snare.mp3 */,
+				FA32B8E51A0DB2EC0079AB58 /* snare.ogg */,
+				FA32B8DE1A0D9D370079AB58 /* AMPSoundTest.m */,
 				F4927CBA18224EE900C1A82D /* Supporting Files */,
 			);
 			name = 481AMP;
@@ -411,9 +431,9 @@
 		F4927C8A18224EE900C1A82D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = AD;
+				CLASSPREFIX = AMP;
 				LastUpgradeCheck = 0500;
-				ORGANIZATIONNAME = "Fiore Basile";
+				ORGANIZATIONNAME = dolo;
 				TargetAttributes = {
 					F4927CB218224EE900C1A82D = {
 						TestTargetID = F4927C9118224EE900C1A82D;
@@ -444,9 +464,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA32B8E81A0DB3C70079AB58 /* snare.ogg in Resources */,
 				FA01EDF219FDC41A00034F00 /* PHBridgePushLinkViewController.xib in Resources */,
 				F4927CA018224EE900C1A82D /* InfoPlist.strings in Resources */,
 				FA01EDF019FDC41A00034F00 /* PHLoadingViewController.xib in Resources */,
+				FA32B8EA1A0DB5F70079AB58 /* snare.mp3 in Resources */,
 				FA01EDF519FDC41A00034F00 /* press_smartbridge.png in Resources */,
 				FA01EDFA19FDC5D700034F00 /* AMPControlLightsViewController.xib in Resources */,
 				FA01EDDE19FCCB0C00034F00 /* Images.xcassets in Resources */,
@@ -462,6 +484,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4927CBE18224EEA00C1A82D /* InfoPlist.strings in Resources */,
+				FA32B8EC1A0DB6140079AB58 /* snare.mp3 in Resources */,
+				FA32B8E71A0DB3BA0079AB58 /* snare.ogg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,7 +528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA01EDE119FCCC8D00034F00 /* 481AMPTests.m in Sources */,
+				FA32B8DF1A0D9D370079AB58 /* AMPSoundTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

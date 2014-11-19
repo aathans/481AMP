@@ -7,6 +7,7 @@
 //
 
 #import "AMPDataManager.h"
+#import <AVFoundation/AVFoundation.h>
 
 @implementation AMPDataManager
 
@@ -19,10 +20,22 @@
     return sharedMyManager;
 }
 
--(void)setCurrentReadValue:(long)currentReadValue{
-    if(currentReadValue < 0.95*_initialReadValue){
-        [self.myHue changeLightsToRandomColor];
+-(void)setCurrentReadValue:(uint32_t)currentReadValue{
+    if([self isPullingBand:currentReadValue]){
+        NSNumber *newBrightness = [NSNumber numberWithInt:(self.brightnessValue*0.80f)];
+        [self.myHue changeBrightness:newBrightness];
+    }else if([self isPushingBand:currentReadValue]){
+        NSNumber *newBrightness = [NSNumber numberWithInt:(self.brightnessValue*1.20f)];
+        [self.myHue changeBrightness:newBrightness];
     }
+}
+
+-(BOOL)isPullingBand:(uint32_t)currentReadValue{
+    return (currentReadValue < 0.95*_initialReadValue);
+}
+
+-(BOOL)isPushingBand:(uint32_t)currentReadValue{
+    return (currentReadValue > 1.05*_initialReadValue && _brightnessValue <= 241);
 }
 
 -(void)setDigitalValue:(BOOL)digitalValue{
@@ -31,4 +44,13 @@
     }
     _digitalValue = digitalValue;
 }
+
+-(void)playSongWithName:(NSString *)songName andType:(NSString *)songType{
+    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:songName ofType:songType]];
+    AVAudioPlayer *songPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    [songPlayer setVolume:0.5f];
+    [songPlayer prepareToPlay];
+    [songPlayer play];
+}
+
 @end

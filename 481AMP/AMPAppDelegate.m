@@ -34,8 +34,6 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    
-    // Insert code here to initialize your application
     self.controlLightsViewController = [[AMPControlLightsViewController alloc] initWithNibName:@"AMPControlLightsViewController" bundle:[NSBundle mainBundle]];
     
     self.controlLightsViewController.view.frame = ((NSView *)self.hueController.window.contentView).bounds;
@@ -91,25 +89,17 @@
         
         [port addObserver:self forKeyPath:@"rxCount" options:NSKeyValueObservingOptionNew context:nil];
         [port addObserver:self forKeyPath:@"txCount" options:NSKeyValueObservingOptionNew context:nil];
-        
-        
-        
+    
         ADArduino* arduino = [[ADArduino alloc] initWithSerial:port];
         
-        
         [self.detailController setArduino:arduino];
-        
         [self.detailController showWindow:self];
-        
         [self.connectButton setTitle:@"Disconnect"];
+        
         self.connected = YES;
-
- 
-        
-        
     } else {
-        
         ADUnixSerialPort* port = (ADUnixSerialPort*) self.detailController.arduino.serialPort;
+        
         [port removeObserver:self forKeyPath:@"rxCount"];
         [port removeObserver:self forKeyPath:@"txCount"];
         
@@ -117,8 +107,8 @@
         [self.detailController close];
         [self.detailController.arduino stopListening];
         [self.connectButton setTitle:@"Connect"];
-        self.connected = NO;
         
+        self.connected = NO;
     }
     
     
@@ -126,13 +116,10 @@
 
 //***** PHILIPS HUE *******
 - (void)applicationDidEnterBackground:(NSApplication *)application {
-    // Stop heartbeat
     [self disableLocalHeartbeat];
     
-    // Remove any open popups / sheets
     [self hideCurrentSheetWindow];
     
-    // Set alerts to nil
     if (self.noConnectionAlert != nil) {
         self.noConnectionAlert = nil;
     }
@@ -145,7 +132,6 @@
 }
 
 - (void)applicationWillEnterForeground:(NSApplication *)application {
-    // Start heartbeat
     [self enableLocalHeartbeat];
 }
 

@@ -35,11 +35,11 @@
 -(void)showWindow:(id)sender {
     self.stopRefresh = NO;
     [super showWindow:sender];
+    self.dataManager = [AMPDataManager sharedManager];
     [self initArduino];
 }
 
 - (void) initArduino {
-    self.dataManager = [AMPDataManager sharedManager];
     
     __block ADArduino* _warduino = self.arduino;
     [self.arduino connectWithBlock:^{

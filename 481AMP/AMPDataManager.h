@@ -13,9 +13,10 @@
 
 @interface AMPDataManager : NSObject
 
-@property (nonatomic) long currentReadValue;
-@property (nonatomic) long initialReadValue;
+@property (nonatomic) uint32_t currentReadValue;
+@property (nonatomic) uint32_t initialReadValue;
 @property (nonatomic) BOOL digitalValue;
+@property (nonatomic) int brightnessValue;
 
 @property (nonatomic) AMPControlLightsViewController *myHue;
 

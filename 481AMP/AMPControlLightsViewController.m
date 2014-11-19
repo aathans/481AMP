@@ -31,14 +31,17 @@
 }
 - (void)loadView{
     [super loadView];
+    
     self.dataManager = [AMPDataManager sharedManager];
     self.dataManager.myHue = self;
+    self.dataManager.brightnessValue = 241;
     PHNotificationManager *notificationManager = [PHNotificationManager defaultManager];
+    
     // Register for the local heartbeat notifications
     [notificationManager registerObject:self withSelector:@selector(localConnection) forNotification:LOCAL_CONNECTION_NOTIFICATION];
     [notificationManager registerObject:self withSelector:@selector(noLocalConnection) forNotification:NO_LOCAL_CONNECTION_NOTIFICATION];
+    
     [self noLocalConnection];
-    self.dataManager = [AMPDataManager sharedManager];
 }
 - (void)localConnection{
     [self loadConnectedBridgeValues];
@@ -138,14 +141,16 @@
     }
 }
 
-- (void)changeBrightness:(NSNumber *)brightness{
+- (void)changeBrightness:(NSNumber *)newBrightness{
     PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
     PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
     
     PHLightState *lightState = [[PHLightState alloc] init];
-    [lightState setBrightness:brightness];
+    self.dataManager.brightnessValue = [newBrightness intValue];
+    
     for (PHLight *light in cache.lights.allValues) {
-        // Send lightstate to light
+        lightState = light.lightState;
+        [lightState setBrightness:newBrightness];
         [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
             if (errors != nil) {
                 NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
@@ -153,6 +158,10 @@
             }
         }];
     }
+}
+
+-(void)updateLightNumber:(NSNumber *)lightNumber withBrightness:(NSNumber *)newBrightness{
+    
 }
 
 @end
