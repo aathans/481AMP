@@ -87,15 +87,15 @@
 }
 
 - (IBAction)light2Pressed:(id)sender {
-    [self toggleLightNumber:@1];
+    [self toggleLightNumber:@2];
 }
 
 - (IBAction)light3Pressed:(id)sender {
-    [self toggleLightNumber:@1];
+    [self toggleLightNumber:@3];
 }
 
 - (IBAction)light4Pressed:(id)sender {
-    [self toggleLightNumber:@1];
+    [self toggleLightNumber:@4];
 }
 
 -(void)toggleLightNumber:(NSNumber *)lightNum{
@@ -105,7 +105,6 @@
     PHLight *light = [cache.lights objectForKey:[lightNum stringValue]];
     
     PHLightState *lightState = light.lightState;
-    
     if([lightState on]){
         [lightState setOn:[NSNumber numberWithBool:NO]];
     }else{

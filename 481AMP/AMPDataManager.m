@@ -25,6 +25,9 @@
 -(void)updateValue:(uint32_t) value forPin:(NSNumber *) pinNumber andIsAnalog:(BOOL) isAnalog{
     if(isAnalog){
         NSNumber *analogValue = [NSNumber numberWithInt:value];
+        if(value < 10){
+            return;
+        }
         [self updateAnalogPin:pinNumber withValue:analogValue];
     }else{
         BOOL digitalValue = value;
