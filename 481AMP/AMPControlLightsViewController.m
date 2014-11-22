@@ -131,7 +131,13 @@
     
     for (PHLight *light in cache.lights.allValues) {
         PHLightState *lightState = [[PHLightState alloc] init];
-        [lightState setHue:[NSNumber numberWithInt:14922]];
+        if(self.dataManager.gameMode){
+            // if in game mode, reset all the lights to be green
+            [lightState setHue:[NSNumber numberWithInt:GREEN_COLOR]];
+        }
+        else{
+            [lightState setHue:[NSNumber numberWithInt:14922]];
+        }
         [lightState setBrightness:[NSNumber numberWithInt:DEFAULT_BRIGHTNESS]];
         [lightState setSaturation:[NSNumber numberWithInt:254]];
         [self.lightStates addObject:lightState];

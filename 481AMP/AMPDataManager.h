@@ -10,6 +10,10 @@
 #import "AMPControlLightsViewController.h"
 #import "AMPMusicPlayer.h"
 
+#define DEFAULT_BRIGHTNESS 140
+#define GREEN_COLOR 25600
+#define RED_COLOR 64000
+
 @class AMPControlLightsViewController;
 
 @interface AMPDataManager : NSObject

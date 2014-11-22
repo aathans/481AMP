@@ -28,15 +28,16 @@
 -(void) resetGame{
     self.gameTimer = GAME_TIME_INTERVAL;
     self.prevTime = [NSDate date];
-    //! TODO: change all the lights to green.
-    //! TODO: restore sound to normal value
+    [self.myHue resetLights];   //changes all lights to green
+    //! TODO: Possibly restore sound to normal value
 }
 
 -(void) gameTimeRanOut{
     if(self.lightIsRed == false){
         self.lightIsRed = true;
-        //! TODO: Turn a random light red.
-        //! TODO: Set the gameDirectionToPull corresponding direction
+        self.gameDirectionToPull = [NSNumber numberWithInt:arc4random_uniform(4)];
+        [self.myHue changeHue:[NSNumber numberWithInt:RED_COLOR] ofLightNumber:self.gameDirectionToPull];
+        
     }
     //! TODO: Possibly turn down the sound
     //! TODO: Possibly turn down the lights
@@ -50,6 +51,11 @@
     //! TODO: possibly turn sound to 0
 }
 
+-(void) changeFromGameMode{
+    self.gameMode = false;
+    [self.myHue resetLights];
+    //! TODO: double check to see if anything else is missing
+}
 
 -(void)updateValue:(uint32_t) value forPin:(NSNumber *) pinNumber andIsAnalog:(BOOL) isAnalog{
     //update game here
@@ -98,7 +104,7 @@
         }
     }
     else{
-        //reset game only if pulling the tube in teh same direction
+        //reset game only if pulling the tube in the same direction
         if([self isPullingBand:pinNumber]){
             if((self.gameTimer <=0) &&
               ([pinNumber integerValue] == [self.gameDirectionToPull integerValue])){
@@ -135,7 +141,9 @@
     NSNumber *previousState = [self.floorValues objectAtIndex:([pinNumber intValue]-FLOOR_START_PIN)];
     BOOL isPressedAlready = [previousState boolValue];
     if(!isPressedAlready && value){
-        [self.myHue changeLightsToRandomColor];
+        if(self.gameMode == false){
+            [self.myHue changeLightsToRandomColor];
+        }
         int soundIndex = arc4random_uniform(NUM_SONGS-1);
         NSString *soundName = [self.songList objectAtIndex:soundIndex];
         [self playSoundWithName:soundName andType:@"mp3"];
