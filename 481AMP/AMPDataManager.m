@@ -12,6 +12,7 @@
 #define DEFAULT_BRIGHTNESS 140
 #define FLOOR_START_PIN 7
 #define NUM_SONGS 3
+#define GAME_TIME_INTERVAL 30.0f
 
 @implementation AMPDataManager
 
@@ -24,7 +25,44 @@
     return sharedMyManager;
 }
 
+-(void) resetGame{
+    self.gameTimer = GAME_TIME_INTERVAL;
+    self.prevTime = [NSDate date];
+    //! TODO: change all the lights to green.
+    //! TODO: restore sound to normal value
+}
+
+-(void) gameTimeRanOut{
+    if(self.lightIsRed == false){
+        self.lightIsRed = true;
+        //! TODO: Turn a random light red.
+        //! TODO: Set the gameDirectionToPull corresponding direction
+    }
+    //! TODO: Possibly turn down the sound
+    //! TODO: Possibly turn down the lights
+    
+}
+
+-(void) changeToGameMode{
+    self.gameMode = true;
+    [self resetGame];
+    [self gameTimeRanOut];
+    //! TODO: possibly turn sound to 0
+}
+
+
 -(void)updateValue:(uint32_t) value forPin:(NSNumber *) pinNumber andIsAnalog:(BOOL) isAnalog{
+    //update game here
+    if(self.gameMode){
+        if(self.gameTimer <= 0){
+            [self gameTimeRanOut];
+        }else{
+            NSTimeInterval interval = [self.prevTime timeIntervalSinceNow];
+            self.gameTimer = self.gameTimer - interval;
+            self.prevTime = [NSDate date];
+        }
+    }
+    
     if(isAnalog){
         NSNumber *analogValue = [NSNumber numberWithInt:value];
         if(value < 10){
@@ -35,6 +73,7 @@
         BOOL digitalValue = value;
         [self updateDigitalPin:pinNumber withValue:digitalValue];
     }
+    
 }
 
 -(void)updateAnalogPin:(NSNumber *) pinNumber withValue:(NSNumber *) value{
@@ -42,18 +81,30 @@
     
     NSNumber *lightNumber = [NSNumber numberWithInt:[pinNumber intValue] + 1];
 
-    if([self isPullingBand:pinNumber]){
-        NSNumber *initialReading = [self.initialTubeValues objectAtIndex:[pinNumber intValue]];
+    if(self.gameMode == false){
+        if([self isPullingBand:pinNumber]){
         
-        int differenceInReading = abs([value intValue] - [initialReading intValue]);
-        int newBrightnessValue = (DEFAULT_BRIGHTNESS + differenceInReading)*1.5;
-        if (newBrightnessValue > 241){
-            newBrightnessValue = 241;
+            NSNumber *initialReading = [self.initialTubeValues objectAtIndex:[pinNumber intValue]];
+        
+            int differenceInReading = abs([value intValue] - [initialReading intValue]);
+            int newBrightnessValue = (DEFAULT_BRIGHTNESS + differenceInReading)*1.5;
+            if (newBrightnessValue > 241){
+                newBrightnessValue = 241;
+            }
+            NSNumber *newBrightness = [NSNumber numberWithInt:newBrightnessValue];
+            [self.myHue changeBrightness:newBrightness ofLightNumber:lightNumber];
+        }else{
+            [self.myHue changeBrightness:[NSNumber numberWithInt:DEFAULT_BRIGHTNESS] ofLightNumber:lightNumber];
         }
-        NSNumber *newBrightness = [NSNumber numberWithInt:newBrightnessValue];
-        [self.myHue changeBrightness:newBrightness ofLightNumber:lightNumber];
-    }else{
-        [self.myHue changeBrightness:[NSNumber numberWithInt:DEFAULT_BRIGHTNESS] ofLightNumber:lightNumber];
+    }
+    else{
+        //reset game only if pulling the tube in teh same direction
+        if([self isPullingBand:pinNumber]){
+            if((self.gameTimer <=0) &&
+              ([pinNumber integerValue] == [self.gameDirectionToPull integerValue])){
+                [self resetGame];
+            }
+        }
     }
 }
 

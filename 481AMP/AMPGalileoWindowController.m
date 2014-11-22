@@ -81,6 +81,7 @@
 - (void)setupGUI {
     [[self tableView] reloadData];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(refresh:) userInfo:nil repeats:YES];
+    
 }
 
 

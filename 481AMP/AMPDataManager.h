@@ -16,6 +16,9 @@
 
 @property (nonatomic) BOOL gameMode;
 @property (nonatomic) BOOL lightIsRed;
+@property (nonatomic) NSNumber* gameDirectionToPull;
+@property (nonatomic) float gameTimer;
+@property (nonatomic) NSDate* prevTime;
 
 @property (nonatomic) NSMutableArray *currentTubeValues; //Analog input
 @property (nonatomic) NSMutableArray *initialTubeValues; //Resting position
