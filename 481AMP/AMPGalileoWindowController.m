@@ -14,8 +14,8 @@
 
 @end
 
-#define NUM_TUBE_PINS 4
-#define NUM_FLOOR_PINS 4
+#define NUM_TUBE_PINS 3
+#define NUM_FLOOR_PINS 0
 
 @implementation AMPGalileoWindowController
 
@@ -40,6 +40,9 @@
     self.stopRefresh = NO;
     [super showWindow:sender];
     self.dataManager = [AMPDataManager sharedManager];
+    self.dataManager.initialTubeValues = [NSMutableArray new];
+    self.dataManager.currentTubeValues = [NSMutableArray new];
+    self.dataManager.floorValues = [NSMutableArray new];
     [self initArduino];
 }
 
@@ -67,7 +70,7 @@
             NSNumber *pinValue = [NSNumber numberWithInt:digitalPin.value];
             [self.dataManager.floorValues addObject:pinValue];
         }
-
+    
         [self setupGUI];
     }];
 }
