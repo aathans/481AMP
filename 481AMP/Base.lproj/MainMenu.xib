@@ -763,7 +763,11 @@
                 <outlet property="window" destination="gs1-JN-i0Y" id="3rL-EF-1hZ"/>
             </connections>
         </customObject>
-        <customObject id="f3b-2Q-PyE" customClass="AMPHueWindowController"/>
+        <customObject id="f3b-2Q-PyE" customClass="AMPHueWindowController">
+            <connections>
+                <outlet property="window" destination="SDO-3v-sev" id="7Sa-W5-mWI"/>
+            </connections>
+        </customObject>
         <window title="Galileo Details" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="gs1-JN-i0Y">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
@@ -854,6 +858,16 @@
                     <constraint firstAttribute="bottom" secondItem="PZR-s7-RL5" secondAttribute="bottom" id="fZ1-Wq-Z0X"/>
                     <constraint firstItem="PZR-s7-RL5" firstAttribute="leading" secondItem="vgY-ib-apK" secondAttribute="leading" id="tUV-D4-I6J"/>
                 </constraints>
+            </view>
+        </window>
+        <window title="Light Options" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="SDO-3v-sev" userLabel="PhilipsHue">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="335" y="390" width="480" height="202"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
+            <view key="contentView" id="6Id-oU-cV9">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="202"/>
+                <autoresizingMask key="autoresizingMask"/>
             </view>
         </window>
     </objects>

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "AMPControlLightsViewController.h"
+#import "AMPMusicPlayer.h"
 
 @class AMPControlLightsViewController;
 
@@ -21,6 +22,7 @@
 @property (nonatomic) NSMutableArray *floorValues; //Digital input
 
 @property (nonatomic) AMPControlLightsViewController *myHue;
+@property (nonatomic) AMPMusicPlayer *musicPlayer;
 
 +(id)sharedManager;
 

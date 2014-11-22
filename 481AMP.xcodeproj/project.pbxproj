@@ -41,6 +41,7 @@
 		FA01EDFA19FDC5D700034F00 /* AMPControlLightsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA01EDF819FDC5D700034F00 /* AMPControlLightsViewController.xib */; };
 		FA01EE0E19FE139600034F00 /* AMPHueWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA01EE0D19FE139600034F00 /* AMPHueWindowController.m */; };
 		FA01EE1119FE827400034F00 /* AMPDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA01EE1019FE827400034F00 /* AMPDataManager.m */; };
+		FA052AE31A20522500B88814 /* AMPMusicPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA052AE21A2051FB00B88814 /* AMPMusicPlayer.m */; };
 		FA28FD0C19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FCFE19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m */; };
 		FA28FD0D19FCC3F500C3C2AA /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0019FCC3F500C3C2AA /* DDASLLogger.m */; };
 		FA28FD0E19FCC3F500C3C2AA /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0219FCC3F500C3C2AA /* DDFileLogger.m */; };
@@ -128,6 +129,8 @@
 		FA01EE0D19FE139600034F00 /* AMPHueWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPHueWindowController.m; sourceTree = "<group>"; };
 		FA01EE0F19FE827400034F00 /* AMPDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPDataManager.h; sourceTree = "<group>"; };
 		FA01EE1019FE827400034F00 /* AMPDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPDataManager.m; sourceTree = "<group>"; };
+		FA052AE11A2051C800B88814 /* AMPMusicPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPMusicPlayer.h; sourceTree = "<group>"; };
+		FA052AE21A2051FB00B88814 /* AMPMusicPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPMusicPlayer.m; sourceTree = "<group>"; };
 		FA28FCFD19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
 		FA28FCFE19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
 		FA28FCFF19FCC3F500C3C2AA /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
@@ -244,6 +247,8 @@
 				FA32B8E41A0DAF390079AB58 /* snare.ogg */,
 				FA01EDDC19FCCB0C00034F00 /* Images.xcassets */,
 				F4927C9C18224EE900C1A82D /* Supporting Files */,
+				FA052AE11A2051C800B88814 /* AMPMusicPlayer.h */,
+				FA052AE21A2051FB00B88814 /* AMPMusicPlayer.m */,
 			);
 			path = 481AMP;
 			sourceTree = "<group>";
@@ -509,6 +514,7 @@
 				FA01EDC819FCCABB00034F00 /* ADUnixSerialPort.m in Sources */,
 				FA28FD1219FCC3F500C3C2AA /* DispatchQueueLogFormatter.m in Sources */,
 				FA28FD0C19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m in Sources */,
+				FA052AE31A20522500B88814 /* AMPMusicPlayer.m in Sources */,
 				FA28FD0F19FCC3F500C3C2AA /* DDLog.m in Sources */,
 				FA01EDC119FCCAAC00034F00 /* ADArduino.m in Sources */,
 				FA28FD0D19FCC3F500C3C2AA /* DDASLLogger.m in Sources */,

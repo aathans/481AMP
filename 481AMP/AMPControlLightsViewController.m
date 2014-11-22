@@ -28,15 +28,14 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        self.dataManager = [AMPDataManager sharedManager];
+        self.dataManager.myHue = self;
     }
     return self;
 }
 - (void)loadView{
     [super loadView];
     
-    self.dataManager = [AMPDataManager sharedManager];
-    self.dataManager.myHue = self;
-
     PHNotificationManager *notificationManager = [PHNotificationManager defaultManager];
     
     // Register for the local heartbeat notifications

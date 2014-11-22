@@ -7,7 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AMPControlLightsViewController">
             <connections>
-                <outlet property="light1Button" destination="bpA-Pp-B2x" id="jmu-cA-gcT"/>
+                <outlet property="light1Button" destination="bpA-Pp-B2x" id="zRd-j6-tiL"/>
                 <outlet property="light2Button" destination="PDg-05-ooC" id="eGL-r3-T42"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
