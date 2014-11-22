@@ -10,6 +10,8 @@
 #import <AVFoundation/AVFoundation.h>
 
 #define DEFAULT_BRIGHTNESS 140
+#define FLOOR_START_PIN 7
+#define NUM_SONGS 3
 
 @implementation AMPDataManager
 
@@ -66,22 +68,36 @@
 //-(BOOL)isPushingBand:(NSNumber *)currentReadValue{
 //    return (currentReadValue > 1.05*_initialReadValue && _brightnessValue <= 241);
 //}
+-(NSArray *)songList
+{
+    if (!_songList) {
+        _songList = @[@"chicken",@"goose",@"horse"];
+    }
+    return _songList;
+}
 
 -(void)updateDigitalPin:(NSNumber *)pinNumber withValue:(BOOL) value{
-    NSNumber *previousState = [self.floorValues objectAtIndex:[pinNumber intValue]];
+    if(self.lightIsRed){
+        return;
+    }
+    
+    NSNumber *previousState = [self.floorValues objectAtIndex:([pinNumber intValue]-FLOOR_START_PIN)];
     BOOL isPressedAlready = [previousState boolValue];
     if(!isPressedAlready && value){
         [self.myHue changeLightsToRandomColor];
+        int soundIndex = arc4random_uniform(NUM_SONGS-1);
+        NSString *soundName = [self.songList objectAtIndex:soundIndex];
+        [self playSoundWithName:soundName andType:@"mp3"];
     }
-    [self.floorValues replaceObjectAtIndex:[pinNumber intValue] withObject:[NSNumber numberWithBool:value]];
+    [self.floorValues replaceObjectAtIndex:([pinNumber intValue]-FLOOR_START_PIN) withObject:[NSNumber numberWithBool:value]];
 }
 
--(void)playSongWithName:(NSString *)songName andType:(NSString *)songType{
+
+-(void)playSoundWithName:(NSString *)songName andType:(NSString *)songType{
     NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:songName ofType:songType]];
-    AVAudioPlayer *songPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-    [songPlayer setVolume:0.5f];
-    [songPlayer prepareToPlay];
-    [songPlayer play];
+    self.songPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    [_songPlayer setVolume:1.0f];
+    [_songPlayer play];
 }
 
 @end

@@ -43,6 +43,9 @@
 		FA01EE1119FE827400034F00 /* AMPDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA01EE1019FE827400034F00 /* AMPDataManager.m */; };
 		FA052AE31A20522500B88814 /* AMPMusicPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA052AE21A2051FB00B88814 /* AMPMusicPlayer.m */; };
 		FA052AE61A2071E100B88814 /* Fireflies.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA052AE41A20719F00B88814 /* Fireflies.mp3 */; };
+		FA052AEA1A209E9C00B88814 /* chicken.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA052AE71A209E9B00B88814 /* chicken.mp3 */; };
+		FA052AEB1A209E9C00B88814 /* goose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA052AE81A209E9C00B88814 /* goose.mp3 */; };
+		FA052AEC1A209E9C00B88814 /* horse.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA052AE91A209E9C00B88814 /* horse.mp3 */; };
 		FA28FD0C19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FCFE19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m */; };
 		FA28FD0D19FCC3F500C3C2AA /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0019FCC3F500C3C2AA /* DDASLLogger.m */; };
 		FA28FD0E19FCC3F500C3C2AA /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0219FCC3F500C3C2AA /* DDFileLogger.m */; };
@@ -132,6 +135,9 @@
 		FA052AE11A2051C800B88814 /* AMPMusicPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPMusicPlayer.h; sourceTree = "<group>"; };
 		FA052AE21A2051FB00B88814 /* AMPMusicPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPMusicPlayer.m; sourceTree = "<group>"; };
 		FA052AE41A20719F00B88814 /* Fireflies.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fireflies.mp3; sourceTree = "<group>"; };
+		FA052AE71A209E9B00B88814 /* chicken.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chicken.mp3; sourceTree = "<group>"; };
+		FA052AE81A209E9C00B88814 /* goose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = goose.mp3; sourceTree = "<group>"; };
+		FA052AE91A209E9C00B88814 /* horse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = horse.mp3; sourceTree = "<group>"; };
 		FA28FCFD19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
 		FA28FCFE19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
 		FA28FCFF19FCC3F500C3C2AA /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
@@ -247,6 +253,9 @@
 				FA01EDD519FCCAF300034F00 /* AMPMainViewController.xib */,
 				FA01EDDA19FCCB0C00034F00 /* MainMenu.xib */,
 				FA052AE41A20719F00B88814 /* Fireflies.mp3 */,
+				FA052AE71A209E9B00B88814 /* chicken.mp3 */,
+				FA052AE81A209E9C00B88814 /* goose.mp3 */,
+				FA052AE91A209E9C00B88814 /* horse.mp3 */,
 				FA32B8E91A0DB5F70079AB58 /* snare.mp3 */,
 				FA32B8E41A0DAF390079AB58 /* snare.ogg */,
 				FA01EDDC19FCCB0C00034F00 /* Images.xcassets */,
@@ -470,6 +479,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA052AEB1A209E9C00B88814 /* goose.mp3 in Resources */,
 				FA32B8E81A0DB3C70079AB58 /* snare.ogg in Resources */,
 				FA01EDF219FDC41A00034F00 /* PHBridgePushLinkViewController.xib in Resources */,
 				F4927CA018224EE900C1A82D /* InfoPlist.strings in Resources */,
@@ -477,9 +487,11 @@
 				FA32B8EA1A0DB5F70079AB58 /* snare.mp3 in Resources */,
 				FA01EDF519FDC41A00034F00 /* press_smartbridge.png in Resources */,
 				FA01EDFA19FDC5D700034F00 /* AMPControlLightsViewController.xib in Resources */,
+				FA052AEC1A209E9C00B88814 /* horse.mp3 in Resources */,
 				FA01EDDE19FCCB0C00034F00 /* Images.xcassets in Resources */,
 				F4927CA618224EE900C1A82D /* Credits.rtf in Resources */,
 				FA052AE61A2071E100B88814 /* Fireflies.mp3 in Resources */,
+				FA052AEA1A209E9C00B88814 /* chicken.mp3 in Resources */,
 				FA01EDD919FCCAF300034F00 /* AMPMainViewController.xib in Resources */,
 				FA01EDF419FDC41A00034F00 /* PHBridgeSelectionViewController.xib in Resources */,
 				FA01EDDD19FCCB0C00034F00 /* MainMenu.xib in Resources */,

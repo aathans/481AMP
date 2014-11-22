@@ -9,17 +9,15 @@
 #import "AMPControlLightsViewController.h"
 #import "AMPAppDelegate.h"
 #import "AMPDataManager.h"
-#import "AMPMusicPlayer.h"
 
 #define MAX_HUE 65535
 #define NUM_LIGHTS 3
 #define DEFAULT_BRIGHTNESS 140
-#define GREEN_COLOR 36210
+#define GREEN_COLOR 25600
 #define RED_COLOR 64000
 
 @interface AMPControlLightsViewController ()
 
-@property (nonatomic)AMPMusicPlayer *myMusicPlayer;
 @property (nonatomic)NSMutableArray *lightStates;
 @property (nonatomic)NSNumber *redLightNumber;
 
@@ -33,7 +31,9 @@
     if (self) {
         self.dataManager = [AMPDataManager sharedManager];
         self.dataManager.myHue = self;
-        self.myMusicPlayer = [AMPMusicPlayer new];
+        self.dataManager.musicPlayer = [AMPMusicPlayer new];
+        self.dataManager.lightIsRed = NO;
+        
         self.lightStates = [NSMutableArray new];
         self.redLightNumber = @0;
     }
@@ -43,11 +43,11 @@
 - (void)loadView{
     [super loadView];
     [self resetLights];
-    [self.myMusicPlayer playMusic];
+    
+    [self.dataManager.musicPlayer playMusic];
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self performSelector:@selector(toggleMusic) withObject:nil afterDelay:5.0f];
+        [self performSelector:@selector(pauseMusic) withObject:nil afterDelay:30.0f];
     });
-    //[self.myMusicPlayer playMusic];
 }
 
 - (IBAction)resetButtonPushed:(id)sender {
@@ -98,11 +98,11 @@
     
 }
 
--(void)toggleMusic{
-    //self.redLightNumber = [NSNumber numberWithInt:arc4random_uniform(2)+1];
-    self.redLightNumber = @1;
+-(void)pauseMusic{
+    self.redLightNumber = [NSNumber numberWithInt:arc4random_uniform(NUM_LIGHTS-1)+1];
     [self changeHue:[NSNumber numberWithInt:RED_COLOR] ofLightNumber:self.redLightNumber];
-    [self.myMusicPlayer pauseMusic];
+    self.dataManager.lightIsRed = YES;
+    [self.dataManager.musicPlayer pauseMusic];
 }
 
 - (void)changeLightsToRandomColor{
@@ -121,7 +121,6 @@
             }
         }];
     }
-    
 }
 
 - (void)resetLights{
@@ -134,7 +133,7 @@
         PHLightState *lightState = [[PHLightState alloc] init];
         [lightState setHue:[NSNumber numberWithInt:14922]];
         [lightState setBrightness:[NSNumber numberWithInt:DEFAULT_BRIGHTNESS]];
-        [lightState setSaturation:[NSNumber numberWithInt:200]];
+        [lightState setSaturation:[NSNumber numberWithInt:254]];
         [self.lightStates addObject:lightState];
         
         // Send lightstate to light
@@ -149,9 +148,14 @@
 
 - (void)changeBrightness:(NSNumber *)newBrightness ofLightNumber:(NSNumber *)lightNum{
     
-    if([lightNum isEqualToNumber:self.redLightNumber]){
+    if([lightNum isEqualToNumber:self.redLightNumber] && ([newBrightness intValue] != DEFAULT_BRIGHTNESS)){
         [self changeHue:[NSNumber numberWithInt:GREEN_COLOR] ofLightNumber:lightNum];
         self.redLightNumber = @0;
+        self.dataManager.lightIsRed = NO;
+        [self.dataManager.musicPlayer playMusic];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self performSelector:@selector(pauseMusic) withObject:nil afterDelay:15.0f];
+        });
         return;
     }
     
@@ -179,6 +183,8 @@
     PHLightState *lightState = [self.lightStates objectAtIndex:[lightNum intValue]-1];
     
     [lightState setHue:newHue];
+    
+    [self.lightStates replaceObjectAtIndex:[lightNum intValue]-1 withObject:lightState];
     
     [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
         if (errors != nil) {
