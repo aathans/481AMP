@@ -37,17 +37,21 @@
 
 -(void)updateAnalogPin:(NSNumber *) pinNumber withValue:(NSNumber *) value{
     [self.currentTubeValues replaceObjectAtIndex:[pinNumber intValue] withObject:value];
+    
+    NSNumber *lightNumber = [NSNumber numberWithInt:[pinNumber intValue] + 1];
+
     if([self isPullingBand:pinNumber]){
         NSNumber *initialReading = [self.initialTubeValues objectAtIndex:[pinNumber intValue]];
-        int differenceInReading = [value intValue] - [initialReading intValue];
-        int newBrightnessValue = DEFAULT_BRIGHTNESS + differenceInReading;
+        
+        int differenceInReading = abs([value intValue] - [initialReading intValue]);
+        int newBrightnessValue = (DEFAULT_BRIGHTNESS + differenceInReading)*1.5;
         if (newBrightnessValue > 241){
             newBrightnessValue = 241;
         }
         NSNumber *newBrightness = [NSNumber numberWithInt:newBrightnessValue];
-        [self.myHue changeBrightness:newBrightness ofLightNumber:pinNumber];
+        [self.myHue changeBrightness:newBrightness ofLightNumber:lightNumber];
     }else{
-        [self.myHue changeBrightness:[NSNumber numberWithInt:DEFAULT_BRIGHTNESS] ofLightNumber:pinNumber];
+        [self.myHue changeBrightness:[NSNumber numberWithInt:DEFAULT_BRIGHTNESS] ofLightNumber:lightNumber];
     }
 }
 
@@ -55,6 +59,7 @@
     NSNumber *newValue = [self.currentTubeValues objectAtIndex:[pinNumber intValue]];
     NSNumber *initialValue = [self.initialTubeValues objectAtIndex:[pinNumber intValue]];
     int thresholdValue = 0.95*[initialValue intValue];
+    
     return ([newValue intValue] < thresholdValue);
 }
 

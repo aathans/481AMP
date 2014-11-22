@@ -42,6 +42,7 @@
 		FA01EE0E19FE139600034F00 /* AMPHueWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA01EE0D19FE139600034F00 /* AMPHueWindowController.m */; };
 		FA01EE1119FE827400034F00 /* AMPDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA01EE1019FE827400034F00 /* AMPDataManager.m */; };
 		FA052AE31A20522500B88814 /* AMPMusicPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA052AE21A2051FB00B88814 /* AMPMusicPlayer.m */; };
+		FA052AE61A2071E100B88814 /* Fireflies.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA052AE41A20719F00B88814 /* Fireflies.mp3 */; };
 		FA28FD0C19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FCFE19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m */; };
 		FA28FD0D19FCC3F500C3C2AA /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0019FCC3F500C3C2AA /* DDASLLogger.m */; };
 		FA28FD0E19FCC3F500C3C2AA /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0219FCC3F500C3C2AA /* DDFileLogger.m */; };
@@ -84,7 +85,6 @@
 		F4927CB418224EE900C1A82D /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		F4927CBB18224EE900C1A82D /* 481AMPTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "481AMPTests-Info.plist"; sourceTree = "<group>"; };
 		F4927CBD18224EEA00C1A82D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FA01EDB419FCCA4300034F00 /* 481AMPTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = 481AMPTests.m; sourceTree = "<group>"; };
 		FA01EDB619FCCAAC00034F00 /* ADArduino.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADArduino.h; sourceTree = "<group>"; };
 		FA01EDB719FCCAAC00034F00 /* ADArduino.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADArduino.m; sourceTree = "<group>"; };
 		FA01EDB819FCCAAC00034F00 /* ADArduinoPin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADArduinoPin.h; sourceTree = "<group>"; };
@@ -131,6 +131,7 @@
 		FA01EE1019FE827400034F00 /* AMPDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPDataManager.m; sourceTree = "<group>"; };
 		FA052AE11A2051C800B88814 /* AMPMusicPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPMusicPlayer.h; sourceTree = "<group>"; };
 		FA052AE21A2051FB00B88814 /* AMPMusicPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPMusicPlayer.m; sourceTree = "<group>"; };
+		FA052AE41A20719F00B88814 /* Fireflies.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Fireflies.mp3; sourceTree = "<group>"; };
 		FA28FCFD19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
 		FA28FCFE19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
 		FA28FCFF19FCC3F500C3C2AA /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
@@ -230,6 +231,8 @@
 				FA28FCFC19FCC3F500C3C2AA /* Lumberjack */,
 				FA01EDCF19FCCADD00034F00 /* AMPAppDelegate.h */,
 				FA01EDD019FCCAF300034F00 /* AMPAppDelegate.m */,
+				FA052AE11A2051C800B88814 /* AMPMusicPlayer.h */,
+				FA052AE21A2051FB00B88814 /* AMPMusicPlayer.m */,
 				FA01EE0C19FE139600034F00 /* AMPHueWindowController.h */,
 				FA01EE0D19FE139600034F00 /* AMPHueWindowController.m */,
 				FA01EDD119FCCAF300034F00 /* AMPGalileoWindowController.h */,
@@ -243,12 +246,11 @@
 				FA01EDD419FCCAF300034F00 /* AMPMainViewController.m */,
 				FA01EDD519FCCAF300034F00 /* AMPMainViewController.xib */,
 				FA01EDDA19FCCB0C00034F00 /* MainMenu.xib */,
+				FA052AE41A20719F00B88814 /* Fireflies.mp3 */,
 				FA32B8E91A0DB5F70079AB58 /* snare.mp3 */,
 				FA32B8E41A0DAF390079AB58 /* snare.ogg */,
 				FA01EDDC19FCCB0C00034F00 /* Images.xcassets */,
 				F4927C9C18224EE900C1A82D /* Supporting Files */,
-				FA052AE11A2051C800B88814 /* AMPMusicPlayer.h */,
-				FA052AE21A2051FB00B88814 /* AMPMusicPlayer.m */,
 			);
 			path = 481AMP;
 			sourceTree = "<group>";
@@ -268,7 +270,6 @@
 		F4927CB918224EE900C1A82D /* 481AMP */ = {
 			isa = PBXGroup;
 			children = (
-				FA01EDB419FCCA4300034F00 /* 481AMPTests.m */,
 				FA32B8EB1A0DB6140079AB58 /* snare.mp3 */,
 				FA32B8E51A0DB2EC0079AB58 /* snare.ogg */,
 				FA32B8DE1A0D9D370079AB58 /* AMPSoundTest.m */,
@@ -478,6 +479,7 @@
 				FA01EDFA19FDC5D700034F00 /* AMPControlLightsViewController.xib in Resources */,
 				FA01EDDE19FCCB0C00034F00 /* Images.xcassets in Resources */,
 				F4927CA618224EE900C1A82D /* Credits.rtf in Resources */,
+				FA052AE61A2071E100B88814 /* Fireflies.mp3 in Resources */,
 				FA01EDD919FCCAF300034F00 /* AMPMainViewController.xib in Resources */,
 				FA01EDF419FDC41A00034F00 /* PHBridgeSelectionViewController.xib in Resources */,
 				FA01EDDD19FCCB0C00034F00 /* MainMenu.xib in Resources */,

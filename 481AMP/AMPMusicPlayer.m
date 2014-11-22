@@ -90,9 +90,7 @@
 -(NSArray *)songList
 {
     if (!_songList) {
-        _songList = @[@"Latch", @"TakeMeHome", @"YoungBlood", @"Gold", @"NeverLetYouGo", @"APunk",
-                      @"Flaws", @"CarriedAway", @"KillingSwitch", @"ThinkingAboutYou", @"IChooseU", @"Daylight",
-                      @"CrookedTeeth", @"ACWonder", @"SweetDisposition", @"Houdini", @"LittleSecrets"];
+        _songList = @[@"Fireflies"];
     }
     return _songList;
 }
