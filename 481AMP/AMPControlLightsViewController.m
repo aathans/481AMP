@@ -105,11 +105,15 @@
     PHLight *light = [cache.lights objectForKey:[lightNum stringValue]];
     
     PHLightState *lightState = light.lightState;
-    if([lightState on]){
-        [lightState setOn:[NSNumber numberWithBool:NO]];
+    
+    NSLog(@"before: %@", lightState.on);
+    if([lightState.on  isEqual: @YES]){
+        lightState.on = @NO;
     }else{
-        [lightState setOn:[NSNumber numberWithBool:YES]];
+        
+        lightState.on = @YES;
     }
+    NSLog(@"After: %@", lightState.on);
     
     [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
         if (errors != nil) {
