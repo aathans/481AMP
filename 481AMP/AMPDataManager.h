@@ -13,14 +13,18 @@
 
 @interface AMPDataManager : NSObject
 
-@property (nonatomic) uint32_t currentReadValue;
-@property (nonatomic) uint32_t initialReadValue;
-@property (nonatomic) BOOL digitalValue;
-@property (nonatomic) int brightnessValue;
+@property (nonatomic) BOOL gameMode;
+
+@property (nonatomic) NSMutableArray *currentTubeValues; //Analog input
+@property (nonatomic) NSMutableArray *initialTubeValues; //Resting position
+
+@property (nonatomic) NSMutableArray *floorValues; //Digital input
 
 @property (nonatomic) AMPControlLightsViewController *myHue;
 
 +(id)sharedManager;
+
+-(void)updateValue:(uint32_t) value forPin:(NSNumber *) pinNumber andIsAnalog:(BOOL) isAnalog;
 
 @end
 

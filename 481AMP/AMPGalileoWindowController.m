@@ -14,6 +14,9 @@
 
 @end
 
+#define NUM_TUBE_PINS 4
+#define NUM_FLOOR_PINS 4
+
 @implementation AMPGalileoWindowController
 
 - (id)initWithWindow:(NSWindow *)window
@@ -21,6 +24,7 @@
     self = [super initWithWindow:window];
     if (self) {
         // Initialization code here.
+
     }
     return self;
 }
@@ -51,28 +55,41 @@
         NSLog(@"Digital pins %@", _warduino.digitalPins);
         
         //**** GET INITIAL PIN VALUE ***
-        ADArduinoPin *pin = [self.arduino.analogPins objectAtIndex:0];
-        self.dataManager.initialReadValue = pin.value;
+        for (int i = 0; i < NUM_TUBE_PINS; i++) {
+            ADArduinoPin *analogPin = [self.arduino.analogPins objectAtIndex:i];
+            NSNumber *pinValue = [NSNumber numberWithInt:analogPin.value];
+            [self.dataManager.currentTubeValues addObject:pinValue];
+            [self.dataManager.initialTubeValues addObject:pinValue];
+        }
         
+        for (int i = 0; i < NUM_FLOOR_PINS; i++) {
+            ADArduinoPin *digitalPin = [self.arduino.digitalPins objectAtIndex:i];
+            NSNumber *pinValue = [NSNumber numberWithInt:digitalPin.value];
+            [self.dataManager.floorValues addObject:pinValue];
+        }
+
         [self setupGUI];
     }];
 }
 
 
-- (void) setupGUI {
-        [[self tableView] reloadData];
+- (void)setupGUI {
+    [[self tableView] reloadData];
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(refresh:) userInfo:nil repeats:YES];
 }
 
 
-- (void) refresh:(NSTimer*)timer {
-    ADArduinoPin *analogPin = [self.arduino.analogPins objectAtIndex:0];
-    self.dataManager.currentReadValue = analogPin.value;
+- (void)refresh:(NSTimer*)timer {
+    for(unsigned int i = 0; i < NUM_TUBE_PINS; i++){
+        ADArduinoPin *analogPin = [self.arduino.analogPins objectAtIndex:i];
+        [self.dataManager updateValue:analogPin.value forPin:[NSNumber numberWithInt:i] andIsAnalog:YES];
+    }
     
+    for(unsigned int i = 0; i < NUM_FLOOR_PINS; i++){
+        ADArduinoPin *digitalPin = [self.arduino.digitalPins objectAtIndex:i];
+        [self.dataManager updateValue:digitalPin.value forPin:[NSNumber numberWithInt:i] andIsAnalog:NO];
+    }
     
-    ADArduinoPin *digitalPin = [self.arduino.digitalPins objectAtIndex:7];
-    self.dataManager.digitalValue = digitalPin.value;
-
     [[self tableView] reloadData];
 }
 

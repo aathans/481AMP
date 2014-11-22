@@ -7,6 +7,8 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AMPControlLightsViewController">
             <connections>
+                <outlet property="light1Button" destination="bpA-Pp-B2x" id="jmu-cA-gcT"/>
+                <outlet property="light2Button" destination="PDg-05-ooC" id="eGL-r3-T42"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -16,14 +18,52 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="272"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lIS-wJ-mtN">
-                    <rect key="frame" x="199" y="119" width="82" height="32"/>
-                    <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hB2-Z2-i9J">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bpA-Pp-B2x">
+                    <rect key="frame" x="18" y="183" width="74" height="26"/>
+                    <buttonCell key="cell" type="bevel" title="Light 1" bezelStyle="regularSquare" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="J2T-5n-k9Q">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
                     <connections>
-                        <action selector="randomizeColoursOfConnectLights:" target="-2" id="h1j-iX-UeT"/>
+                        <action selector="light1Pressed:" target="-2" id="8Is-yH-OLG"/>
+                    </connections>
+                </button>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cgU-1D-7ke">
+                    <rect key="frame" x="269" y="183" width="74" height="26"/>
+                    <buttonCell key="cell" type="bevel" title="Light 3" bezelStyle="regularSquare" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ab8-Co-FkU">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="light3Pressed:" target="-2" id="yGL-mC-2Jj"/>
+                    </connections>
+                </button>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8us-11-z3H">
+                    <rect key="frame" x="388" y="183" width="74" height="26"/>
+                    <buttonCell key="cell" type="bevel" title="Light 4" bezelStyle="regularSquare" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="T8H-Fx-uf8">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="light4Pressed:" target="-2" id="7cc-BS-52O"/>
+                    </connections>
+                </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IVC-a4-6XX">
+                    <rect key="frame" x="178" y="235" width="124" height="17"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Turn On/Off Lights" id="lHs-h4-cyZ">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PDg-05-ooC">
+                    <rect key="frame" x="143" y="183" width="74" height="26"/>
+                    <buttonCell key="cell" type="bevel" title="Light 2" bezelStyle="regularSquare" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9Zs-m4-JG7">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="light2Pressed:" target="-2" id="dN8-Si-vfG"/>
                     </connections>
                 </button>
             </subviews>

@@ -11,13 +11,15 @@
 #import "AMPDataManager.h"
 
 #define MAX_HUE 65535
+#define NUM_LIGHTS 4
+#define DEFAULT_BRIGHTNESS 140
 
 @interface AMPControlLightsViewController ()
 
 @property (nonatomic,weak) IBOutlet NSTextField *bridgeMacLabel;
 @property (nonatomic,weak) IBOutlet NSTextField *bridgeIpLabel;
 @property (nonatomic,weak) IBOutlet NSTextField *bridgeLastHeartbeatLabel;
-@property (nonatomic,weak) IBOutlet NSButton *randomLightsButton;
+@property (weak) IBOutlet NSButton *light1Button;
 
 @end
 
@@ -34,7 +36,7 @@
     
     self.dataManager = [AMPDataManager sharedManager];
     self.dataManager.myHue = self;
-    self.dataManager.brightnessValue = 241;
+
     PHNotificationManager *notificationManager = [PHNotificationManager defaultManager];
     
     // Register for the local heartbeat notifications
@@ -53,7 +55,6 @@
     [self.bridgeIpLabel setEnabled:NO];
     self.bridgeMacLabel.stringValue = NSLocalizedString(@"Not connected", @"");
     [self.bridgeMacLabel setEnabled:NO];
-    [self.randomLightsButton setEnabled:NO];
 }
 - (void)loadConnectedBridgeValues{
     PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
@@ -70,10 +71,10 @@
             [dateFormatter setDateStyle:NSDateFormatterNoStyle];
             [dateFormatter setTimeStyle:NSDateFormatterMediumStyle];
             self.bridgeLastHeartbeatLabel.stringValue = [NSString stringWithFormat:@"%@",[dateFormatter stringFromDate:[NSDate date]]];
-            [self.randomLightsButton setEnabled:YES];
+            //[self.randomLightsButton setEnabled:YES];
         } else {
             self.bridgeLastHeartbeatLabel.stringValue = NSLocalizedString(@"Waiting...", @"");
-            [self.randomLightsButton setEnabled:NO];
+            //[self.randomLightsButton setEnabled:NO];
         }
     }
 }
@@ -82,24 +83,43 @@
     [NSAppDelegate searchForBridgeLocal];
 }
 
-- (IBAction)randomizeColoursOfConnectLights:(id)sender{
-    [self.randomLightsButton setEnabled:NO];
+- (IBAction)light1Pressed:(id)sender {
+    [self toggleLightNumber:@1];
+}
+
+- (IBAction)light2Pressed:(id)sender {
+    [self toggleLightNumber:@1];
+}
+
+- (IBAction)light3Pressed:(id)sender {
+    [self toggleLightNumber:@1];
+}
+
+- (IBAction)light4Pressed:(id)sender {
+    [self toggleLightNumber:@1];
+}
+
+-(void)toggleLightNumber:(NSNumber *)lightNum{
     PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
     PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
-    for (PHLight *light in cache.lights.allValues) {
-        PHLightState *lightState = [[PHLightState alloc] init];
-        [lightState setHue:[NSNumber numberWithInt:arc4random() % MAX_HUE]];
-        [lightState setBrightness:[NSNumber numberWithInt:254]];
-        [lightState setSaturation:[NSNumber numberWithInt:254]];
-        // Send lightstate to light
-        [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
-            if (errors != nil) {
-                NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
-                NSLog(@"Response: %@",message);
-            }
-            [self.randomLightsButton setEnabled:YES];
-        }];
+    
+    PHLight *light = [cache.lights objectForKey:[lightNum stringValue]];
+    
+    PHLightState *lightState = light.lightState;
+    
+    if([lightState on]){
+        [lightState setOn:[NSNumber numberWithBool:NO]];
+    }else{
+        [lightState setOn:[NSNumber numberWithBool:YES]];
     }
+    
+    [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
+        if (errors != nil) {
+            NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
+            NSLog(@"Response: %@",message);
+        }
+    }];
+    
 }
 
 - (void)changeLightsToRandomColor{
@@ -108,7 +128,7 @@
     
     PHLightState *lightState = [[PHLightState alloc] init];
     [lightState setHue:[NSNumber numberWithInt:arc4random() % MAX_HUE]];
-    
+        
     for (PHLight *light in cache.lights.allValues) {
         // Send lightstate to light
         [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
@@ -141,27 +161,21 @@
     }
 }
 
-- (void)changeBrightness:(NSNumber *)newBrightness{
+- (void)changeBrightness:(NSNumber *)newBrightness ofLightNumber:(NSNumber *)lightNum{
     PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
     PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
     
-    PHLightState *lightState = [[PHLightState alloc] init];
-    self.dataManager.brightnessValue = [newBrightness intValue];
+    PHLight *light = [cache.lights objectForKey:[lightNum stringValue]];
+    PHLightState *lightState = light.lightState;
     
-    for (PHLight *light in cache.lights.allValues) {
-        lightState = light.lightState;
-        [lightState setBrightness:newBrightness];
-        [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
-            if (errors != nil) {
-                NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
-                NSLog(@"Response: %@",message);
-            }
-        }];
-    }
-}
-
--(void)updateLightNumber:(NSNumber *)lightNumber withBrightness:(NSNumber *)newBrightness{
+    [lightState setBrightness:newBrightness];
     
+    [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
+        if (errors != nil) {
+            NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
+            NSLog(@"Response: %@",message);
+        }
+    }];
 }
 
 @end

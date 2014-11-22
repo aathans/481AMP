@@ -15,7 +15,7 @@
 
 @property (nonatomic) AMPDataManager* dataManager;
 
-- (void)changeBrightness:(NSNumber *)brightness;
+- (void)changeBrightness:(NSNumber *)brightness ofLightNumber:(NSNumber *)lightNum;
 - (void)changeLightsToRandomColor;
 
 @end

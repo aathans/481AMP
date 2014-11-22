@@ -56,9 +56,7 @@
     
 }
 
-
 - (void) setupSerialPortGUI {
-    
     
     self.rxLabel.stringValue = @"0";
     self.txLabel.stringValue = @"0";

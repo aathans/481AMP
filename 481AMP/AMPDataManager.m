@@ -9,6 +9,8 @@
 #import "AMPDataManager.h"
 #import <AVFoundation/AVFoundation.h>
 
+#define DEFAULT_BRIGHTNESS 140
+
 @implementation AMPDataManager
 
 +(id)sharedManager{
@@ -20,29 +22,50 @@
     return sharedMyManager;
 }
 
--(void)setCurrentReadValue:(uint32_t)currentReadValue{
-    if([self isPullingBand:currentReadValue]){
-        NSNumber *newBrightness = [NSNumber numberWithInt:(self.brightnessValue*0.80f)];
-        [self.myHue changeBrightness:newBrightness];
-    }else if([self isPushingBand:currentReadValue]){
-        NSNumber *newBrightness = [NSNumber numberWithInt:(self.brightnessValue*1.20f)];
-        [self.myHue changeBrightness:newBrightness];
+-(void)updateValue:(uint32_t) value forPin:(NSNumber *) pinNumber andIsAnalog:(BOOL) isAnalog{
+    if(isAnalog){
+        NSNumber *analogValue = [NSNumber numberWithInt:value];
+        [self updateAnalogPin:pinNumber withValue:analogValue];
+    }else{
+        BOOL digitalValue = value;
+        [self updateDigitalPin:pinNumber withValue:digitalValue];
     }
 }
 
--(BOOL)isPullingBand:(uint32_t)currentReadValue{
-    return (currentReadValue < 0.95*_initialReadValue);
+-(void)updateAnalogPin:(NSNumber *) pinNumber withValue:(NSNumber *) value{
+    [self.currentTubeValues replaceObjectAtIndex:[pinNumber intValue] withObject:value];
+    if([self isPullingBand:pinNumber]){
+        NSNumber *initialReading = [self.initialTubeValues objectAtIndex:[pinNumber intValue]];
+        int differenceInReading = [value intValue] - [initialReading intValue];
+        int newBrightnessValue = DEFAULT_BRIGHTNESS + differenceInReading;
+        if (newBrightnessValue > 241){
+            newBrightnessValue = 241;
+        }
+        NSNumber *newBrightness = [NSNumber numberWithInt:newBrightnessValue];
+        [self.myHue changeBrightness:newBrightness ofLightNumber:pinNumber];
+    }else{
+        [self.myHue changeBrightness:[NSNumber numberWithInt:DEFAULT_BRIGHTNESS] ofLightNumber:pinNumber];
+    }
 }
 
--(BOOL)isPushingBand:(uint32_t)currentReadValue{
-    return (currentReadValue > 1.05*_initialReadValue && _brightnessValue <= 241);
+-(BOOL)isPullingBand:(NSNumber *)pinNumber{
+    NSNumber *newValue = [self.currentTubeValues objectAtIndex:[pinNumber intValue]];
+    NSNumber *initialValue = [self.initialTubeValues objectAtIndex:[pinNumber intValue]];
+    int thresholdValue = 0.95*[initialValue intValue];
+    return ([newValue intValue] < thresholdValue);
 }
 
--(void)setDigitalValue:(BOOL)digitalValue{
-    if(digitalValue && self.digitalValue != 1){
+//-(BOOL)isPushingBand:(NSNumber *)currentReadValue{
+//    return (currentReadValue > 1.05*_initialReadValue && _brightnessValue <= 241);
+//}
+
+-(void)updateDigitalPin:(NSNumber *)pinNumber withValue:(BOOL) value{
+    NSNumber *previousState = [self.floorValues objectAtIndex:[pinNumber intValue]];
+    BOOL isPressedAlready = [previousState boolValue];
+    if(!isPressedAlready && value){
         [self.myHue changeLightsToRandomColor];
     }
-    _digitalValue = digitalValue;
+    [self.floorValues replaceObjectAtIndex:[pinNumber intValue] withObject:[NSNumber numberWithBool:value]];
 }
 
 -(void)playSongWithName:(NSString *)songName andType:(NSString *)songType{
