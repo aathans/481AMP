@@ -17,11 +17,13 @@
 #define DEFAULT_SATURATION 254
 #define GREEN_COLOR 26000
 #define RED_COLOR 65280
+#define INTERRUPT_TIME 10.0f
 
 
 @interface AMPControlLightsViewController ()
 
 @property (nonatomic)NSMutableArray *lightStates;
+@property (nonatomic)NSMutableArray *previousStates;
 @property (nonatomic)NSNumber *redLightNumber;
 
 @end
@@ -38,6 +40,7 @@
         self.dataManager.lightIsRed = NO;
         
         self.lightStates = [NSMutableArray new];
+        self.previousStates = [NSMutableArray new];
         self.redLightNumber = @0;
         [self resetLights];
         
@@ -77,28 +80,22 @@
     [self toggleLightNumber:@4];
 }
 
-- (IBAction)pullBand:(id)sender {
-    
-    for(int i = 0; i < 5; i++) {
-        [self changeLightsToRandomColor];
-        NSLog(@"Pulling band");
-        NSDate *runUntil = [NSDate dateWithTimeIntervalSinceNow: 3.0 ];
-        [[NSRunLoop currentRunLoop] runUntilDate:runUntil];
-        
-        [self changeBrightness:@50 ofLightNumber:@1];
-        
-        // Wait 3 seconds, then release band
-        runUntil = [NSDate dateWithTimeIntervalSinceNow: 3.0 ];
-        [[NSRunLoop currentRunLoop] runUntilDate:runUntil];
-        
-        [self changeBrightness:@250 ofLightNumber:@1];
-        
-        runUntil = [NSDate dateWithTimeIntervalSinceNow: 3.0 ];
-        [[NSRunLoop currentRunLoop] runUntilDate:runUntil];
-    }
-    
-      //[data updateValue:310 forPin:@0 andIsAnalog:true];
+- (IBAction)pullTube1:(id)sender {
+    [self pullTube:@1];
 }
+
+- (IBAction)pullTube2:(id)sender {
+    [self pullTube:@2];
+}
+     
+- (IBAction)pullTube3:(id)sender {
+    [self pullTube:@3];
+}
+
+- (IBAction)randomizeLightsButton:(id)sender {
+    [self changeLightsToRandomColor];
+}
+
 
 -(void)toggleLightNumber:(NSNumber *)lightNum{
     PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
@@ -127,17 +124,51 @@
 -(void)pauseMusic{
     NSLog(@"HII");
     self.redLightNumber = @1;//[NSNumber numberWithInt:arc4random_uniform(NUM_LIGHTS-1)+1];
+    
+    // Save current light states
+    [self.previousStates removeAllObjects];
+    for (int i = 0; i < count; i++) {
+        PHLightState *oldState = [self.lightStates objectAtIndex:i];
+        PHLightState *oldStateCopy = [[PHLightState alloc] init];
+        [oldStateCopy setHue:oldState.hue];
+        [oldState setBrightness:oldState.brightness];
+        [oldState setSaturation:oldState.saturation];
+        
+        [self.previousStates addObject:oldStateCopy];
+    }
+    
+    // Change one light to red, the rest to green
     [self changeHue:[NSNumber numberWithInt:RED_COLOR] ofLightNumber:self.redLightNumber];
+    
+    for (int i = 1; i <= count; i++) {
+        if (self.redLightNumber != [NSNumber numberWithInt:i]) {
+            [self changeHue:[NSNumber numberWithInt:GREEN_COLOR] ofLightNumber:[NSNumber numberWithInt:i]];
+        }
+    }
+    
     self.dataManager.lightIsRed = YES;
     [self.dataManager.musicPlayer pauseMusic];
 }
 
+- (void)restoreLights{
+    // Restore all light states to their previous versions
+    for(int i = 0; i < self.previousStates.count; i++) {
+        NSNumber *lightNum = [NSNumber numberWithInt:(i+1)];
+        PHLightState *lightState = [self.previousStates objectAtIndex:i];
+        
+        [self changeLightState:lightState ofLightNum:lightNum];
+    }
+}
+
+
 - (void)changeLightsToRandomColor{
-    PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
-    NSUInteger count = cache.lights.count;
+    if (self.dataManager.lightIsRed == NO) {
+        PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
+        NSUInteger count = cache.lights.count;
     
-    for (int i = 1; i <= count; i++) {
-        [self changeHue:[NSNumber numberWithInt:arc4random() % MAX_HUE] ofLightNumber:[NSNumber numberWithInt:i]];
+        for (int i = 1; i <= count; i++) {
+            [self changeHue:[NSNumber numberWithInt:arc4random() % MAX_HUE] ofLightNumber:[NSNumber numberWithInt:i]];
+        }
     }
 }
 
@@ -162,6 +193,11 @@
             }
         }];
     }
+    
+    self.dataManager.lightIsRed = NO;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self performSelector:@selector(pauseMusic) withObject:nil afterDelay:INTERRUPT_TIME];
+    });
 }
 
 - (void)changeBrightness:(NSNumber *)newBrightness ofLightNumber:(NSNumber *)lightNum{
@@ -171,40 +207,41 @@
         self.redLightNumber = @0;
         self.dataManager.lightIsRed = NO;
         [self.dataManager.musicPlayer playMusic];
+        
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self performSelector:@selector(pauseMusic) withObject:nil afterDelay:5.0f];
+            [self performSelector:@selector(restoreLights) withObject:nil afterDelay:1.0f];
+        });
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self performSelector:@selector(pauseMusic) withObject:nil afterDelay:INTERRUPT_TIME];
         });
         return;
     }
     
-    PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
-    PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
-    
-    PHLight *light = [cache.lights objectForKey:[lightNum stringValue]];
     PHLightState *lightState = [self.lightStates objectAtIndex:[lightNum intValue]-1];
     
     [lightState setBrightness:newBrightness];
     
-    [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
-        if (errors != nil) {
-            NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
-            NSLog(@"Response: %@",message);
-        }
-    }];
+    [self changeLightState:lightState ofLightNum:lightNum];
 }
 
 -(void)changeHue:(NSNumber *)newHue ofLightNumber:(NSNumber *)lightNum{
-    PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
-    PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
-    
-    PHLight *light = [cache.lights objectForKey:[lightNum stringValue]];
     PHLightState *lightState = [self.lightStates objectAtIndex:[lightNum intValue]-1];
     
     [lightState setHue:newHue];
     
-    [self.lightStates replaceObjectAtIndex:[lightNum intValue]-1 withObject:lightState];
+    [self changeLightState:lightState ofLightNum:lightNum];
+}
+
+-(void)changeLightState:(PHLightState*)newState ofLightNum:(NSNumber *)lightNum{
+    PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
+    PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
     
-    [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
+    PHLight *light = [cache.lights objectForKey:[lightNum stringValue]];
+    
+    [self.lightStates replaceObjectAtIndex:[lightNum intValue]-1 withObject:newState];
+    
+    [bridgeSendAPI updateLightStateForId:light.identifier withLightState:newState completionHandler:^(NSArray *errors) {
         if (errors != nil) {
             NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
             NSLog(@"Response: %@",message);
