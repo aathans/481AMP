@@ -24,8 +24,8 @@
 
 @property (nonatomic) AMPControlLightsViewController *myHue;
 @property (nonatomic) AMPMusicPlayer *musicPlayer;
-@property (nonatomic) AVAudioPlayer *songPlayer;
-@property (nonatomic) NSArray *songList;
+@property (nonatomic) AVAudioPlayer *soundPlayer;
+@property (nonatomic) NSArray *soundList;
 
 +(id)sharedManager;
 

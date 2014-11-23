@@ -42,9 +42,10 @@
         self.lightStates = [NSMutableArray new];
         self.previousStates = [NSMutableArray new];
         self.redLightNumber = @0;
-        [self resetLights];
         
+        [self resetLights];
         [self.dataManager.musicPlayer playMusic];
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             [self performSelector:@selector(pauseMusic) withObject:nil afterDelay:5.0f];
         });
@@ -54,6 +55,42 @@
 
 - (void)loadView{
     [super loadView];
+
+}
+
+- (void)resetTube{
+    if (self.dataManager.initialTubeValues.count == 0) {
+        self.dataManager.initialTubeValues = [NSMutableArray new];
+        self.dataManager.currentTubeValues = [NSMutableArray new];
+        for (int i = 0; i < 4; i++) {
+            NSNumber *pinValue = @500;
+            [self.dataManager.currentTubeValues addObject:pinValue];
+            [self.dataManager.initialTubeValues addObject:pinValue];
+        }
+    } else {
+        for (int i = 0; i < 4; i++) {
+            NSNumber *pinValue = @500;
+            [self.dataManager.currentTubeValues replaceObjectAtIndex:i withObject:pinValue];
+        }
+    }
+}
+
+- (void)pullTube: (NSNumber *) tubeNumber {
+    AMPDataManager* data = self.dataManager;
+    
+    [self resetTube];
+    
+    int tubeInt = [tubeNumber intValue];
+    NSNumber *pinNum = [NSNumber numberWithInt:(tubeInt-1)];
+    NSLog(@"Pulling band");
+    [data updateValue:240 forPin:pinNum andIsAnalog:true];
+    
+    // Wait 3 seconds, then release band
+    NSDate *runUntil = [NSDate dateWithTimeIntervalSinceNow: 3.0 ];
+    
+    [[NSRunLoop currentRunLoop] runUntilDate:runUntil];
+    
+    [self resetTube];
 }
 
 - (IBAction)resetButtonPushed:(id)sender {
@@ -122,27 +159,22 @@
 }
 
 -(void)pauseMusic{
-    NSLog(@"HII");
+    NSUInteger count = self.lightStates.count;
     self.redLightNumber = @1;//[NSNumber numberWithInt:arc4random_uniform(NUM_LIGHTS-1)+1];
     
     // Save current light states
     [self.previousStates removeAllObjects];
-    for (int i = 0; i < count; i++) {
-        PHLightState *oldState = [self.lightStates objectAtIndex:i];
-        PHLightState *oldStateCopy = [[PHLightState alloc] init];
-        [oldStateCopy setHue:oldState.hue];
-        [oldState setBrightness:oldState.brightness];
-        [oldState setSaturation:oldState.saturation];
-        
-        [self.previousStates addObject:oldStateCopy];
-    }
+    NSArray *trueDeepCopyArray = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:self.lightStates]];
+    self.previousStates = [NSMutableArray arrayWithArray:trueDeepCopyArray];
     
     // Change one light to red, the rest to green
-    [self changeHue:[NSNumber numberWithInt:RED_COLOR] ofLightNumber:self.redLightNumber];
-    
     for (int i = 1; i <= count; i++) {
+        PHLightState *lightState = [self.lightStates objectAtIndex:i-1];
+        [lightState setBrightness:[NSNumber numberWithInt:DEFAULT_BRIGHTNESS]];
         if (self.redLightNumber != [NSNumber numberWithInt:i]) {
             [self changeHue:[NSNumber numberWithInt:GREEN_COLOR] ofLightNumber:[NSNumber numberWithInt:i]];
+        }else{
+            [self changeHue:[NSNumber numberWithInt:RED_COLOR] ofLightNumber:self.redLightNumber];
         }
     }
     
@@ -195,9 +227,6 @@
     }
     
     self.dataManager.lightIsRed = NO;
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self performSelector:@selector(pauseMusic) withObject:nil afterDelay:INTERRUPT_TIME];
-    });
 }
 
 - (void)changeBrightness:(NSNumber *)newBrightness ofLightNumber:(NSNumber *)lightNum{

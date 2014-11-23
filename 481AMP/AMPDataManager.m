@@ -68,12 +68,12 @@
 //-(BOOL)isPushingBand:(NSNumber *)currentReadValue{
 //    return (currentReadValue > 1.05*_initialReadValue && _brightnessValue <= 241);
 //}
--(NSArray *)songList
+-(NSArray *)soundList
 {
-    if (!_songList) {
-        _songList = @[@"chicken",@"goose",@"horse"];
+    if (!_soundList) {
+        _soundList = @[@"chicken",@"goose",@"horse"];
     }
-    return _songList;
+    return _soundList;
 }
 
 -(void)updateDigitalPin:(NSNumber *)pinNumber withValue:(BOOL) value{
@@ -86,7 +86,7 @@
     if(!isPressedAlready && value){
         [self.myHue changeLightsToRandomColor];
         int soundIndex = arc4random_uniform(NUM_SONGS-1);
-        NSString *soundName = [self.songList objectAtIndex:soundIndex];
+        NSString *soundName = [self.soundList objectAtIndex:soundIndex];
         [self playSoundWithName:soundName andType:@"mp3"];
     }
     [self.floorValues replaceObjectAtIndex:([pinNumber intValue]-FLOOR_START_PIN) withObject:[NSNumber numberWithBool:value]];
@@ -95,9 +95,9 @@
 
 -(void)playSoundWithName:(NSString *)songName andType:(NSString *)songType{
     NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:songName ofType:songType]];
-    self.songPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
-    [_songPlayer setVolume:1.0f];
-    [_songPlayer play];
+    self.soundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    [_soundPlayer setVolume:1.0f];
+    [_soundPlayer play];
 }
 
 @end
