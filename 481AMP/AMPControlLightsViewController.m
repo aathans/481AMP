@@ -15,7 +15,7 @@
 #define NUM_LIGHTS 3
 #define DEFAULT_BRIGHTNESS 140
 #define GREEN_COLOR 36210
-#define RED_COLOR 64000
+#define RED_COLOR 65280
 
 @interface AMPControlLightsViewController ()
 
@@ -74,6 +74,29 @@
     [self toggleLightNumber:@4];
 }
 
+- (IBAction)pullBand:(id)sender {
+    
+    for(int i = 0; i < 5; i++) {
+        [self changeLightsToRandomColor];
+        NSLog(@"Pulling band");
+        NSDate *runUntil = [NSDate dateWithTimeIntervalSinceNow: 3.0 ];
+        [[NSRunLoop currentRunLoop] runUntilDate:runUntil];
+        
+        [self changeBrightness:@50 ofLightNumber:@1];
+        
+        // Wait 3 seconds, then release band
+        runUntil = [NSDate dateWithTimeIntervalSinceNow: 3.0 ];
+        [[NSRunLoop currentRunLoop] runUntilDate:runUntil];
+        
+        [self changeBrightness:@250 ofLightNumber:@1];
+        
+        runUntil = [NSDate dateWithTimeIntervalSinceNow: 3.0 ];
+        [[NSRunLoop currentRunLoop] runUntilDate:runUntil];
+    }
+    
+      //[data updateValue:310 forPin:@0 andIsAnalog:true];
+}
+
 -(void)toggleLightNumber:(NSNumber *)lightNum{
     PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
     PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
@@ -107,19 +130,20 @@
 
 - (void)changeLightsToRandomColor{
     PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
-    PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
+  //  PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
     
-    PHLightState *lightState = [[PHLightState alloc] init];
-    [lightState setHue:[NSNumber numberWithInt:arc4random() % MAX_HUE]];
-        
-    for (PHLight *light in cache.lights.allValues) {
+   /*PHLightState *lightState = [[PHLightState alloc] init];
+    [lightState setHue:[NSNumber numberWithInt:arc4random() % MAX_HUE]];*/
+    NSUInteger count = cache.lights.count;
+    for (int i = 1; i < count+1; i++) {
         // Send lightstate to light
-        [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
+        [self changeHue:[NSNumber numberWithInt:arc4random() % MAX_HUE] ofLightNumber:[NSNumber numberWithInt:i]];
+     /*  [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
             if (errors != nil) {
                 NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
                 NSLog(@"Response: %@",message);
             }
-        }];
+        }];*/
     }
     
 }
