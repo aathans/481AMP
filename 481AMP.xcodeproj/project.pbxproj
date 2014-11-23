@@ -53,6 +53,9 @@
 		FA052AF81A21925400B88814 /* Proleter.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA052AF71A21925400B88814 /* Proleter.mp3 */; };
 		FA052AFA1A2192BA00B88814 /* Happy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA052AF91A2192BA00B88814 /* Happy.mp3 */; };
 		FA052AFC1A21982C00B88814 /* UnderTheSea.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA052AFB1A21982C00B88814 /* UnderTheSea.mp3 */; };
+		FA052B041A21E56000B88814 /* AMPHueWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA052B031A21E56000B88814 /* AMPHueWindow.xib */; };
+		FA052B081A21E62F00B88814 /* AMPMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA052B061A21E62F00B88814 /* AMPMainWindowController.m */; };
+		FA052B091A21E62F00B88814 /* AMPMainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA052B071A21E62F00B88814 /* AMPMainWindowController.xib */; };
 		FA28FD0C19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FCFE19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m */; };
 		FA28FD0D19FCC3F500C3C2AA /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0019FCC3F500C3C2AA /* DDASLLogger.m */; };
 		FA28FD0E19FCC3F500C3C2AA /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0219FCC3F500C3C2AA /* DDFileLogger.m */; };
@@ -151,6 +154,10 @@
 		FA052AF71A21925400B88814 /* Proleter.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Proleter.mp3; sourceTree = "<group>"; };
 		FA052AF91A2192BA00B88814 /* Happy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Happy.mp3; sourceTree = "<group>"; };
 		FA052AFB1A21982C00B88814 /* UnderTheSea.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = UnderTheSea.mp3; sourceTree = "<group>"; };
+		FA052B031A21E56000B88814 /* AMPHueWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMPHueWindow.xib; sourceTree = "<group>"; };
+		FA052B051A21E62F00B88814 /* AMPMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPMainWindowController.h; sourceTree = "<group>"; };
+		FA052B061A21E62F00B88814 /* AMPMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPMainWindowController.m; sourceTree = "<group>"; };
+		FA052B071A21E62F00B88814 /* AMPMainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMPMainWindowController.xib; sourceTree = "<group>"; };
 		FA28FCFD19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
 		FA28FCFE19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
 		FA28FCFF19FCC3F500C3C2AA /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
@@ -249,6 +256,9 @@
 				FA28FCFC19FCC3F500C3C2AA /* Lumberjack */,
 				FA01EDCF19FCCADD00034F00 /* AMPAppDelegate.h */,
 				FA01EDD019FCCAF300034F00 /* AMPAppDelegate.m */,
+				FA052B051A21E62F00B88814 /* AMPMainWindowController.h */,
+				FA052B061A21E62F00B88814 /* AMPMainWindowController.m */,
+				FA052B071A21E62F00B88814 /* AMPMainWindowController.xib */,
 				FA052AF21A20A32500B88814 /* Music Player */,
 				FA052AEF1A20A30400B88814 /* Hue */,
 				FA052AF01A20A30E00B88814 /* Galileo */,
@@ -362,6 +372,7 @@
 			children = (
 				FA01EE0C19FE139600034F00 /* AMPHueWindowController.h */,
 				FA01EE0D19FE139600034F00 /* AMPHueWindowController.m */,
+				FA052B031A21E56000B88814 /* AMPHueWindow.xib */,
 				FA01EDF619FDC5D700034F00 /* AMPControlLightsViewController.h */,
 				FA01EDF719FDC5D700034F00 /* AMPControlLightsViewController.m */,
 				FA01EDF819FDC5D700034F00 /* AMPControlLightsViewController.xib */,
@@ -554,6 +565,7 @@
 				FA052AF61A21923700B88814 /* BreakFree.mp3 in Resources */,
 				FA052AF41A21918900B88814 /* SafeAndSound.mp3 in Resources */,
 				FA01EDF519FDC41A00034F00 /* press_smartbridge.png in Resources */,
+				FA052B091A21E62F00B88814 /* AMPMainWindowController.xib in Resources */,
 				FA01EDFA19FDC5D700034F00 /* AMPControlLightsViewController.xib in Resources */,
 				FA052AF81A21925400B88814 /* Proleter.mp3 in Resources */,
 				FA052AEC1A209E9C00B88814 /* horse.mp3 in Resources */,
@@ -565,6 +577,7 @@
 				FA01EDF419FDC41A00034F00 /* PHBridgeSelectionViewController.xib in Resources */,
 				FA01EDDD19FCCB0C00034F00 /* MainMenu.xib in Resources */,
 				FA052AFA1A2192BA00B88814 /* Happy.mp3 in Resources */,
+				FA052B041A21E56000B88814 /* AMPHueWindow.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,6 +612,7 @@
 				FA28FD1219FCC3F500C3C2AA /* DispatchQueueLogFormatter.m in Sources */,
 				FA28FD0C19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m in Sources */,
 				FA052AE31A20522500B88814 /* AMPMusicPlayer.m in Sources */,
+				FA052B081A21E62F00B88814 /* AMPMainWindowController.m in Sources */,
 				FA28FD0F19FCC3F500C3C2AA /* DDLog.m in Sources */,
 				FA01EDC119FCCAAC00034F00 /* ADArduino.m in Sources */,
 				FA28FD0D19FCC3F500C3C2AA /* DDASLLogger.m in Sources */,

@@ -42,6 +42,12 @@
         self.lightStates = [NSMutableArray new];
         self.previousStates = [NSMutableArray new];
         self.redLightNumber = @0;
+        [self resetLights];
+        
+        [self.dataManager.musicPlayer playMusic];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self performSelector:@selector(pauseMusic) withObject:nil afterDelay:5.0f];
+        });
     }
     return self;
 }
@@ -151,7 +157,7 @@
 }
 
 -(void)pauseMusic{
-    NSUInteger count = self.lightStates.count;
+    NSLog(@"HII");
     self.redLightNumber = @1;//[NSNumber numberWithInt:arc4random_uniform(NUM_LIGHTS-1)+1];
     
     // Save current light states

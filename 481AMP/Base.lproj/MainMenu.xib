@@ -748,7 +748,7 @@
             <connections>
                 <outlet property="connectButton" destination="7zW-gA-15j" id="xhH-UX-Tuw"/>
                 <outlet property="detailController" destination="eEj-GT-3tg" id="cpT-Hl-g7f"/>
-                <outlet property="hueController" destination="f3b-2Q-PyE" id="OOv-rF-xwU"/>
+                <outlet property="mainController" destination="76y-LG-fCq" id="cF5-he-9eK"/>
                 <outlet property="rxLabel" destination="ydS-Pn-8GJ" id="q5p-8V-12i"/>
                 <outlet property="serialBaudCombo" destination="zLy-O9-Uj5" id="esZ-hQ-OmS"/>
                 <outlet property="serialPortsCombo" destination="aAZ-Ah-L1O" id="6bH-Ug-fpL"/>
@@ -761,11 +761,6 @@
             <connections>
                 <outlet property="tableView" destination="KkT-P9-HML" id="bkJ-W7-zRl"/>
                 <outlet property="window" destination="gs1-JN-i0Y" id="3rL-EF-1hZ"/>
-            </connections>
-        </customObject>
-        <customObject id="f3b-2Q-PyE" customClass="AMPHueWindowController">
-            <connections>
-                <outlet property="window" destination="SDO-3v-sev" id="7Sa-W5-mWI"/>
             </connections>
         </customObject>
         <window title="Galileo Details" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="gs1-JN-i0Y">
@@ -860,15 +855,6 @@
                 </constraints>
             </view>
         </window>
-        <window title="Light Options" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="SDO-3v-sev" userLabel="PhilipsHue">
-            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
-            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="202"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
-            <view key="contentView" id="6Id-oU-cV9">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="202"/>
-                <autoresizingMask key="autoresizingMask"/>
-            </view>
-        </window>
+        <customObject id="76y-LG-fCq" customClass="AMPMainWindowController"/>
     </objects>
 </document>

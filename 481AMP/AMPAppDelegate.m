@@ -12,7 +12,7 @@
 #import "ADArduino.h"
 #import "ADUnixSerialPort.h"
 #import "PHLoadingViewController.h"
-#import "AMPControlLightsViewController.h"
+#import "AMPDataManager.h"
 
 @interface AMPAppDelegate()
 
@@ -25,8 +25,9 @@
 @property (nonatomic, strong) PHBridgeSelectionViewController *bridgeSelectionViewController;
 @property (nonatomic, strong) PHLoadingViewController *loadingViewController;
 @property (nonatomic, strong) PHBridgePushLinkViewController *pushLinkViewController;
-@property (nonatomic, strong) AMPControlLightsViewController *controlLightsViewController;
 @property (nonatomic, strong) PHBridgeSearching *bridgeSearch;
+
+@property (nonatomic)AMPDataManager *dataManager;
 
 @end
 
@@ -34,11 +35,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    self.controlLightsViewController = [[AMPControlLightsViewController alloc] initWithNibName:@"AMPControlLightsViewController" bundle:[NSBundle mainBundle]];
-    
-    self.controlLightsViewController.view.frame = ((NSView *)self.hueController.window.contentView).bounds;
-    self.hueController.window.contentView = self.controlLightsViewController.view;
-    [self.hueController showWindow:self];
+    self.dataManager = [AMPDataManager sharedManager];
     
     self.phHueSDK = [PHHueSDK new];
     [self.phHueSDK startUpSDK];
@@ -51,7 +48,7 @@
     [notificationManager registerObject:self withSelector:@selector(notAuthenticated) forNotification:NO_LOCAL_AUTHENTICATION_NOTIFICATION];
     
     [self enableLocalHeartbeat];
-    
+        
     [self setupSerialPortGUI];
     
 }
@@ -91,10 +88,13 @@
         ADArduino* arduino = [[ADArduino alloc] initWithSerial:port];
         
         [self.detailController setArduino:arduino];
-        [self.detailController showWindow:self];
+        //[self.detailController showWindow:self];
         [self.connectButton setTitle:@"Disconnect"];
         
         self.connected = YES;
+        
+        self.mainController = [[AMPMainWindowController alloc] initWithWindowNibName:@"AMPMainWindowController"];
+        [self.mainController showWindow:self];
     } else {
         ADUnixSerialPort* port = (ADUnixSerialPort*) self.detailController.arduino.serialPort;
         

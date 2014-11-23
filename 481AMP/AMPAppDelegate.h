@@ -11,6 +11,7 @@
 #import "AMPHueWindowController.h"
 #include "PHBridgePushLinkViewController.h"
 #include "PHBridgeSelectionViewController.h"
+#import "AMPMainWindowController.h"
 #import <HueSDK_OSX/HueSDK.h>
 
 #define NSAppDelegate  ((AMPAppDelegate *)[[NSApplication sharedApplication] delegate])
@@ -33,7 +34,7 @@
 
 //*** PHILIPS HUE ***
 @property (nonatomic) PHHueSDK *phHueSDK;
-@property (nonatomic) IBOutlet AMPHueWindowController *hueController;
+
 -(void)enableLocalHeartbeat;
 
 -(void)disableLocalHeartbeat;
@@ -42,6 +43,7 @@
 
 //***************
 
+@property (strong) IBOutlet AMPMainWindowController *mainController;
 
 - (IBAction)connectAction:(id)sender;
 
