@@ -50,6 +50,40 @@
     });
 }
 
+- (void)resetTube{
+    if (self.dataManager.initialTubeValues.count == 0) {
+        self.dataManager.initialTubeValues = [NSMutableArray new];
+        self.dataManager.currentTubeValues = [NSMutableArray new];     for (int i = 0; i < 4; i++) {
+            NSNumber *pinValue = @500;
+            [self.dataManager.currentTubeValues addObject:pinValue];
+            [self.dataManager.initialTubeValues addObject:pinValue];
+        }
+    } else {
+        for (int i = 0; i < 4; i++) {
+            NSNumber *pinValue = @500;
+            [self.dataManager.currentTubeValues replaceObjectAtIndex:i withObject:pinValue];
+        }
+    }
+}
+
+- (void)pullTube: (NSNumber *) tubeNumber {
+    AMPDataManager* data = self.dataManager;
+    
+    [self resetTube];
+    
+    int tubeInt = [tubeNumber intValue];
+    NSNumber *pinNum = [NSNumber numberWithInt:(tubeInt-1)];
+    NSLog(@"Pulling band");
+    [data updateValue:240 forPin:pinNum andIsAnalog:true];
+    
+    // Wait 3 seconds, then release band
+    NSDate *runUntil = [NSDate dateWithTimeIntervalSinceNow: 3.0 ];
+    
+    [[NSRunLoop currentRunLoop] runUntilDate:runUntil];
+    
+    [self resetTube];
+}
+
 - (IBAction)resetButtonPushed:(id)sender {
     [self resetLights];
 }
@@ -74,27 +108,16 @@
     [self toggleLightNumber:@4];
 }
 
-- (IBAction)pullBand:(id)sender {
-    
-    for(int i = 0; i < 5; i++) {
-        [self changeLightsToRandomColor];
-        NSLog(@"Pulling band");
-        NSDate *runUntil = [NSDate dateWithTimeIntervalSinceNow: 3.0 ];
-        [[NSRunLoop currentRunLoop] runUntilDate:runUntil];
-        
-        [self changeBrightness:@50 ofLightNumber:@1];
-        
-        // Wait 3 seconds, then release band
-        runUntil = [NSDate dateWithTimeIntervalSinceNow: 3.0 ];
-        [[NSRunLoop currentRunLoop] runUntilDate:runUntil];
-        
-        [self changeBrightness:@250 ofLightNumber:@1];
-        
-        runUntil = [NSDate dateWithTimeIntervalSinceNow: 3.0 ];
-        [[NSRunLoop currentRunLoop] runUntilDate:runUntil];
-    }
-    
-      //[data updateValue:310 forPin:@0 andIsAnalog:true];
+- (IBAction)pullTube1:(id)sender {
+    [self pullTube:@1];
+}
+
+- (IBAction)pullTube2:(id)sender {
+    [self pullTube:@2];
+}
+     
+- (IBAction)pullTube3:(id)sender {
+    [self pullTube:@3];
 }
 
 -(void)toggleLightNumber:(NSNumber *)lightNum{
