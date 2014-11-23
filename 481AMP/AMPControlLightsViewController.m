@@ -157,7 +157,7 @@
 }
 
 -(void)pauseMusic{
-    NSLog(@"HII");
+    NSUInteger count = self.lightStates.count;
     self.redLightNumber = @1;//[NSNumber numberWithInt:arc4random_uniform(NUM_LIGHTS-1)+1];
     
     // Save current light states
