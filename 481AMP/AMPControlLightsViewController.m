@@ -68,9 +68,8 @@
             [self.dataManager.initialTubeValues addObject:pinValue];
         }
     } else {
-        for (int i = 0; i < 4; i++) {
-            NSNumber *pinValue = @500;
-            [self.dataManager.currentMaxTubeValues replaceObjectAtIndex:i withObject:pinValue];
+        for (int i = 0; i < NUM_LIGHTS; i++) {
+            [self.dataManager updateValue:500 forPin:[NSNumber numberWithInt:i] andIsAnalog:true];
         }
     }
 }
@@ -90,7 +89,7 @@
     
     [[NSRunLoop currentRunLoop] runUntilDate:runUntil];
     
-    [self resetTube];
+    //[self resetTube];
 }
 
 - (IBAction)resetButtonPushed:(id)sender {
@@ -160,7 +159,10 @@
 
 -(void)pauseMusic{
     NSUInteger count = self.lightStates.count;
-    self.redLightNumber = [NSNumber numberWithInt:arc4random() % (NUM_LIGHTS)+1];
+    self.redLightNumber = [NSNumber numberWithInt:arc4random_uniform(NUM_LIGHTS-1)+1];
+    
+    self.dataManager.lightIsRed = YES;
+    [self.dataManager.musicPlayer pauseMusic];
     
     // Save current light states
     [self.previousStates removeAllObjects];
@@ -178,13 +180,11 @@
         }
     }
     
-    self.dataManager.lightIsRed = YES;
-    [self.dataManager.musicPlayer pauseMusic];
 }
 
 - (void)restoreLights{
     // Restore all light states to their previous versions
-    for(int i = 0; i < self.previousStates.count; i++) {
+    for(int i = 0; i < NUM_LIGHTS; i++) {
         NSNumber *lightNum = [NSNumber numberWithInt:(i+1)];
         PHLightState *lightState = [self.previousStates objectAtIndex:i];
         
@@ -229,30 +229,30 @@
     self.dataManager.lightIsRed = NO;
 }
 
-- (void)changeBrightness:(NSNumber *)newBrightness ofLightNumber:(NSNumber *)lightNum{
-    
-    if([lightNum isEqualToNumber:self.redLightNumber] && ([newBrightness intValue] != DEFAULT_BRIGHTNESS)){
-        [self changeHue:[NSNumber numberWithInt:GREEN_COLOR] ofLightNumber:lightNum];
-        self.redLightNumber = @0;
-        self.dataManager.lightIsRed = NO;
-        [self.dataManager.musicPlayer playMusic];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self performSelector:@selector(restoreLights) withObject:nil afterDelay:1.0f];
-        });
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self performSelector:@selector(pauseMusic) withObject:nil afterDelay:INTERRUPT_TIME];
-        });
-        return;
-    }
-    
-    PHLightState *lightState = [self.lightStates objectAtIndex:[lightNum intValue]-1];
-    
-    [lightState setBrightness:newBrightness];
-    
-    [self changeLightState:lightState ofLightNum:lightNum];
-}
+//- (void)changeBrightness:(NSNumber *)newBrightness ofLightNumber:(NSNumber *)lightNum{
+//    
+//    if([lightNum isEqualToNumber:self.redLightNumber] && ([newBrightness intValue] != DEFAULT_BRIGHTNESS)){
+//        [self changeHue:[NSNumber numberWithInt:GREEN_COLOR] ofLightNumber:lightNum];
+//        self.redLightNumber = @0;
+//        self.dataManager.lightIsRed = NO;
+//        [self.dataManager.musicPlayer playMusic];
+//        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [self performSelector:@selector(restoreLights) withObject:nil afterDelay:1.0f];
+//        });
+//        
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//            [self performSelector:@selector(pauseMusic) withObject:nil afterDelay:INTERRUPT_TIME];
+//        });
+//        return;
+//    }
+//    
+//    PHLightState *lightState = [self.lightStates objectAtIndex:[lightNum intValue]-1];
+//    
+//    [lightState setBrightness:newBrightness];
+//    
+//    [self changeLightState:lightState ofLightNum:lightNum];
+//}
 
 -(void)changeHue:(NSNumber *)newHue ofLightNumber:(NSNumber *)lightNum{
     PHLightState *lightState = [self.lightStates objectAtIndex:[lightNum intValue]-1];
@@ -276,6 +276,8 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             [self performSelector:@selector(pauseMusic) withObject:nil afterDelay:INTERRUPT_TIME];
         });
+        return;
+    }else if(self.dataManager.lightIsRed){
         return;
     }
     
