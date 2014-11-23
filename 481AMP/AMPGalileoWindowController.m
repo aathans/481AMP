@@ -61,8 +61,9 @@
         
         //**** GET INITIAL PIN VALUE ***
         for (int i = 0; i < NUM_TUBE_PINS; i++) {
-            ADArduinoPin *analogPin = [self.arduino.analogPins objectAtIndex:i];
-            NSNumber *pinValue = [NSNumber numberWithInt:analogPin.value];
+           /* ADArduinoPin *analogPin = [self.arduino.analogPins objectAtIndex:i];
+            NSNumber *pinValue = [NSNumber numberWithInt:analogPin.value];*/
+            NSNumber *pinValue = [NSNumber numberWithInt:320];
             [self.dataManager.currentTubeValues addObject:pinValue];
             [self.dataManager.initialTubeValues addObject:pinValue];
         }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA5B3ED61A208EAF00FFBD35 /* AMPTubeTest.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5B3ED51A208EAF00FFBD35 /* AMPTubeTest.m */; };
+		CA5B3ED81A208ECD00FFBD35 /* AMPFloorTest.m in Sources */ = {isa = PBXBuildFile; fileRef = CA5B3ED71A208ECD00FFBD35 /* AMPFloorTest.m */; };
 		F439CA2B1822A01B002F09E2 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F439CA2A1822A01B002F09E2 /* IOKit.framework */; };
 		F4927C9618224EE900C1A82D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4927C9518224EE900C1A82D /* Cocoa.framework */; };
 		F4927CA018224EE900C1A82D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F4927C9E18224EE900C1A82D /* InfoPlist.strings */; };
@@ -77,6 +79,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CA5B3ED51A208EAF00FFBD35 /* AMPTubeTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPTubeTest.m; sourceTree = "<group>"; };
+		CA5B3ED71A208ECD00FFBD35 /* AMPFloorTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPFloorTest.m; sourceTree = "<group>"; };
 		F439CA2A1822A01B002F09E2 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		F4927C9218224EE900C1A82D /* 481AMP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 481AMP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4927C9518224EE900C1A82D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -277,6 +281,8 @@
 		F4927CB918224EE900C1A82D /* 481AMP */ = {
 			isa = PBXGroup;
 			children = (
+				CA5B3ED71A208ECD00FFBD35 /* AMPFloorTest.m */,
+				CA5B3ED51A208EAF00FFBD35 /* AMPTubeTest.m */,
 				FA32B8EB1A0DB6140079AB58 /* snare.mp3 */,
 				FA32B8E51A0DB2EC0079AB58 /* snare.ogg */,
 				FA32B8DE1A0D9D370079AB58 /* AMPSoundTest.m */,
@@ -612,7 +618,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA5B3ED81A208ECD00FFBD35 /* AMPFloorTest.m in Sources */,
 				FA32B8DF1A0D9D370079AB58 /* AMPSoundTest.m in Sources */,
+				CA5B3ED61A208EAF00FFBD35 /* AMPTubeTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

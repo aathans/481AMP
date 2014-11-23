@@ -1,5 +1,5 @@
 //
-//  AMPValueTest.m
+//  AMPBandTest.m
 //  481AMP
 //
 //  Created by Brandon Mazzara on 11/22/14.
@@ -9,11 +9,11 @@
 #import <XCTest/XCTest.h>
 #import "AMPDataManager.h"
 
-@interface AMPBandTest : XCTestCase
+@interface AMPTubeTest : XCTestCase
 
 @end
 
-@implementation AMPBandTest
+@implementation AMPTubeTest
 
 - (void)setUp
 {
@@ -42,7 +42,7 @@
     [data updateValue:310 forPin:pinNum andIsAnalog:true];
 }
 
-- (void)testBand
+- (void)testTube
 {
     for(int i = 0; i < 3; i++) {
         NSDate *runUntil = [NSDate dateWithTimeIntervalSinceNow: 3.0 ];

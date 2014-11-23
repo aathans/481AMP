@@ -36,40 +36,14 @@
     [data updateValue:0 forPin:pinNum andIsAnalog:false];
 }
 
-- (void)pullBand:(NSNumber *) pinNum
-{
-    AMPDataManager* data = [AMPDataManager sharedManager];
-    
-    NSLog(@"Pulling band");
-    [data updateValue:220 forPin:pinNum andIsAnalog:false];
-    
-    // Wait 3 seconds, then release band
-    NSDate *runUntil = [NSDate dateWithTimeIntervalSinceNow: 3.0 ];
-    
-    [[NSRunLoop currentRunLoop] runUntilDate:runUntil];
-    
-    [data updateValue:310 forPin:pinNum andIsAnalog:false];
-}
-
 - (void)testFloor
 {
     for(int i = 0; i < 4; i++) {
         NSDate *runUntil = [NSDate dateWithTimeIntervalSinceNow: 3.0 ];
-    
+        
         [[NSRunLoop currentRunLoop] runUntilDate:runUntil];
-    
+        
         [self stepOnFloor:[NSNumber numberWithInt:i]];
-    }
-}
-
-- (void)testBand
-{
-    for(int i = 0; i < 3; i++) {
-        NSDate *runUntil = [NSDate dateWithTimeIntervalSinceNow: 3.0 ];
-        
-        [[NSRunLoop currentRunLoop] runUntilDate:runUntil];
-        
-        [self pullBand:[NSNumber numberWithInt:i]];
     }
 }
 
