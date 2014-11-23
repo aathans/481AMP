@@ -18,6 +18,4 @@
     [super loadView];
 }
 
-
-
 @end

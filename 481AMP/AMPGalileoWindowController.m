@@ -14,8 +14,8 @@
 
 @end
 
-#define NUM_TUBE_PINS 3
-#define NUM_FLOOR_PINS 1
+#define NUM_TUBE_PINS 1
+#define NUM_FLOOR_PINS 0
 #define FLOOR_START_PIN 7
 
 @implementation AMPGalileoWindowController
@@ -236,7 +236,6 @@
 -(void)changePinValue:(NSInteger)row value:(uint32_t)value {
     ADArduinoPin* pin = [self pinForRow:row];
     if (!pin) return;
-    NSLog(@"Setting value %u", value);
    
     [pin setValue:value];
 }

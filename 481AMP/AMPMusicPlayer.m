@@ -97,7 +97,7 @@
 -(NSArray *)songList
 {
     if (!_songList) {
-        _songList = @[@"Fireflies"];
+        _songList = @[@"Fireflies", @"SafeAndSound", @"BreakFree", @"Happy", @"UnderTheSea", @"Proleter"];
     }
     return _songList;
 }
@@ -123,22 +123,22 @@
     }
     [self.songPlayer setVolume:_currentVolume];
 }
-
--(void)adjustVolumeWithRotation:(int)rotation
-{
-    BOOL shouldIncrease = rotation > 30;
-    BOOL shouldDecrease = rotation < -30;
-    
-    if (shouldIncrease) {
-        [self.volumeDecreaseTimer invalidate];
-        self.volumeIncreaseTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(increaseVolume) userInfo:nil repeats:NO];
-        [self.volumeIncreaseTimer fire];
-    } else if (shouldDecrease) {
-        [self.volumeIncreaseTimer invalidate];
-        self.volumeDecreaseTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(decreaseVolume) userInfo:nil repeats:NO];
-        [self.volumeDecreaseTimer fire];
-    }
-    
-}
+//
+//-(void)adjustVolumeWithRotation:(int)rotation
+//{
+//    BOOL shouldIncrease = rotation > 30;
+//    BOOL shouldDecrease = rotation < -30;
+//    
+//    if (shouldIncrease) {
+//        [self.volumeDecreaseTimer invalidate];
+//        self.volumeIncreaseTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(increaseVolume) userInfo:nil repeats:NO];
+//        [self.volumeIncreaseTimer fire];
+//    } else if (shouldDecrease) {
+//        [self.volumeIncreaseTimer invalidate];
+//        self.volumeDecreaseTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(decreaseVolume) userInfo:nil repeats:NO];
+//        [self.volumeDecreaseTimer fire];
+//    }
+//    
+//}
 
 @end
