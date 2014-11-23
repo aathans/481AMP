@@ -39,18 +39,18 @@
         
         self.lightStates = [NSMutableArray new];
         self.redLightNumber = @0;
+        [self resetLights];
+        
+        [self.dataManager.musicPlayer playMusic];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self performSelector:@selector(pauseMusic) withObject:nil afterDelay:5.0f];
+        });
     }
     return self;
 }
 
 - (void)loadView{
     [super loadView];
-    [self resetLights];
-    
-    [self.dataManager.musicPlayer playMusic];
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self performSelector:@selector(pauseMusic) withObject:nil afterDelay:5.0f];
-    });
 }
 
 - (IBAction)resetButtonPushed:(id)sender {
@@ -125,6 +125,7 @@
 }
 
 -(void)pauseMusic{
+    NSLog(@"HII");
     self.redLightNumber = @1;//[NSNumber numberWithInt:arc4random_uniform(NUM_LIGHTS-1)+1];
     [self changeHue:[NSNumber numberWithInt:RED_COLOR] ofLightNumber:self.redLightNumber];
     self.dataManager.lightIsRed = YES;
