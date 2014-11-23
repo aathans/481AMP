@@ -14,8 +14,8 @@
 
 @end
 
-#define NUM_TUBE_PINS 3
-#define NUM_FLOOR_PINS 1
+#define NUM_TUBE_PINS 1
+#define NUM_FLOOR_PINS 0
 #define FLOOR_START_PIN 7
 
 @implementation AMPGalileoWindowController
@@ -61,9 +61,8 @@
         
         //**** GET INITIAL PIN VALUE ***
         for (int i = 0; i < NUM_TUBE_PINS; i++) {
-           /* ADArduinoPin *analogPin = [self.arduino.analogPins objectAtIndex:i];
-            NSNumber *pinValue = [NSNumber numberWithInt:analogPin.value];*/
-            NSNumber *pinValue = [NSNumber numberWithInt:320];
+            ADArduinoPin *analogPin = [self.arduino.analogPins objectAtIndex:i];
+            NSNumber *pinValue = [NSNumber numberWithInt:analogPin.value];
             [self.dataManager.currentTubeValues addObject:pinValue];
             [self.dataManager.initialTubeValues addObject:pinValue];
         }
@@ -237,7 +236,6 @@
 -(void)changePinValue:(NSInteger)row value:(uint32_t)value {
     ADArduinoPin* pin = [self pinForRow:row];
     if (!pin) return;
-    NSLog(@"Setting value %u", value);
    
     [pin setValue:value];
 }

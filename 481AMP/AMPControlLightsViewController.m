@@ -12,9 +12,12 @@
 
 #define MAX_HUE 65535
 #define NUM_LIGHTS 3
+#define DEFAULT_HUE 14922
 #define DEFAULT_BRIGHTNESS 140
-#define GREEN_COLOR 36210
+#define DEFAULT_SATURATION 254
+#define GREEN_COLOR 26000
 #define RED_COLOR 65280
+
 
 @interface AMPControlLightsViewController ()
 
@@ -46,7 +49,7 @@
     
     [self.dataManager.musicPlayer playMusic];
     dispatch_async(dispatch_get_main_queue(), ^{
-        [self performSelector:@selector(pauseMusic) withObject:nil afterDelay:30.0f];
+        [self performSelector:@selector(pauseMusic) withObject:nil afterDelay:5.0f];
     });
 }
 
@@ -122,7 +125,7 @@
 }
 
 -(void)pauseMusic{
-    self.redLightNumber = [NSNumber numberWithInt:arc4random_uniform(NUM_LIGHTS-1)+1];
+    self.redLightNumber = @1;//[NSNumber numberWithInt:arc4random_uniform(NUM_LIGHTS-1)+1];
     [self changeHue:[NSNumber numberWithInt:RED_COLOR] ofLightNumber:self.redLightNumber];
     self.dataManager.lightIsRed = YES;
     [self.dataManager.musicPlayer pauseMusic];
@@ -130,20 +133,10 @@
 
 - (void)changeLightsToRandomColor{
     PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
-  //  PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
-    
-   /*PHLightState *lightState = [[PHLightState alloc] init];
-    [lightState setHue:[NSNumber numberWithInt:arc4random() % MAX_HUE]];*/
     NSUInteger count = cache.lights.count;
-    for (int i = 1; i < count+1; i++) {
-        // Send lightstate to light
+    
+    for (int i = 1; i <= count; i++) {
         [self changeHue:[NSNumber numberWithInt:arc4random() % MAX_HUE] ofLightNumber:[NSNumber numberWithInt:i]];
-     /*  [bridgeSendAPI updateLightStateForId:light.identifier withLightState:lightState completionHandler:^(NSArray *errors) {
-            if (errors != nil) {
-                NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
-                NSLog(@"Response: %@",message);
-            }
-        }];*/
     }
 }
 
@@ -155,9 +148,9 @@
     
     for (PHLight *light in cache.lights.allValues) {
         PHLightState *lightState = [[PHLightState alloc] init];
-        [lightState setHue:[NSNumber numberWithInt:14922]];
+        [lightState setHue:[NSNumber numberWithInt:DEFAULT_HUE]];
         [lightState setBrightness:[NSNumber numberWithInt:DEFAULT_BRIGHTNESS]];
-        [lightState setSaturation:[NSNumber numberWithInt:254]];
+        [lightState setSaturation:[NSNumber numberWithInt:DEFAULT_SATURATION]];
         [self.lightStates addObject:lightState];
         
         // Send lightstate to light
@@ -178,7 +171,7 @@
         self.dataManager.lightIsRed = NO;
         [self.dataManager.musicPlayer playMusic];
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self performSelector:@selector(pauseMusic) withObject:nil afterDelay:15.0f];
+            [self performSelector:@selector(pauseMusic) withObject:nil afterDelay:5.0f];
         });
         return;
     }
