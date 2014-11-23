@@ -55,15 +55,14 @@
 - (void)resetTube{
     if (self.dataManager.initialTubeValues.count == 0) {
         self.dataManager.initialTubeValues = [NSMutableArray new];
-        self.dataManager.currentTubeValues = [NSMutableArray new];     for (int i = 0; i < 4; i++) {
+        self.dataManager.currentTubeValues = [NSMutableArray new];     for (int i = 0; i < 3; i++) {
             NSNumber *pinValue = @500;
             [self.dataManager.currentTubeValues addObject:pinValue];
             [self.dataManager.initialTubeValues addObject:pinValue];
         }
     } else {
-        for (int i = 0; i < 4; i++) {
-            NSNumber *pinValue = @500;
-            [self.dataManager.currentTubeValues replaceObjectAtIndex:i withObject:pinValue];
+        for (int i = 0; i < 3; i++) {
+            [self.dataManager updateValue:500 forPin:[NSNumber numberWithInt:i] andIsAnalog:true];
         }
     }
 }
@@ -130,7 +129,7 @@
 -(void)toggleLightNumber:(NSNumber *)lightNum{
     PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
     PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
-    
+
     PHLight *light = [cache.lights objectForKey:[lightNum stringValue]];
     
     PHLightState *lightState = [self.lightStates objectAtIndex:[lightNum intValue]-1];
@@ -267,16 +266,18 @@
     PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
     PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
     
-    PHLight *light = [cache.lights objectForKey:[lightNum stringValue]];
+    if(lightNum.intValue <= self.lightStates.count) {
+        PHLight *light = [cache.lights objectForKey:[lightNum stringValue]];
+        
+        [self.lightStates replaceObjectAtIndex:[lightNum intValue]-1 withObject:newState];
     
-    [self.lightStates replaceObjectAtIndex:[lightNum intValue]-1 withObject:newState];
-    
-    [bridgeSendAPI updateLightStateForId:light.identifier withLightState:newState completionHandler:^(NSArray *errors) {
-        if (errors != nil) {
-            NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
-            NSLog(@"Response: %@",message);
-        }
-    }];
+        [bridgeSendAPI updateLightStateForId:light.identifier withLightState:newState completionHandler:^(NSArray *errors) {
+            if (errors != nil) {
+                NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
+                NSLog(@"Response: %@",message);
+            }
+        }];
+    }
 }
 
 @end
