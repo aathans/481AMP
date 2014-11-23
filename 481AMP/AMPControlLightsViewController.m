@@ -61,16 +61,16 @@
 - (void)resetTube{
     if (self.dataManager.initialTubeValues.count == 0) {
         self.dataManager.initialTubeValues = [NSMutableArray new];
-        self.dataManager.currentTubeValues = [NSMutableArray new];
+        self.dataManager.currentMaxTubeValues = [NSMutableArray new];
         for (int i = 0; i < 4; i++) {
             NSNumber *pinValue = @500;
-            [self.dataManager.currentTubeValues addObject:pinValue];
+            [self.dataManager.currentMaxTubeValues addObject:pinValue];
             [self.dataManager.initialTubeValues addObject:pinValue];
         }
     } else {
         for (int i = 0; i < 4; i++) {
             NSNumber *pinValue = @500;
-            [self.dataManager.currentTubeValues replaceObjectAtIndex:i withObject:pinValue];
+            [self.dataManager.currentMaxTubeValues replaceObjectAtIndex:i withObject:pinValue];
         }
     }
 }
@@ -137,7 +137,7 @@
 -(void)toggleLightNumber:(NSNumber *)lightNum{
     PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
     PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
-
+    
     PHLight *light = [cache.lights objectForKey:[lightNum stringValue]];
     
     PHLightState *lightState = [self.lightStates objectAtIndex:[lightNum intValue]-1];
@@ -262,22 +262,46 @@
     [self changeLightState:lightState ofLightNum:lightNum];
 }
 
+-(void)incrementHueBy:(int) incrementValue ofLightNumber:(NSNumber *)lightNum{
+    if([lightNum isEqualToNumber:self.redLightNumber]){
+        [self changeHue:[NSNumber numberWithInt:GREEN_COLOR] ofLightNumber:lightNum];
+        self.redLightNumber = @0;
+        self.dataManager.lightIsRed = NO;
+        [self.dataManager.musicPlayer playMusic];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self performSelector:@selector(restoreLights) withObject:nil afterDelay:1.0f];
+        });
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self performSelector:@selector(pauseMusic) withObject:nil afterDelay:INTERRUPT_TIME];
+        });
+        return;
+    }
+    
+    PHLightState *lightState = [self.lightStates objectAtIndex:[lightNum intValue]-1];
+    int oldHue = [lightState.hue intValue];
+    int newHueValue = (oldHue + incrementValue) % 65535;
+    
+    NSNumber *newHue = [NSNumber numberWithInt:newHueValue];
+    [lightState setHue:newHue];
+    [self changeLightState:lightState ofLightNum:lightNum];
+}
+
 -(void)changeLightState:(PHLightState*)newState ofLightNum:(NSNumber *)lightNum{
     PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
     PHBridgeSendAPI *bridgeSendAPI = [[PHBridgeSendAPI alloc] init];
     
-    if(lightNum.intValue <= self.lightStates.count) {
-        PHLight *light = [cache.lights objectForKey:[lightNum stringValue]];
-        
-        [self.lightStates replaceObjectAtIndex:[lightNum intValue]-1 withObject:newState];
+    PHLight *light = [cache.lights objectForKey:[lightNum stringValue]];
     
-        [bridgeSendAPI updateLightStateForId:light.identifier withLightState:newState completionHandler:^(NSArray *errors) {
-            if (errors != nil) {
-                NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
-                NSLog(@"Response: %@",message);
-            }
-        }];
-    }
+    [self.lightStates replaceObjectAtIndex:[lightNum intValue]-1 withObject:newState];
+    
+    [bridgeSendAPI updateLightStateForId:light.identifier withLightState:newState completionHandler:^(NSArray *errors) {
+        if (errors != nil) {
+            NSString *message = [NSString stringWithFormat:@"%@: %@", NSLocalizedString(@"Errors", @""), errors != nil ? errors : NSLocalizedString(@"none", @"")];
+            NSLog(@"Response: %@",message);
+        }
+    }];
 }
 
 @end

@@ -14,11 +14,11 @@
 
 @interface AMPDataManager : NSObject
 
-@property (nonatomic) BOOL gameMode;
 @property (nonatomic) BOOL lightIsRed;
 
-@property (nonatomic) NSMutableArray *currentTubeValues; //Analog input
+@property (nonatomic) NSMutableArray *currentMaxTubeValues; //Analog input
 @property (nonatomic) NSMutableArray *initialTubeValues; //Resting position
+@property (nonatomic) NSMutableArray *isPulling;
 
 @property (nonatomic) NSMutableArray *floorValues; //Digital input
 

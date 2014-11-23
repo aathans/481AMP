@@ -42,7 +42,7 @@
     [super showWindow:sender];
     self.dataManager = [AMPDataManager sharedManager];
     self.dataManager.initialTubeValues = [NSMutableArray new];
-    self.dataManager.currentTubeValues = [NSMutableArray new];
+    self.dataManager.currentMaxTubeValues = [NSMutableArray new];
     self.dataManager.floorValues = [NSMutableArray new];
     
     [self initArduino];
@@ -63,7 +63,7 @@
         for (int i = 0; i < NUM_TUBE_PINS; i++) {
             ADArduinoPin *analogPin = [self.arduino.analogPins objectAtIndex:i];
             NSNumber *pinValue = [NSNumber numberWithInt:analogPin.value];
-            [self.dataManager.currentTubeValues addObject:pinValue];
+            [self.dataManager.currentMaxTubeValues addObject:pinValue];
             [self.dataManager.initialTubeValues addObject:pinValue];
         }
         

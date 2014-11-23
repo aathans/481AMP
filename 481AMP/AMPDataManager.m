@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 
 #define DEFAULT_BRIGHTNESS 140
+#define INCREMENT_MULTIPLIER 600
 #define FLOOR_START_PIN 7
 #define NUM_SONGS 3
 
@@ -27,10 +28,15 @@
 -(void)updateValue:(uint32_t) value forPin:(NSNumber *) pinNumber andIsAnalog:(BOOL) isAnalog{
     if(isAnalog){
         NSNumber *analogValue = [NSNumber numberWithInt:value];
-        if(value < 10){
-            return;
+        if([self isPullingBand:pinNumber withValue:analogValue]){
+            [self updateAnalogPin:pinNumber withValue:analogValue];
+        }else{
+            NSNumber *initialValue = [self.initialTubeValues objectAtIndex:[pinNumber intValue]];
+            NSNumber *currentValue = [self.currentMaxTubeValues objectAtIndex:[pinNumber intValue]];
+            if(![currentValue isEqualToNumber:initialValue]){
+                [self.currentMaxTubeValues replaceObjectAtIndex:[pinNumber intValue] withObject:initialValue];
+            }
         }
-        [self updateAnalogPin:pinNumber withValue:analogValue];
     }else{
         BOOL digitalValue = value;
         [self updateDigitalPin:pinNumber withValue:digitalValue];
@@ -38,36 +44,29 @@
 }
 
 -(void)updateAnalogPin:(NSNumber *) pinNumber withValue:(NSNumber *) value{
-    [self.currentTubeValues replaceObjectAtIndex:[pinNumber intValue] withObject:value];
+    NSNumber *previousValue = [self.currentMaxTubeValues objectAtIndex:[pinNumber intValue]];
+    if([value intValue] >= [previousValue intValue]){
+        return;
+    }
+    
+    [self.currentMaxTubeValues replaceObjectAtIndex:[pinNumber intValue] withObject:value];
     
     NSNumber *lightNumber = [NSNumber numberWithInt:[pinNumber intValue] + 1];
 
-    if([self isPullingBand:pinNumber]){
-        NSNumber *initialReading = [self.initialTubeValues objectAtIndex:[pinNumber intValue]];
-        
-        int differenceInReading = abs([value intValue] - [initialReading intValue]);
-        int newBrightnessValue = (DEFAULT_BRIGHTNESS + differenceInReading)*1.5;
-        if (newBrightnessValue > 241){
-            newBrightnessValue = 241;
-        }
-        NSNumber *newBrightness = [NSNumber numberWithInt:newBrightnessValue];
-        [self.myHue changeBrightness:newBrightness ofLightNumber:lightNumber];
-    }else{
-        [self.myHue changeBrightness:[NSNumber numberWithInt:DEFAULT_BRIGHTNESS] ofLightNumber:lightNumber];
-    }
+    NSNumber *initialReading = [self.initialTubeValues objectAtIndex:[pinNumber intValue]];
+    
+    int differenceInReading = abs([value intValue] - [initialReading intValue]);
+    int incrementValue = differenceInReading*INCREMENT_MULTIPLIER;
+    [self.myHue incrementHueBy:incrementValue ofLightNumber:lightNumber];
 }
 
--(BOOL)isPullingBand:(NSNumber *)pinNumber{
-    NSNumber *newValue = [self.currentTubeValues objectAtIndex:[pinNumber intValue]];
+-(BOOL)isPullingBand:(NSNumber *)pinNumber withValue:(NSNumber *)inValue{
     NSNumber *initialValue = [self.initialTubeValues objectAtIndex:[pinNumber intValue]];
     int thresholdValue = 0.95*[initialValue intValue];
     
-    return ([newValue intValue] < thresholdValue);
+    return ([inValue intValue] < thresholdValue);
 }
 
-//-(BOOL)isPushingBand:(NSNumber *)currentReadValue{
-//    return (currentReadValue > 1.05*_initialReadValue && _brightnessValue <= 241);
-//}
 -(NSArray *)soundList
 {
     if (!_soundList) {

@@ -88,7 +88,7 @@
         ADArduino* arduino = [[ADArduino alloc] initWithSerial:port];
         
         [self.detailController setArduino:arduino];
-        //[self.detailController showWindow:self];
+        [self.detailController showWindow:self];
         [self.connectButton setTitle:@"Disconnect"];
         
         self.connected = YES;

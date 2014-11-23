@@ -17,5 +17,7 @@
 
 - (void)changeBrightness:(NSNumber *)brightness ofLightNumber:(NSNumber *)lightNum;
 - (void)changeLightsToRandomColor;
+- (void)incrementHueBy:(int) incrementValue ofLightNumber:(NSNumber *)lightNum;
+
 
 @end
