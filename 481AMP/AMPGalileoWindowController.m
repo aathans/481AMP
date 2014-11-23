@@ -15,7 +15,8 @@
 @end
 
 #define NUM_TUBE_PINS 3
-#define NUM_FLOOR_PINS 0
+#define NUM_FLOOR_PINS 1
+#define FLOOR_START_PIN 7
 
 @implementation AMPGalileoWindowController
 
@@ -43,6 +44,7 @@
     self.dataManager.initialTubeValues = [NSMutableArray new];
     self.dataManager.currentTubeValues = [NSMutableArray new];
     self.dataManager.floorValues = [NSMutableArray new];
+    
     [self initArduino];
 }
 
@@ -66,7 +68,7 @@
             [self.dataManager.initialTubeValues addObject:pinValue];
         }
         
-        for (int i = 0; i < NUM_FLOOR_PINS; i++) {
+        for (int i = FLOOR_START_PIN; i < FLOOR_START_PIN + NUM_FLOOR_PINS; i++) {
             ADArduinoPin *digitalPin = [self.arduino.digitalPins objectAtIndex:i];
             NSNumber *pinValue = [NSNumber numberWithInt:digitalPin.value];
             [self.dataManager.floorValues addObject:pinValue];
@@ -89,7 +91,7 @@
         [self.dataManager updateValue:analogPin.value forPin:[NSNumber numberWithInt:i] andIsAnalog:YES];
     }
     
-    for(unsigned int i = 0; i < NUM_FLOOR_PINS; i++){
+    for(unsigned int i = FLOOR_START_PIN; i < FLOOR_START_PIN + NUM_FLOOR_PINS; i++){
         ADArduinoPin *digitalPin = [self.arduino.digitalPins objectAtIndex:i];
         [self.dataManager updateValue:digitalPin.value forPin:[NSNumber numberWithInt:i] andIsAnalog:NO];
     }

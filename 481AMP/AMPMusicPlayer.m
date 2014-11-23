@@ -44,11 +44,18 @@
         NSString *title = [self.songList firstObject];
         [self playSongWithName:title];
     }
+    
+    if(self.isPlaying){
+        return;
+    }
     [self.songPlayer play];
     self.isPlaying = true;
 }
 
 -(void)pauseMusic {
+    if(!self.isPlaying){
+        return;
+    }
     [self.songPlayer pause];
     self.isPlaying = false;
 }

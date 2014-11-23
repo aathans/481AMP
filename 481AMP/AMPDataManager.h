@@ -15,6 +15,7 @@
 @interface AMPDataManager : NSObject
 
 @property (nonatomic) BOOL gameMode;
+@property (nonatomic) BOOL lightIsRed;
 
 @property (nonatomic) NSMutableArray *currentTubeValues; //Analog input
 @property (nonatomic) NSMutableArray *initialTubeValues; //Resting position
@@ -23,6 +24,8 @@
 
 @property (nonatomic) AMPControlLightsViewController *myHue;
 @property (nonatomic) AMPMusicPlayer *musicPlayer;
+@property (nonatomic) AVAudioPlayer *songPlayer;
+@property (nonatomic) NSArray *songList;
 
 +(id)sharedManager;
 
