@@ -17,7 +17,7 @@
 #define DEFAULT_SATURATION 254
 #define GREEN_COLOR 26000
 #define RED_COLOR 65280
-#define INTERRUPT_TIME 10.0f
+#define INTERRUPT_TIME 5.0f
 
 
 @interface AMPControlLightsViewController ()
@@ -47,7 +47,7 @@
         [self.dataManager.musicPlayer playMusic];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self performSelector:@selector(pauseMusic) withObject:nil afterDelay:5.0f];
+            [self performSelector:@selector(pauseMusic) withObject:nil afterDelay:INTERRUPT_TIME];
         });
     }
     return self;
@@ -160,7 +160,7 @@
 
 -(void)pauseMusic{
     NSUInteger count = self.lightStates.count;
-    self.redLightNumber = @1;//[NSNumber numberWithInt:arc4random_uniform(NUM_LIGHTS-1)+1];
+    self.redLightNumber = [NSNumber numberWithInt:arc4random() % (NUM_LIGHTS)+1];
     
     // Save current light states
     [self.previousStates removeAllObjects];
