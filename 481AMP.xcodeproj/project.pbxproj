@@ -46,6 +46,11 @@
 		FA052AEA1A209E9C00B88814 /* chicken.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA052AE71A209E9B00B88814 /* chicken.mp3 */; };
 		FA052AEB1A209E9C00B88814 /* goose.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA052AE81A209E9C00B88814 /* goose.mp3 */; };
 		FA052AEC1A209E9C00B88814 /* horse.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA052AE91A209E9C00B88814 /* horse.mp3 */; };
+		FA052AF41A21918900B88814 /* SafeAndSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA052AF31A21918900B88814 /* SafeAndSound.mp3 */; };
+		FA052AF61A21923700B88814 /* BreakFree.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA052AF51A21923700B88814 /* BreakFree.mp3 */; };
+		FA052AF81A21925400B88814 /* Proleter.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA052AF71A21925400B88814 /* Proleter.mp3 */; };
+		FA052AFA1A2192BA00B88814 /* Happy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA052AF91A2192BA00B88814 /* Happy.mp3 */; };
+		FA052AFC1A21982C00B88814 /* UnderTheSea.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = FA052AFB1A21982C00B88814 /* UnderTheSea.mp3 */; };
 		FA28FD0C19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FCFE19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m */; };
 		FA28FD0D19FCC3F500C3C2AA /* DDASLLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0019FCC3F500C3C2AA /* DDASLLogger.m */; };
 		FA28FD0E19FCC3F500C3C2AA /* DDFileLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0219FCC3F500C3C2AA /* DDFileLogger.m */; };
@@ -137,6 +142,11 @@
 		FA052AE71A209E9B00B88814 /* chicken.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chicken.mp3; sourceTree = "<group>"; };
 		FA052AE81A209E9C00B88814 /* goose.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = goose.mp3; sourceTree = "<group>"; };
 		FA052AE91A209E9C00B88814 /* horse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = horse.mp3; sourceTree = "<group>"; };
+		FA052AF31A21918900B88814 /* SafeAndSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = SafeAndSound.mp3; sourceTree = "<group>"; };
+		FA052AF51A21923700B88814 /* BreakFree.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BreakFree.mp3; sourceTree = "<group>"; };
+		FA052AF71A21925400B88814 /* Proleter.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Proleter.mp3; sourceTree = "<group>"; };
+		FA052AF91A2192BA00B88814 /* Happy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Happy.mp3; sourceTree = "<group>"; };
+		FA052AFB1A21982C00B88814 /* UnderTheSea.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = UnderTheSea.mp3; sourceTree = "<group>"; };
 		FA28FCFD19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDAbstractDatabaseLogger.h; sourceTree = "<group>"; };
 		FA28FCFE19FCC3F500C3C2AA /* DDAbstractDatabaseLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDAbstractDatabaseLogger.m; sourceTree = "<group>"; };
 		FA28FCFF19FCC3F500C3C2AA /* DDASLLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDASLLogger.h; sourceTree = "<group>"; };
@@ -332,6 +342,11 @@
 			isa = PBXGroup;
 			children = (
 				FA052AE41A20719F00B88814 /* Fireflies.mp3 */,
+				FA052AF31A21918900B88814 /* SafeAndSound.mp3 */,
+				FA052AF51A21923700B88814 /* BreakFree.mp3 */,
+				FA052AF91A2192BA00B88814 /* Happy.mp3 */,
+				FA052AFB1A21982C00B88814 /* UnderTheSea.mp3 */,
+				FA052AF71A21925400B88814 /* Proleter.mp3 */,
 			);
 			name = Songs;
 			sourceTree = "<group>";
@@ -527,10 +542,14 @@
 				FA052AEB1A209E9C00B88814 /* goose.mp3 in Resources */,
 				FA01EDF219FDC41A00034F00 /* PHBridgePushLinkViewController.xib in Resources */,
 				F4927CA018224EE900C1A82D /* InfoPlist.strings in Resources */,
+				FA052AFC1A21982C00B88814 /* UnderTheSea.mp3 in Resources */,
 				FA01EDF019FDC41A00034F00 /* PHLoadingViewController.xib in Resources */,
 				FA32B8EA1A0DB5F70079AB58 /* snare.mp3 in Resources */,
+				FA052AF61A21923700B88814 /* BreakFree.mp3 in Resources */,
+				FA052AF41A21918900B88814 /* SafeAndSound.mp3 in Resources */,
 				FA01EDF519FDC41A00034F00 /* press_smartbridge.png in Resources */,
 				FA01EDFA19FDC5D700034F00 /* AMPControlLightsViewController.xib in Resources */,
+				FA052AF81A21925400B88814 /* Proleter.mp3 in Resources */,
 				FA052AEC1A209E9C00B88814 /* horse.mp3 in Resources */,
 				FA01EDDE19FCCB0C00034F00 /* Images.xcassets in Resources */,
 				F4927CA618224EE900C1A82D /* Credits.rtf in Resources */,
@@ -539,6 +558,7 @@
 				FA01EDD919FCCAF300034F00 /* AMPMainViewController.xib in Resources */,
 				FA01EDF419FDC41A00034F00 /* PHBridgeSelectionViewController.xib in Resources */,
 				FA01EDDD19FCCB0C00034F00 /* MainMenu.xib in Resources */,
+				FA052AFA1A2192BA00B88814 /* Happy.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
