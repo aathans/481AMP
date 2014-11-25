@@ -66,18 +66,8 @@
                         <action selector="light2Pressed:" target="-2" id="dN8-Si-vfG"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q04-U0-c8h">
-                    <rect key="frame" x="267" y="54" width="78" height="32"/>
-                    <buttonCell key="cell" type="push" title="RESET" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="emC-gZ-7dQ">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="resetButtonPushed:" target="-2" id="vue-9K-fpT"/>
-                    </connections>
-                </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="trV-Vg-njd">
-                    <rect key="frame" x="125" y="54" width="111" height="32"/>
+                    <rect key="frame" x="185" y="54" width="111" height="32"/>
                     <buttonCell key="cell" type="push" title="Randomize" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eQp-Rm-UVd">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
