@@ -76,46 +76,6 @@
                         <action selector="resetButtonPushed:" target="-2" id="vue-9K-fpT"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vv9-Kh-b2s">
-                    <rect key="frame" x="6" y="119" width="98" height="32"/>
-                    <buttonCell key="cell" type="push" title="Pull Tube" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="RLk-Ne-DSb">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="pullTube2:" target="-2" id="AHt-dH-xK7"/>
-                    </connections>
-                </button>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ElK-Fw-yW2">
-                    <rect key="frame" x="0.0" y="119" width="111" height="32"/>
-                    <buttonCell key="cell" type="push" title="Pull Tube 1" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="z7c-t0-PH6">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="pullTube1:" target="-2" id="8oO-rk-sgW"/>
-                    </connections>
-                </button>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ocL-00-xCR">
-                    <rect key="frame" x="251" y="119" width="111" height="32"/>
-                    <buttonCell key="cell" type="push" title="Pull Tube 3" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MEe-1G-PUt">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="pullTube3:" target="-2" id="pBe-L8-LKH"/>
-                    </connections>
-                </button>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kt5-3I-lhT">
-                    <rect key="frame" x="125" y="119" width="111" height="32"/>
-                    <buttonCell key="cell" type="push" title="Pull Tube 2" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="cMS-GA-YAk">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="pullTube2:" target="-2" id="eg5-5R-gUI"/>
-                    </connections>
-                </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="trV-Vg-njd">
                     <rect key="frame" x="125" y="54" width="111" height="32"/>
                     <buttonCell key="cell" type="push" title="Randomize" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eQp-Rm-UVd">
