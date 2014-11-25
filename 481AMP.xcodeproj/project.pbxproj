@@ -120,7 +120,6 @@
 		FA01EDD019FCCAF300034F00 /* AMPAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMPAppDelegate.m; path = 481AMP/AMPAppDelegate.m; sourceTree = SOURCE_ROOT; };
 		FA01EDD119FCCAF300034F00 /* AMPGalileoWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMPGalileoWindowController.h; path = 481AMP/AMPGalileoWindowController.h; sourceTree = SOURCE_ROOT; };
 		FA01EDD219FCCAF300034F00 /* AMPGalileoWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMPGalileoWindowController.m; path = 481AMP/AMPGalileoWindowController.m; sourceTree = SOURCE_ROOT; };
-		FA01EDD319FCCAF300034F00 /* AMPMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMPMainViewController.h; path = 481AMP/AMPMainViewController.h; sourceTree = SOURCE_ROOT; };
 		FA01EDDB19FCCB0C00034F00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = 481AMP/Base.lproj/MainMenu.xib; sourceTree = SOURCE_ROOT; };
 		FA01EDDC19FCCB0C00034F00 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = 481AMP/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		FA01EDDF19FCCB3E00034F00 /* HueSDK_OSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HueSDK_OSX.framework; sourceTree = "<group>"; };
@@ -264,7 +263,6 @@
 				FA052AEF1A20A30400B88814 /* Hue */,
 				FA052AF01A20A30E00B88814 /* Galileo */,
 				FA052AF11A20A31700B88814 /* Manager */,
-				FA01EDD319FCCAF300034F00 /* AMPMainViewController.h */,
 				FA01EDDA19FCCB0C00034F00 /* MainMenu.xib */,
 				FA052AEE1A20A2D200B88814 /* Songs */,
 				FA052AED1A20A2CA00B88814 /* Sounds */,

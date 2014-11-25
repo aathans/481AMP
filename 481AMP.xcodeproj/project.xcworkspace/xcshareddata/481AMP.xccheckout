@@ -5,13 +5,13 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>C91317C2-1658-4EED-BCF4-161892F1D5CC</string>
+	<string>69C4A6C4-95E2-4FE5-90DC-1D65A752FCE9</string>
 	<key>IDESourceControlProjectName</key>
 	<string>481AMP</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>CE0FC50B0DE7C4D58B029B094C1732FF594F93A3</key>
-		<string>https://github.com/aathans/481AMP.git</string>
+		<string>github.com:aathans/481AMP.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>481AMP.xcodeproj</string>
@@ -21,7 +21,7 @@
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/aathans/481AMP.git</string>
+	<string>github.com:aathans/481AMP.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
