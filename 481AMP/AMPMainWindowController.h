@@ -10,4 +10,6 @@
 
 @interface AMPMainWindowController : NSWindowController
 
+-(void)redLightWasSet;
+
 @end

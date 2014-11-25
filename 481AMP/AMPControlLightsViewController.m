@@ -17,7 +17,7 @@
 #define DEFAULT_SATURATION 254
 #define GREEN_COLOR 26000
 #define RED_COLOR 65280
-#define INTERRUPT_TIME 20.0f
+#define INTERRUPT_TIME 15.0f
 
 
 @interface AMPControlLightsViewController ()
@@ -212,6 +212,7 @@
     
     for (PHLight *light in cache.lights.allValues) {
         PHLightState *lightState = [[PHLightState alloc] init];
+        [lightState setOnBool:YES];
         [lightState setHue:[NSNumber numberWithInt:DEFAULT_HUE]];
         [lightState setBrightness:[NSNumber numberWithInt:DEFAULT_BRIGHTNESS]];
         [lightState setSaturation:[NSNumber numberWithInt:DEFAULT_SATURATION]];

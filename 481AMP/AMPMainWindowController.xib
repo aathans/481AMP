@@ -59,6 +59,9 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="musicOptionsPushed:" target="-2" id="6bY-68-tEk"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>

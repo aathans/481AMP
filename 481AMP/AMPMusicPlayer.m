@@ -27,6 +27,7 @@
     if (self) {
         self.songIndex = 0;
         self.currentVolume = 0.5f;
+        self.isPlaying = true;
     }
     return self;
 }
@@ -103,8 +104,8 @@
 }
 
 -(void)startMusic{
-    NSInteger size = self.songList.count;
-    int pickSongIndex = arc4random()%size;
+    int numSongs = (int)self.songList.count;
+    int pickSongIndex = arc4random_uniform(numSongs);
     NSString *songName = [self.songList objectAtIndex:pickSongIndex];
     [self playSongWithName:songName];
     

@@ -16,6 +16,8 @@
 
 @implementation AMPDataManager
 
+@synthesize lightIsRed = _lightIsRed;
+
 +(id)sharedManager{
     static AMPDataManager *sharedMyManager = nil;
     static dispatch_once_t onceToken;
@@ -96,6 +98,17 @@
     self.soundPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     [_soundPlayer setVolume:1.0f];
     [_soundPlayer play];
+}
+
+-(BOOL)lightIsRed{
+    return _lightIsRed;
+}
+
+-(void)setLightIsRed:(BOOL)lightIsRed{
+    _lightIsRed = lightIsRed;
+    if(lightIsRed){
+        [self.mainWC redLightWasSet];
+    }
 }
 
 @end

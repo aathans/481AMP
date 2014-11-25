@@ -9,5 +9,9 @@
 #import <Cocoa/Cocoa.h>
 
 @interface AMPMusicWindowController : NSWindowController
+@property (weak) IBOutlet NSButton *pausePlayButton;
+
+-(void)changeButtonToPause;
+
 
 @end

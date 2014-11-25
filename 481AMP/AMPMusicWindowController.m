@@ -26,15 +26,29 @@
 }
 
 - (IBAction)prevSongButton:(id)sender {
-    [self.dataManager.musicPlayer playLastSong];
+    if(![self.dataManager lightIsRed]){
+        [self.dataManager.musicPlayer playLastSong];
+    }
 }
 
 - (IBAction)nextSongButton:(id)sender {
-    [self.dataManager.musicPlayer playNextSong];
+    if(![self.dataManager lightIsRed]){
+        [self.dataManager.musicPlayer playNextSong];
+    }
 }
 
 - (IBAction)playPauseButton:(id)sender {
-    [self.dataManager.musicPlayer toggleMusic];
+    if(![self.dataManager lightIsRed]){
+        [self.dataManager.musicPlayer toggleMusic];
+    }else if(self.pausePlayButton.state == NSOnState){
+        self.pausePlayButton.state = NSOffState;
+    }else{
+        self.pausePlayButton.state = NSOnState;
+    }
+}
+
+-(void)changeButtonToPause{
+    [self.pausePlayButton setState:NSOnState];
 }
 
 @end
