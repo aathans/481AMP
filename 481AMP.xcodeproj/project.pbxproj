@@ -27,8 +27,6 @@
 		FA01EDCE19FCCACF00034F00 /* ORSSerialPortManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FA01EDCC19FCCACF00034F00 /* ORSSerialPortManager.m */; };
 		FA01EDD619FCCAF300034F00 /* AMPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA01EDD019FCCAF300034F00 /* AMPAppDelegate.m */; };
 		FA01EDD719FCCAF300034F00 /* AMPGalileoWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA01EDD219FCCAF300034F00 /* AMPGalileoWindowController.m */; };
-		FA01EDD819FCCAF300034F00 /* AMPMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA01EDD419FCCAF300034F00 /* AMPMainViewController.m */; };
-		FA01EDD919FCCAF300034F00 /* AMPMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA01EDD519FCCAF300034F00 /* AMPMainViewController.xib */; };
 		FA01EDDD19FCCB0C00034F00 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA01EDDA19FCCB0C00034F00 /* MainMenu.xib */; };
 		FA01EDDE19FCCB0C00034F00 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA01EDDC19FCCB0C00034F00 /* Images.xcassets */; };
 		FA01EDE019FCCB3E00034F00 /* HueSDK_OSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA01EDDF19FCCB3E00034F00 /* HueSDK_OSX.framework */; };
@@ -123,8 +121,6 @@
 		FA01EDD119FCCAF300034F00 /* AMPGalileoWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMPGalileoWindowController.h; path = 481AMP/AMPGalileoWindowController.h; sourceTree = SOURCE_ROOT; };
 		FA01EDD219FCCAF300034F00 /* AMPGalileoWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMPGalileoWindowController.m; path = 481AMP/AMPGalileoWindowController.m; sourceTree = SOURCE_ROOT; };
 		FA01EDD319FCCAF300034F00 /* AMPMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AMPMainViewController.h; path = 481AMP/AMPMainViewController.h; sourceTree = SOURCE_ROOT; };
-		FA01EDD419FCCAF300034F00 /* AMPMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AMPMainViewController.m; path = 481AMP/AMPMainViewController.m; sourceTree = SOURCE_ROOT; };
-		FA01EDD519FCCAF300034F00 /* AMPMainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AMPMainViewController.xib; path = 481AMP/AMPMainViewController.xib; sourceTree = SOURCE_ROOT; };
 		FA01EDDB19FCCB0C00034F00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = 481AMP/Base.lproj/MainMenu.xib; sourceTree = SOURCE_ROOT; };
 		FA01EDDC19FCCB0C00034F00 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = 481AMP/Images.xcassets; sourceTree = SOURCE_ROOT; };
 		FA01EDDF19FCCB3E00034F00 /* HueSDK_OSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HueSDK_OSX.framework; sourceTree = "<group>"; };
@@ -269,8 +265,6 @@
 				FA052AF01A20A30E00B88814 /* Galileo */,
 				FA052AF11A20A31700B88814 /* Manager */,
 				FA01EDD319FCCAF300034F00 /* AMPMainViewController.h */,
-				FA01EDD419FCCAF300034F00 /* AMPMainViewController.m */,
-				FA01EDD519FCCAF300034F00 /* AMPMainViewController.xib */,
 				FA01EDDA19FCCB0C00034F00 /* MainMenu.xib */,
 				FA052AEE1A20A2D200B88814 /* Songs */,
 				FA052AED1A20A2CA00B88814 /* Sounds */,
@@ -582,7 +576,6 @@
 				F4927CA618224EE900C1A82D /* Credits.rtf in Resources */,
 				FA052AE61A2071E100B88814 /* Fireflies.mp3 in Resources */,
 				FA052AEA1A209E9C00B88814 /* chicken.mp3 in Resources */,
-				FA01EDD919FCCAF300034F00 /* AMPMainViewController.xib in Resources */,
 				FA01EDF419FDC41A00034F00 /* PHBridgeSelectionViewController.xib in Resources */,
 				FA01EDDD19FCCB0C00034F00 /* MainMenu.xib in Resources */,
 				FA052AFA1A2192BA00B88814 /* Happy.mp3 in Resources */,
@@ -613,7 +606,6 @@
 				FA01EE1119FE827400034F00 /* AMPDataManager.m in Sources */,
 				FA01EDC419FCCAAC00034F00 /* ADFirmata.m in Sources */,
 				FA01EDF319FDC41A00034F00 /* PHBridgeSelectionViewController.m in Sources */,
-				FA01EDD819FCCAF300034F00 /* AMPMainViewController.m in Sources */,
 				FA28FD1019FCC3F500C3C2AA /* DDTTYLogger.m in Sources */,
 				FA28FD0E19FCC3F500C3C2AA /* DDFileLogger.m in Sources */,
 				FA01EDEF19FDC41A00034F00 /* PHLoadingViewController.m in Sources */,
