@@ -44,7 +44,7 @@
         self.redLightNumber = @0;
         
         [self resetLights];
-        [self.dataManager.musicPlayer playMusic];
+        [self.dataManager.musicPlayer startMusic];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self performSelector:@selector(pauseMusic) withObject:nil afterDelay:INTERRUPT_TIME];

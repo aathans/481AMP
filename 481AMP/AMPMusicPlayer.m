@@ -102,6 +102,14 @@
     return _songList;
 }
 
+-(void)startMusic{
+    NSInteger size = self.songList.count;
+    int pickSongIndex = arc4random()%size;
+    NSString *songName = [self.songList objectAtIndex:pickSongIndex];
+    [self playSongWithName:songName];
+    
+}
+
 -(void)increaseVolume
 {
     self.currentVolume += 0.01;

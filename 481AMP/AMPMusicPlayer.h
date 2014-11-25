@@ -20,6 +20,7 @@
 -(void)toggleMusic;
 -(void)playNextSong;
 -(void)playLastSong;
+-(void)startMusic;
 -(void)adjustVolumeWithRotation:(int)rotation;
 
 @end
