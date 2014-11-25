@@ -14,8 +14,8 @@
 
 @end
 
-#define NUM_TUBE_PINS 1
-#define NUM_FLOOR_PINS 0
+#define NUM_TUBE_PINS 4
+#define NUM_FLOOR_PINS 1
 #define FLOOR_START_PIN 7
 
 @implementation AMPGalileoWindowController

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="AMPMusicWindowController">
+            <connections>
+                <outlet property="window" destination="F0z-JX-Cv5" id="gIp-Ho-8D9"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="778"/>
+            <view key="contentView" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TSb-bq-bkI">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="rainbowbackground" id="a99-8V-1mE"/>
+                    </imageView>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fvo-fm-YJZ">
+                        <rect key="frame" x="123" y="61" width="73" height="55"/>
+                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="previous" imagePosition="only" alignment="center" state="on" imageScaling="axesIndependently" inset="2" id="9BD-pf-7Ml">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WFY-ME-Xj1">
+                        <rect key="frame" x="285" y="61" width="73" height="55"/>
+                        <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="next" imagePosition="only" alignment="center" state="on" imageScaling="axesIndependently" inset="2" id="TJy-xf-JtY">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Yl-aE-4Mp">
+                        <rect key="frame" x="154" y="188" width="172" height="52"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Music Options" id="G8s-hy-kJZ">
+                            <font key="font" metaFont="system" size="24"/>
+                            <color key="textColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iif-xv-2VK">
+                        <rect key="frame" x="204" y="61" width="73" height="55"/>
+                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="pause" imagePosition="only" alignment="center" alternateImage="play" state="on" imageScaling="axesIndependently" inset="2" id="wCs-7M-DF4">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                    </button>
+                </subviews>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+        </window>
+    </objects>
+    <resources>
+        <image name="next" width="256" height="256"/>
+        <image name="pause" width="256" height="256"/>
+        <image name="play" width="256" height="256"/>
+        <image name="previous" width="256" height="256"/>
+        <image name="rainbowbackground" width="1024" height="768"/>
+    </resources>
+</document>

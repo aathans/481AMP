@@ -83,8 +83,7 @@
     NSNumber *previousState = [self.floorValues objectAtIndex:([pinNumber intValue]-FLOOR_START_PIN)];
     BOOL isPressedAlready = [previousState boolValue];
     if(!isPressedAlready && value){
-        [self.myHue changeLightsToRandomColor];
-        int soundIndex = arc4random_uniform(NUM_SONGS-1);
+        int soundIndex = arc4random() % NUM_SONGS;
         NSString *soundName = [self.soundList objectAtIndex:soundIndex];
         [self playSoundWithName:soundName andType:@"mp3"];
     }

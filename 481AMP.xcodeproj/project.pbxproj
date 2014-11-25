@@ -63,6 +63,8 @@
 		FA28FD1019FCC3F500C3C2AA /* DDTTYLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0619FCC3F500C3C2AA /* DDTTYLogger.m */; };
 		FA28FD1119FCC3F500C3C2AA /* ContextFilterLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0919FCC3F500C3C2AA /* ContextFilterLogFormatter.m */; };
 		FA28FD1219FCC3F500C3C2AA /* DispatchQueueLogFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28FD0B19FCC3F500C3C2AA /* DispatchQueueLogFormatter.m */; };
+		FA2E63741A242C0200ABC8FB /* AMPMusicWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2E63721A242C0200ABC8FB /* AMPMusicWindowController.m */; };
+		FA2E63751A242C0200ABC8FB /* AMPMusicWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA2E63731A242C0200ABC8FB /* AMPMusicWindowController.xib */; };
 		FA32B8DF1A0D9D370079AB58 /* AMPSoundTest.m in Sources */ = {isa = PBXBuildFile; fileRef = FA32B8DE1A0D9D370079AB58 /* AMPSoundTest.m */; };
 		FA32B8E11A0DA0760079AB58 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA32B8E01A0DA0760079AB58 /* AVFoundation.framework */; };
 		FA32B8E21A0DAB820079AB58 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA32B8E01A0DA0760079AB58 /* AVFoundation.framework */; };
@@ -172,6 +174,9 @@
 		FA28FD0919FCC3F500C3C2AA /* ContextFilterLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContextFilterLogFormatter.m; sourceTree = "<group>"; };
 		FA28FD0A19FCC3F500C3C2AA /* DispatchQueueLogFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispatchQueueLogFormatter.h; sourceTree = "<group>"; };
 		FA28FD0B19FCC3F500C3C2AA /* DispatchQueueLogFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispatchQueueLogFormatter.m; sourceTree = "<group>"; };
+		FA2E63711A242C0200ABC8FB /* AMPMusicWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPMusicWindowController.h; sourceTree = "<group>"; };
+		FA2E63721A242C0200ABC8FB /* AMPMusicWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPMusicWindowController.m; sourceTree = "<group>"; };
+		FA2E63731A242C0200ABC8FB /* AMPMusicWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AMPMusicWindowController.xib; sourceTree = "<group>"; };
 		FA32B8DE1A0D9D370079AB58 /* AMPSoundTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPSoundTest.m; sourceTree = "<group>"; };
 		FA32B8E01A0DA0760079AB58 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FA32B8E51A0DB2EC0079AB58 /* snare.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = snare.ogg; sourceTree = "<group>"; };
@@ -402,6 +407,9 @@
 			isa = PBXGroup;
 			children = (
 				FA052AE11A2051C800B88814 /* AMPMusicPlayer.h */,
+				FA2E63711A242C0200ABC8FB /* AMPMusicWindowController.h */,
+				FA2E63721A242C0200ABC8FB /* AMPMusicWindowController.m */,
+				FA2E63731A242C0200ABC8FB /* AMPMusicWindowController.xib */,
 				FA052AE21A2051FB00B88814 /* AMPMusicPlayer.m */,
 			);
 			name = "Music Player";
@@ -565,6 +573,7 @@
 				FA052AF61A21923700B88814 /* BreakFree.mp3 in Resources */,
 				FA052AF41A21918900B88814 /* SafeAndSound.mp3 in Resources */,
 				FA01EDF519FDC41A00034F00 /* press_smartbridge.png in Resources */,
+				FA2E63751A242C0200ABC8FB /* AMPMusicWindowController.xib in Resources */,
 				FA052B091A21E62F00B88814 /* AMPMainWindowController.xib in Resources */,
 				FA01EDFA19FDC5D700034F00 /* AMPControlLightsViewController.xib in Resources */,
 				FA052AF81A21925400B88814 /* Proleter.mp3 in Resources */,
@@ -598,6 +607,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2E63741A242C0200ABC8FB /* AMPMusicWindowController.m in Sources */,
 				FA01EDF919FDC5D700034F00 /* AMPControlLightsViewController.m in Sources */,
 				F4927CA218224EE900C1A82D /* main.m in Sources */,
 				FA01EE1119FE827400034F00 /* AMPDataManager.m in Sources */,

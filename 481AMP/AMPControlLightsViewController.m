@@ -11,13 +11,13 @@
 #import "AMPDataManager.h"
 
 #define MAX_HUE 65535
-#define NUM_LIGHTS 3
+#define NUM_LIGHTS 4
 #define DEFAULT_HUE 14922
 #define DEFAULT_BRIGHTNESS 140
 #define DEFAULT_SATURATION 254
 #define GREEN_COLOR 26000
 #define RED_COLOR 65280
-#define INTERRUPT_TIME 5.0f
+#define INTERRUPT_TIME 20.0f
 
 
 @interface AMPControlLightsViewController ()
