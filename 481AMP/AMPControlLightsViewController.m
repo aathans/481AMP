@@ -11,14 +11,18 @@
 #import "AMPDataManager.h"
 
 #define MAX_HUE 65535
-#define NUM_LIGHTS 4
+#define NUM_LIGHTS 2
 #define DEFAULT_HUE 14922
 #define DEFAULT_BRIGHTNESS 140
 #define DEFAULT_SATURATION 254
 #define GREEN_COLOR 26000
 #define RED_COLOR 65280
+#define BLUE_COLOR 46920
+#define YELLOW_COLOR 12750
+#define PURPLE_COLOR 56100
 #define INTERRUPT_TIME 15.0f
 
+int stopColor = RED_COLOR;
 
 @interface AMPControlLightsViewController ()
 
@@ -127,11 +131,28 @@
 - (IBAction)pullTube3:(id)sender {
     [self pullTube:@3];
 }
+- (IBAction)overrideStop:(id)sender {
+    [self incrementHueBy:0 ofLightNumber:self.redLightNumber];
+}
 
 - (IBAction)randomizeLightsButton:(id)sender {
     [self changeLightsToRandomColor];
 }
 
+- (IBAction)changeStopColor:(id)sender {
+    NSInteger clickedSegment = [sender selectedSegment];
+    NSString * segmentLabel = [sender labelForSegment:clickedSegment];
+    
+    if ([segmentLabel isEqualToString:@"Red"]) {
+        stopColor = RED_COLOR;
+    } else if ([segmentLabel isEqualToString:@"Blue"]) {
+        stopColor = BLUE_COLOR;
+    } else if ([segmentLabel isEqualToString:@"Yellow"]) {
+        stopColor = YELLOW_COLOR;
+    } else if ([segmentLabel isEqualToString:@"Purple"]) {
+        stopColor = PURPLE_COLOR;
+    }
+}
 
 -(void)toggleLightNumber:(NSNumber *)lightNum{
     PHBridgeResourcesCache *cache = [PHBridgeResourcesReader readBridgeResourcesCache];
@@ -176,7 +197,7 @@
         if (self.redLightNumber != [NSNumber numberWithInt:i]) {
             [self changeHue:[NSNumber numberWithInt:GREEN_COLOR] ofLightNumber:[NSNumber numberWithInt:i]];
         }else{
-            [self changeHue:[NSNumber numberWithInt:RED_COLOR] ofLightNumber:self.redLightNumber];
+            [self changeHue:[NSNumber numberWithInt:stopColor] ofLightNumber:self.redLightNumber];
         }
     }
     
