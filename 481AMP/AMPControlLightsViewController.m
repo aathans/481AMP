@@ -11,7 +11,7 @@
 #import "AMPDataManager.h"
 
 #define MAX_HUE 65535
-#define NUM_LIGHTS 2
+#define NUM_LIGHTS 4
 #define DEFAULT_HUE 14922
 #define DEFAULT_BRIGHTNESS 140
 #define DEFAULT_SATURATION 254
@@ -118,6 +118,13 @@ int stopColor = RED_COLOR;
 
 - (IBAction)light4Pressed:(id)sender {
     [self toggleLightNumber:@4];
+}
+
+- (IBAction)changeBrightnessButton:(id)sender {
+    NSInteger tag = ((NSSlider*)sender).tag;
+    double sliderVal = [(NSSlider*)sender doubleValue];
+    
+    [self changeBrightness:sliderVal ofLightNumber:[NSNumber numberWithInteger:tag]];
 }
 
 - (IBAction)pullTube1:(id)sender {
@@ -280,6 +287,15 @@ int stopColor = RED_COLOR;
     PHLightState *lightState = [self.lightStates objectAtIndex:[lightNum intValue]-1];
     
     [lightState setHue:newHue];
+    
+    [self changeLightState:lightState ofLightNum:lightNum];
+}
+
+-(void)changeBrightness:(double) percentage ofLightNumber:(NSNumber *)lightNum{
+    PHLightState *lightState = [self.lightStates objectAtIndex:[lightNum intValue]-1];
+    
+    NSNumber *newBrightness = [NSNumber numberWithInt:255 * (percentage * .01)];
+    [lightState setBrightness:newBrightness];
     
     [self changeLightState:lightState ofLightNum:lightNum];
 }

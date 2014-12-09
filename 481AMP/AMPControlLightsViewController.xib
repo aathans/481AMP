@@ -14,11 +14,11 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="480" height="262"/>
+            <rect key="frame" x="0.0" y="0.0" width="480" height="285"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bpA-Pp-B2x">
-                    <rect key="frame" x="18" y="173" width="74" height="26"/>
+                    <rect key="frame" x="18" y="197" width="74" height="26"/>
                     <buttonCell key="cell" type="bevel" title="Light 1" bezelStyle="regularSquare" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="J2T-5n-k9Q">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -28,7 +28,7 @@
                     </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cgU-1D-7ke">
-                    <rect key="frame" x="269" y="173" width="74" height="26"/>
+                    <rect key="frame" x="269" y="197" width="74" height="26"/>
                     <buttonCell key="cell" type="bevel" title="Light 3" bezelStyle="regularSquare" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ab8-Co-FkU">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -38,7 +38,7 @@
                     </connections>
                 </button>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8us-11-z3H">
-                    <rect key="frame" x="388" y="173" width="74" height="26"/>
+                    <rect key="frame" x="388" y="197" width="74" height="26"/>
                     <buttonCell key="cell" type="bevel" title="Light 4" bezelStyle="regularSquare" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="T8H-Fx-uf8">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -48,7 +48,7 @@
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IVC-a4-6XX">
-                    <rect key="frame" x="178" y="225" width="124" height="17"/>
+                    <rect key="frame" x="178" y="248" width="124" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Turn On/Off Lights" id="lHs-h4-cyZ">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -56,7 +56,7 @@
                     </textFieldCell>
                 </textField>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PDg-05-ooC">
-                    <rect key="frame" x="143" y="173" width="74" height="26"/>
+                    <rect key="frame" x="143" y="197" width="74" height="26"/>
                     <buttonCell key="cell" type="bevel" title="Light 2" bezelStyle="regularSquare" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="9Zs-m4-JG7">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -66,7 +66,7 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="trV-Vg-njd">
-                    <rect key="frame" x="185" y="96" width="111" height="32"/>
+                    <rect key="frame" x="185" y="97" width="111" height="32"/>
                     <buttonCell key="cell" type="push" title="Randomize" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eQp-Rm-UVd">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
@@ -76,7 +76,7 @@
                     </connections>
                 </button>
                 <segmentedControl verticalHuggingPriority="750" fixedFrame="YES" tag="6" translatesAutoresizingMaskIntoConstraints="NO" id="zOT-i2-70I">
-                    <rect key="frame" x="18" y="18" width="225" height="24"/>
+                    <rect key="frame" x="18" y="25" width="225" height="24"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <segmentedCell key="cell" alignment="left" style="rounded" trackingMode="selectOne" id="P2m-Xw-7nv">
                         <font key="font" metaFont="system"/>
@@ -92,7 +92,7 @@
                     </connections>
                 </segmentedControl>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WzM-tX-RMi">
-                    <rect key="frame" x="351" y="13" width="115" height="32"/>
+                    <rect key="frame" x="351" y="20" width="115" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Override Stop" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="WCN-dJ-bjZ">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -103,7 +103,7 @@
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="opH-WD-CCo">
-                    <rect key="frame" x="35" y="49" width="190" height="17"/>
+                    <rect key="frame" x="35" y="56" width="190" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Change the stop light color:" id="FCE-Yv-TEh">
                         <font key="font" metaFont="system"/>
@@ -111,7 +111,47 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" tag="1" translatesAutoresizingMaskIntoConstraints="NO" id="ywV-eZ-au1">
+                    <rect key="frame" x="7" y="157" width="96" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="100" doubleValue="55.100000000000001" tickMarkPosition="above" sliderType="linear" id="2a0-xl-0wQ"/>
+                    <connections>
+                        <action selector="changeBrightnessButton:" target="-2" id="WjM-ff-k52"/>
+                    </connections>
+                </slider>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" tag="2" translatesAutoresizingMaskIntoConstraints="NO" id="m6u-oD-itK">
+                    <rect key="frame" x="132" y="157" width="96" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="100" doubleValue="55.100000000000001" tickMarkPosition="above" sliderType="linear" id="IWk-f2-7FP"/>
+                    <connections>
+                        <action selector="changeBrightnessButton:" target="-2" id="tOK-GH-fV8"/>
+                    </connections>
+                </slider>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" tag="3" translatesAutoresizingMaskIntoConstraints="NO" id="rdE-3G-CHm">
+                    <rect key="frame" x="258" y="157" width="96" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="100" doubleValue="55.100000000000001" tickMarkPosition="above" sliderType="linear" id="osg-1B-UlH"/>
+                    <connections>
+                        <action selector="changeBrightnessButton:" target="-2" id="jza-Ng-vvo"/>
+                    </connections>
+                </slider>
+                <slider verticalHuggingPriority="750" fixedFrame="YES" tag="4" translatesAutoresizingMaskIntoConstraints="NO" id="V07-zF-rrQ">
+                    <rect key="frame" x="377" y="157" width="96" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <sliderCell key="cell" continuous="YES" state="on" alignment="left" maxValue="100" doubleValue="55.100000000000001" tickMarkPosition="above" sliderType="linear" id="d7R-2y-H90"/>
+                    <connections>
+                        <action selector="changeBrightnessButton:" target="-2" id="p4N-PK-w2x"/>
+                    </connections>
+                </slider>
             </subviews>
         </customView>
+        <button verticalHuggingPriority="750" id="xKn-ab-EhB">
+            <rect key="frame" x="0.0" y="0.0" width="82" height="32"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ngu-gl-tru">
+                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                <font key="font" metaFont="system"/>
+            </buttonCell>
+        </button>
     </objects>
 </document>
