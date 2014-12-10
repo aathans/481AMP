@@ -10,11 +10,10 @@
 #import "ADArduino.h"
 #import "AMPDataManager.h"
 
-@interface AMPGalileoWindowController : NSWindowController <NSTableViewDataSource,NSTableViewDelegate>
+@interface AMPGalileoWindowController : NSWindowController
 
 
 @property (strong) ADArduino* arduino;
-@property (assign) IBOutlet NSTableView *tableView;
 @property (assign) BOOL stopRefresh;
 @property (assign) NSTimer* timer;
 

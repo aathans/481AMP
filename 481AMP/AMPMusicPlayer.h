@@ -19,9 +19,14 @@
 -(void)pauseMusic;
 -(void)toggleMusic;
 -(void)playNextSong;
--(void)playLastSong;
+-(void)playPrevSong;
 -(void)startMusic;
+-(void)playLastSong;
 -(void)adjustVolumeWithRotation:(int)rotation;
+-(NSInteger)getNumberOfSongs;
 -(NSString*)getCurrentSong;
+
+-(void)addSongWithURL:(NSURL *)songURL andSongName:(NSString *)songName;
+
 
 @end

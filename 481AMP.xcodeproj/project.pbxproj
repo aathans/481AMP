@@ -398,10 +398,10 @@
 		FA052AF21A20A32500B88814 /* Music Player */ = {
 			isa = PBXGroup;
 			children = (
-				FA052AE11A2051C800B88814 /* AMPMusicPlayer.h */,
 				FA2E63711A242C0200ABC8FB /* AMPMusicWindowController.h */,
 				FA2E63721A242C0200ABC8FB /* AMPMusicWindowController.m */,
 				FA2E63731A242C0200ABC8FB /* AMPMusicWindowController.xib */,
+				FA052AE11A2051C800B88814 /* AMPMusicPlayer.h */,
 				FA052AE21A2051FB00B88814 /* AMPMusicPlayer.m */,
 			);
 			name = "Music Player";

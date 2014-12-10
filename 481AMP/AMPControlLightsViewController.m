@@ -12,14 +12,17 @@
 
 #define MAX_HUE 65535
 #define NUM_LIGHTS 4
+
 #define DEFAULT_HUE 14922
 #define DEFAULT_BRIGHTNESS 140
 #define DEFAULT_SATURATION 254
+
 #define GREEN_COLOR 26000
 #define RED_COLOR 65280
 #define BLUE_COLOR 46920
 #define YELLOW_COLOR 12750
 #define PURPLE_COLOR 56100
+
 #define INTERRUPT_TIME 15.0f
 
 int stopColor = RED_COLOR;
@@ -62,44 +65,6 @@ int stopColor = RED_COLOR;
 
 }
 
-- (void)resetTube{
-    if (self.dataManager.initialTubeValues.count == 0) {
-        self.dataManager.initialTubeValues = [NSMutableArray new];
-        self.dataManager.currentMaxTubeValues = [NSMutableArray new];
-        for (int i = 0; i < 4; i++) {
-            NSNumber *pinValue = @500;
-            [self.dataManager.currentMaxTubeValues addObject:pinValue];
-            [self.dataManager.initialTubeValues addObject:pinValue];
-        }
-    } else {
-        for (int i = 0; i < NUM_LIGHTS; i++) {
-            [self.dataManager updateValue:500 forPin:[NSNumber numberWithInt:i] andIsAnalog:true];
-        }
-    }
-}
-
-- (void)pullTube: (NSNumber *) tubeNumber {
-    AMPDataManager* data = self.dataManager;
-    
-    [self resetTube];
-    
-    int tubeInt = [tubeNumber intValue];
-    NSNumber *pinNum = [NSNumber numberWithInt:(tubeInt-1)];
-    NSLog(@"Pulling band");
-    [data updateValue:240 forPin:pinNum andIsAnalog:true];
-    
-    // Wait 3 seconds, then release band
-    NSDate *runUntil = [NSDate dateWithTimeIntervalSinceNow: 3.0 ];
-    
-    [[NSRunLoop currentRunLoop] runUntilDate:runUntil];
-    
-    //[self resetTube];
-}
-
-- (IBAction)resetButtonPushed:(id)sender {
-    [self resetLights];
-}
-
 - (IBAction)selectOtherBridge:(id)sender{
     [NSAppDelegate searchForBridgeLocal];
 }
@@ -127,19 +92,10 @@ int stopColor = RED_COLOR;
     [self changeBrightness:sliderVal ofLightNumber:[NSNumber numberWithInteger:tag]];
 }
 
-- (IBAction)pullTube1:(id)sender {
-    [self pullTube:@1];
-}
-
-- (IBAction)pullTube2:(id)sender {
-    [self pullTube:@2];
-}
-     
-- (IBAction)pullTube3:(id)sender {
-    [self pullTube:@3];
-}
 - (IBAction)overrideStop:(id)sender {
-    [self incrementHueBy:0 ofLightNumber:self.redLightNumber];
+    if(![self.redLightNumber isEqualToNumber:@0]){
+        [self incrementHueBy:0 ofLightNumber:self.redLightNumber];
+    }
 }
 
 - (IBAction)randomizeLightsButton:(id)sender {
@@ -149,7 +105,6 @@ int stopColor = RED_COLOR;
 - (IBAction)changeStopColor:(id)sender {
     NSInteger clickedSegment = [sender selectedSegment];
     NSString * segmentLabel = [sender labelForSegment:clickedSegment];
-    
     if ([segmentLabel isEqualToString:@"Red"]) {
         stopColor = RED_COLOR;
     } else if ([segmentLabel isEqualToString:@"Blue"]) {
@@ -258,30 +213,6 @@ int stopColor = RED_COLOR;
     self.dataManager.lightIsRed = NO;
 }
 
-//- (void)changeBrightness:(NSNumber *)newBrightness ofLightNumber:(NSNumber *)lightNum{
-//    
-//    if([lightNum isEqualToNumber:self.redLightNumber] && ([newBrightness intValue] != DEFAULT_BRIGHTNESS)){
-//        [self changeHue:[NSNumber numberWithInt:GREEN_COLOR] ofLightNumber:lightNum];
-//        self.redLightNumber = @0;
-//        self.dataManager.lightIsRed = NO;
-//        [self.dataManager.musicPlayer playMusic];
-//        
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [self performSelector:@selector(restoreLights) withObject:nil afterDelay:1.0f];
-//        });
-//        
-//        dispatch_async(dispatch_get_main_queue(), ^{
-//            [self performSelector:@selector(pauseMusic) withObject:nil afterDelay:INTERRUPT_TIME];
-//        });
-//        return;
-//    }
-//    
-//    PHLightState *lightState = [self.lightStates objectAtIndex:[lightNum intValue]-1];
-//    
-//    [lightState setBrightness:newBrightness];
-//    
-//    [self changeLightState:lightState ofLightNum:lightNum];
-//}
 
 -(void)changeHue:(NSNumber *)newHue ofLightNumber:(NSNumber *)lightNum{
     PHLightState *lightState = [self.lightStates objectAtIndex:[lightNum intValue]-1];
@@ -321,7 +252,7 @@ int stopColor = RED_COLOR;
     
     PHLightState *lightState = [self.lightStates objectAtIndex:[lightNum intValue]-1];
     int oldHue = [lightState.hue intValue];
-    int newHueValue = (oldHue + incrementValue) % 65535;
+    int newHueValue = (oldHue + incrementValue) % MAX_HUE;
     
     NSNumber *newHue = [NSNumber numberWithInt:newHueValue];
     [lightState setHue:newHue];

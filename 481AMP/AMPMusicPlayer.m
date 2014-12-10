@@ -14,7 +14,8 @@
 
 @property (nonatomic) AMPMusicWindowController* windowController;
 @property (nonatomic) AVAudioPlayer *songPlayer;
-@property (nonatomic) NSArray *songList;
+@property (nonatomic) NSMutableArray *songList;
+@property (nonatomic) NSMutableArray *songNames;
 @property (nonatomic) int songIndex;
 @property (nonatomic) BOOL isPlaying;
 @property (nonatomic) float currentVolume;
@@ -35,22 +36,24 @@
     return self;
 }
 
--(void)playSongWithName:(NSString *)song {
+-(void)playSongWithIndex:(NSInteger ) songIndex {
     if (!self.windowController) {
         self.windowController = [NSAppDelegate.mainController getMusicWindowController];
     }
-    NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:song ofType:@"mp3"]];
-    self.songPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
+    
+    NSURL *songURL = [self.songList objectAtIndex:songIndex];
+    NSString *songName = [self.songNames objectAtIndex:songIndex];
+    
+    self.songPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:songURL error:nil];
     [self.songPlayer setVolume:_currentVolume];
     [self.songPlayer play];
-    [self.windowController updateSongBox:song];
-    NSLog(@"playing music");
+    
+    [self.windowController updateSongBox:songName];
 }
 
 -(void)playMusic {
     if (!self.songPlayer) {
-        NSString *title = [self.songList firstObject];
-        [self playSongWithName:title];
+        [self playSongWithIndex:0];
     }
     
     if(self.isPlaying){
@@ -79,18 +82,25 @@
         self.songIndex = 0;
     }
     [self.songPlayer stop];
-    [self playSongWithName:[self.songList objectAtIndex:self.songIndex]];
+    [self playSongWithIndex:self.songIndex];
     self.isPlaying = true;
 }
 
--(void)playLastSong {
+-(void)playPrevSong {
     if(self.songIndex <= 0) {
         self.songIndex = (int)self.songList.count-1;
     } else {
         self.songIndex--;
     }
     [self.songPlayer stop];
-    [self playSongWithName:[self.songList objectAtIndex:self.songIndex]];
+    [self playSongWithIndex:self.songIndex];
+    self.isPlaying = true;
+}
+
+-(void)playLastSong{
+    self.songIndex = (int)self.songList.count - 1;
+    [self.songPlayer stop];
+    [self playSongWithIndex:self.songIndex];
     self.isPlaying = true;
 }
 
@@ -102,20 +112,36 @@
     }
 }
 
--(NSArray *)songList
+-(NSMutableArray *)songList
 {
     if (!_songList) {
-        _songList = @[@"Fireflies", @"Safe and Sound", @"Break Free", @"Happy", @"Under the Sea", @"Proleter"];
+        self.songList = [NSMutableArray new];
+        NSArray *defaultSongList = @[@"Fireflies", @"Safe and Sound", @"Break Free", @"Happy", @"Under the Sea", @"Proleter"];
+        for(NSString *song in defaultSongList){
+            [self addSongWithURL:[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:song ofType:@"mp3"]] andSongName:song];
+        }
     }
     return _songList;
+}
+
+-(NSMutableArray *)songNames
+{
+    if(!_songNames){
+        _songNames = [NSMutableArray new];
+    }
+    return _songNames;
+}
+
+-(void)addSongWithURL:(NSURL *)songURL andSongName:(NSString *)songName{
+    [self.songList addObject:songURL];
+    [self.songNames addObject:songName];
 }
 
 -(void)startMusic{
     int numSongs = (int)self.songList.count;
     int pickSongIndex = arc4random_uniform(numSongs);
-    NSString *songName = [self.songList objectAtIndex:pickSongIndex];
     self.songIndex = pickSongIndex;
-    [self playSongWithName:songName];
+    [self playSongWithIndex:self.songIndex];
     
 }
 
@@ -142,25 +168,12 @@
 }
 
 -(NSString*)getCurrentSong{
-    NSString *songName = [self.songList objectAtIndex:self.songIndex];
+    NSString *songName = [self.songNames objectAtIndex:self.songIndex];
     return songName;
 }
-//
-//-(void)adjustVolumeWithRotation:(int)rotation
-//{
-//    BOOL shouldIncrease = rotation > 30;
-//    BOOL shouldDecrease = rotation < -30;
-//    
-//    if (shouldIncrease) {
-//        [self.volumeDecreaseTimer invalidate];
-//        self.volumeIncreaseTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(increaseVolume) userInfo:nil repeats:NO];
-//        [self.volumeIncreaseTimer fire];
-//    } else if (shouldDecrease) {
-//        [self.volumeIncreaseTimer invalidate];
-//        self.volumeDecreaseTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(decreaseVolume) userInfo:nil repeats:NO];
-//        [self.volumeDecreaseTimer fire];
-//    }
-//    
-//}
+
+-(NSInteger)getNumberOfSongs{
+    return self.songList.count;
+}
 
 @end

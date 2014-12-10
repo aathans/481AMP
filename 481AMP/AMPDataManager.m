@@ -12,7 +12,7 @@
 #define DEFAULT_BRIGHTNESS 140
 #define INCREMENT_MULTIPLIER 600
 #define FLOOR_START_PIN 7
-#define NUM_SONGS 3
+#define NUM_SOUNDS 3
 
 @implementation AMPDataManager
 
@@ -85,7 +85,7 @@
     NSNumber *previousState = [self.floorValues objectAtIndex:([pinNumber intValue]-FLOOR_START_PIN)];
     BOOL isPressedAlready = [previousState boolValue];
     if(!isPressedAlready && value){
-        int soundIndex = arc4random() % NUM_SONGS;
+        int soundIndex = arc4random() % NUM_SOUNDS;
         NSString *soundName = [self.soundList objectAtIndex:soundIndex];
         [self playSoundWithName:soundName andType:@"mp3"];
     }

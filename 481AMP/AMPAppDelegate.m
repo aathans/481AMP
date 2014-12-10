@@ -35,11 +35,12 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
+
     self.dataManager = [AMPDataManager sharedManager];
-    
-    self.phHueSDK = [PHHueSDK new];
-    [self.phHueSDK startUpSDK];
-    [self.phHueSDK enableLogging:YES];
+
+//    self.phHueSDK = [PHHueSDK new];
+//    [self.phHueSDK startUpSDK];
+//    [self.phHueSDK enableLogging:YES];
     
     PHNotificationManager *notificationManager = [PHNotificationManager defaultManager];
     
@@ -47,9 +48,12 @@
     [notificationManager registerObject:self withSelector:@selector(noLocalConnection) forNotification:NO_LOCAL_CONNECTION_NOTIFICATION];
     [notificationManager registerObject:self withSelector:@selector(notAuthenticated) forNotification:NO_LOCAL_AUTHENTICATION_NOTIFICATION];
     
-    [self enableLocalHeartbeat];
+    //[self enableLocalHeartbeat];
         
     [self setupSerialPortGUI];
+    
+    //self.mainController = [[AMPMainWindowController alloc] initWithWindowNibName:@"AMPMainWindowController"];
+    //[self.mainController showWindow:self];
     
 }
 
@@ -89,8 +93,8 @@
         
         [self.detailController setArduino:arduino];
         [self.detailController showWindow:self];
-        [self.connectButton setTitle:@"Disconnect"];
         
+        [self.connectButton setTitle:@"Disconnect"];
         self.connected = YES;
         
         self.mainController = [[AMPMainWindowController alloc] initWithWindowNibName:@"AMPMainWindowController"];
