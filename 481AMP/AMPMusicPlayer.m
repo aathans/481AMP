@@ -7,9 +7,12 @@
 //
 
 #import "AMPMusicPlayer.h"
+#import "AMPAppDelegate.h"
+#import "AMPMusicWindowController.h"
 
 @interface AMPMusicPlayer()
 
+@property (nonatomic) AMPMusicWindowController* windowController;
 @property (nonatomic) AVAudioPlayer *songPlayer;
 @property (nonatomic) NSArray *songList;
 @property (nonatomic) int songIndex;
@@ -33,10 +36,14 @@
 }
 
 -(void)playSongWithName:(NSString *)song {
+    if (!self.windowController) {
+        self.windowController = [NSAppDelegate.mainController getMusicWindowController];
+    }
     NSURL *url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:song ofType:@"mp3"]];
     self.songPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:nil];
     [self.songPlayer setVolume:_currentVolume];
     [self.songPlayer play];
+    [self.windowController updateSongBox:song];
     NSLog(@"playing music");
 }
 
@@ -68,7 +75,7 @@
 
 -(void)playNextSong {
     self.songIndex++;
-    if(self.songIndex >= 16) {
+    if(self.songIndex >= self.songList.count) {
         self.songIndex = 0;
     }
     [self.songPlayer stop];
@@ -78,7 +85,7 @@
 
 -(void)playLastSong {
     if(self.songIndex <= 0) {
-        self.songIndex = 16;
+        self.songIndex = (int)self.songList.count-1;
     } else {
         self.songIndex--;
     }
@@ -98,7 +105,7 @@
 -(NSArray *)songList
 {
     if (!_songList) {
-        _songList = @[@"Fireflies", @"SafeAndSound", @"BreakFree", @"Happy", @"UnderTheSea", @"Proleter"];
+        _songList = @[@"Fireflies", @"Safe and Sound", @"Break Free", @"Happy", @"Under the Sea", @"Proleter"];
     }
     return _songList;
 }
@@ -107,6 +114,7 @@
     int numSongs = (int)self.songList.count;
     int pickSongIndex = arc4random_uniform(numSongs);
     NSString *songName = [self.songList objectAtIndex:pickSongIndex];
+    self.songIndex = pickSongIndex;
     [self playSongWithName:songName];
     
 }
@@ -131,6 +139,11 @@
         self.currentVolume = 1.0f;
     }
     [self.songPlayer setVolume:_currentVolume];
+}
+
+-(NSString*)getCurrentSong{
+    NSString *songName = [self.songList objectAtIndex:self.songIndex];
+    return songName;
 }
 //
 //-(void)adjustVolumeWithRotation:(int)rotation

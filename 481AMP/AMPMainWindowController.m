@@ -44,4 +44,8 @@
     [self.musicWC changeButtonToPause];
 }
 
+-(NSWindowController*)getMusicWindowController{
+    return self.musicWC;
+}
+
 @end

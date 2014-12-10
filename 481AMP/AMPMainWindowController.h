@@ -12,4 +12,6 @@
 
 -(void)redLightWasSet;
 
+-(NSWindowController*)getMusicWindowController;
+
 @end

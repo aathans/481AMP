@@ -12,6 +12,7 @@
 @property (weak) IBOutlet NSButton *pausePlayButton;
 
 -(void)changeButtonToPause;
+-(void)updateSongBox:(NSString*)songName;
 
 
 @end

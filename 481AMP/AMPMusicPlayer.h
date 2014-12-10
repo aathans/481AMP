@@ -22,5 +22,6 @@
 -(void)playLastSong;
 -(void)startMusic;
 -(void)adjustVolumeWithRotation:(int)rotation;
+-(NSString*)getCurrentSong;
 
 @end

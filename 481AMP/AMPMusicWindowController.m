@@ -23,6 +23,7 @@
     
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     self.dataManager = [AMPDataManager sharedManager];
+    [self updateSongBox:[self.dataManager.musicPlayer getCurrentSong]];
 }
 
 - (IBAction)prevSongButton:(id)sender {
@@ -49,6 +50,11 @@
 
 -(void)changeButtonToPause{
     [self.pausePlayButton setState:NSOnState];
+}
+
+- (void)updateSongBox:(NSString*)songName{
+    NSControl* textField = [self.window.contentView viewWithTag:1];
+    [textField setStringValue:songName];
 }
 
 @end
