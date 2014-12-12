@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AMPControlLightsViewController">
             <connections>
+                <outlet property="stoppedLabel" destination="Q6k-ay-6fx" id="EoI-NA-R4Z"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -16,6 +17,10 @@
             <rect key="frame" x="0.0" y="0.0" width="480" height="285"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YLG-oC-ZP4">
+                    <rect key="frame" x="0.0" y="0.0" width="480" height="285"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="HueBackground481" id="zoo-u6-b1O"/>
+                </imageView>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bpA-Pp-B2x">
                     <rect key="frame" x="18" y="197" width="74" height="26"/>
                     <buttonCell key="cell" type="bevel" title="Light 1" bezelStyle="regularSquare" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="J2T-5n-k9Q">
@@ -50,7 +55,7 @@
                     <rect key="frame" x="178" y="248" width="124" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Turn On/Off Lights" id="lHs-h4-cyZ">
                         <font key="font" metaFont="system"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
@@ -103,7 +108,7 @@
                     <rect key="frame" x="35" y="56" width="190" height="17"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Change the stop light color:" id="FCE-Yv-TEh">
                         <font key="font" metaFont="system"/>
-                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="textColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
@@ -135,7 +140,16 @@
                         <action selector="changeBrightnessButton:" target="-2" id="p4N-PK-w2x"/>
                     </connections>
                 </slider>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q6k-ay-6fx">
+                    <rect key="frame" x="80" y="133" width="332" height="23"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="PULL TUBE TOWARDS STOP LIGHT!" drawsBackground="YES" id="hVI-Bs-da5">
+                        <font key="font" metaFont="system" size="19"/>
+                        <color key="textColor" red="0.9803922176361084" green="0.0" blue="0.0078431377187371254" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="backgroundColor" white="0.80086678830000002" alpha="0.27000000000000002" colorSpace="calibratedWhite"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
+            <point key="canvasLocation" x="273" y="236.5"/>
         </customView>
         <button verticalHuggingPriority="750" id="xKn-ab-EhB">
             <rect key="frame" x="0.0" y="0.0" width="82" height="32"/>
@@ -145,5 +159,17 @@
                 <font key="font" metaFont="system"/>
             </buttonCell>
         </button>
+        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="w8b-xp-5SD">
+            <rect key="frame" x="0.0" y="0.0" width="38" height="17"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="O8A-x0-w03">
+                <font key="font" metaFont="system"/>
+                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+            </textFieldCell>
+        </textField>
     </objects>
+    <resources>
+        <image name="HueBackground481" width="392.72726440429688" height="233.18182373046875"/>
+    </resources>
 </document>

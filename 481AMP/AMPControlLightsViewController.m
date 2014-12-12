@@ -32,6 +32,7 @@ int stopColor = RED_COLOR;
 @property (nonatomic)NSMutableArray *lightStates;
 @property (nonatomic)NSMutableArray *previousStates;
 @property (nonatomic)NSNumber *redLightNumber;
+@property (weak) IBOutlet NSTextField *stoppedLabel;
 
 @end
 
@@ -145,6 +146,7 @@ int stopColor = RED_COLOR;
     self.redLightNumber = [NSNumber numberWithInt:arc4random_uniform(NUM_LIGHTS-1)+1];
     
     self.dataManager.lightIsRed = YES;
+    self.stoppedLabel.hidden = NO;
     [self.dataManager.musicPlayer pauseMusic];
     
     // Save current light states
@@ -236,6 +238,7 @@ int stopColor = RED_COLOR;
         [self changeHue:[NSNumber numberWithInt:GREEN_COLOR] ofLightNumber:lightNum];
         self.redLightNumber = @0;
         self.dataManager.lightIsRed = NO;
+        self.stoppedLabel.hidden = YES;
         [self.dataManager.musicPlayer playMusic];
         
         dispatch_async(dispatch_get_main_queue(), ^{

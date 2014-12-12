@@ -25,10 +25,10 @@
                 <subviews>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TSb-bq-bkI">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="rainbowbackground" id="a99-8V-1mE"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="MusicBackground" id="a99-8V-1mE"/>
                     </imageView>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fvo-fm-YJZ">
-                        <rect key="frame" x="123" y="61" width="73" height="55"/>
+                        <rect key="frame" x="123" y="89" width="73" height="55"/>
                         <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="previous" imagePosition="only" alignment="center" state="on" imageScaling="axesIndependently" inset="2" id="9BD-pf-7Ml">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -38,7 +38,7 @@
                         </connections>
                     </button>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WFY-ME-Xj1">
-                        <rect key="frame" x="285" y="61" width="73" height="55"/>
+                        <rect key="frame" x="285" y="89" width="73" height="55"/>
                         <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="next" imagePosition="only" alignment="center" state="on" imageScaling="axesIndependently" inset="2" id="TJy-xf-JtY">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -48,15 +48,15 @@
                         </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Yl-aE-4Mp">
-                        <rect key="frame" x="154" y="188" width="172" height="52"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Music Options" id="G8s-hy-kJZ">
+                        <rect key="frame" x="154" y="232" width="172" height="29"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Music Options" drawsBackground="YES" id="G8s-hy-kJZ">
                             <font key="font" metaFont="system" size="24"/>
-                            <color key="textColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iif-xv-2VK">
-                        <rect key="frame" x="204" y="61" width="73" height="55"/>
+                        <rect key="frame" x="204" y="89" width="73" height="55"/>
                         <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="play" imagePosition="overlaps" alignment="center" alternateImage="pause" state="on" imageScaling="axesIndependently" inset="2" id="wCs-7M-DF4">
                             <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
@@ -66,15 +66,15 @@
                         </connections>
                     </button>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dHj-nb-eZE">
-                        <rect key="frame" x="190" y="166" width="100" height="22"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" alignment="center" title="Now playing:" id="gQB-Ki-BoD">
+                        <rect key="frame" x="192" y="183" width="96" height="22"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" alignment="center" title="Now playing:" drawsBackground="YES" id="gQB-Ki-BoD">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="highlightColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fMm-30-5l0">
-                        <rect key="frame" x="189" y="20" width="102" height="32"/>
+                        <rect key="frame" x="189" y="42" width="102" height="32"/>
                         <buttonCell key="cell" type="push" title="Add Song" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="0A8-pE-pNd">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
@@ -84,7 +84,7 @@
                         </connections>
                     </button>
                     <scrollView fixedFrame="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="115-Qy-ZG8">
-                        <rect key="frame" x="151" y="118" width="178" height="22"/>
+                        <rect key="frame" x="151" y="152" width="178" height="22"/>
                         <clipView key="contentView" misplaced="YES" id="BV9-Bl-7il">
                             <rect key="frame" x="1" y="1" width="238" height="133"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,10 +136,10 @@
         </button>
     </objects>
     <resources>
+        <image name="MusicBackground" width="240" height="135"/>
         <image name="next" width="256" height="256"/>
         <image name="pause" width="256" height="256"/>
         <image name="play" width="256" height="256"/>
         <image name="previous" width="256" height="256"/>
-        <image name="rainbowbackground" width="1024" height="768"/>
     </resources>
 </document>

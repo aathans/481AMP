@@ -97,6 +97,8 @@
         ADArduinoPin *digitalPin = [self.arduino.digitalPins objectAtIndex:i];
         [self.dataManager updateValue:digitalPin.value forPin:[NSNumber numberWithInt:i] andIsAnalog:NO];
     }
+    NSLog(@"Analog pins %@", self.arduino.analogPins);
+    NSLog(@"Digital pins %@", self.arduino.digitalPins);
 }
 
 -(void)close {
